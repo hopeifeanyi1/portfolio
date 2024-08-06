@@ -1,4 +1,4 @@
- "use client"
+"use client"
 import React, { useState, useRef } from 'react'
 import ProjectCard from './ProjectCard'
 import ProjectTag from './ProjectTag'
@@ -8,27 +8,29 @@ import { motion, useInView } from 'framer-motion'
 const projectData = [
     {
         id: 1,
-        title: "Transportation Booking Website",
+        title: "Portfolio Website",
         description: "project description",
-        image: "/images/project.jpg",
+        image: "/images/portfoli.png",
         tag: ["All", "Web"],
         gitUrl: "/",
         previewUrl: "/",
+        
     },
     {
         id: 2,
-        title: "Project Management Website",
+        title: "Krist E-Commerce Website",
         description: "project description",
-        image: "/images/project.jpg",
+        image: "/images/ecommerce.png",
         tag: ["All", "Web"],
         gitUrl: "/",
         previewUrl: "/",
+        
     },
     {
         id: 3,
-        title: "Food Ordering App",
+        title: "Bus Tracker",
         description: "project description",
-        image: "/images/project.jpg",
+        image: "/images/bus.png",
         tag: ["All", "Web"],
         gitUrl: "/",
         previewUrl: "/"
@@ -37,7 +39,7 @@ const projectData = [
         id: 4,
         title: "Bitcoin Trading Website",
         description: "project description",
-        image: "/images/project.jpg",
+        image: "/images/bitcoi.png",
         tag: ["All", "Web"],
         gitUrl: "/",
         previewUrl: "/",
@@ -46,7 +48,7 @@ const projectData = [
         id: 5,
         title: "Store Inventory Website",
         description: "project description",
-        image: "/images/project.jpg",
+        image: "/images/inventory.png",
         tag: ["All", "Web"],
         gitUrl: "/",
         previewUrl: "/",
@@ -62,21 +64,23 @@ const projectData = [
     },
     {
         id: 7,
-        title: "Krist E-Commerce Website",
+        title: "Project Management Website",
         description: "project description",
         image: "/images/project.jpg",
         tag: ["All", "Web"],
         gitUrl: "/",
         previewUrl: "/",
+        
     },
     {
         id: 8,
-        title: "Portfolio Website",
+        title: "Transportation Booking Website",
         description: "project description",
         image: "/images/project.jpg",
         tag: ["All", "Web"],
         gitUrl: "/",
         previewUrl: "/",
+        
     }
 ]
 

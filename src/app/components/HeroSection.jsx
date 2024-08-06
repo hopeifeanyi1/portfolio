@@ -15,7 +15,7 @@ const HeroSection = () => {
           initial={{ opacity: 0, scale: 0.5 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 1 }}
-          className="col-span-8 place-self-center text-center sm:text-left justify-self-start"
+          className="col-span-8 place-self-center text-center sm:text-left md:justify-self-start"
         >
                 <h1 className="mb-4 text-4xl sm:text-5xl lg:text-7xl lg:leading-snug font-extrabold">
                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-pink-600">
@@ -43,13 +43,13 @@ const HeroSection = () => {
                 
                 <Link
                 href="/#contact"
-                className="px-6 inline-block py-3 w-full sm:w-fit rounded-full mr-4 bg-gradient-to-br from-purple-500 to-pink-500 hover:bg-slate-200 text-white"
+                className="px-6 inline-block py-3 rounded-full mr-4 bg-gradient-to-br from-purple-500 to-pink-500 hover:bg-slate-200 text-white"
                 >
                     Hire Me
                 </Link>
                 <Link
                 href="/"
-                className="px-1 inline-block py-1 w-full sm:w-fit rounded-full bg-gradient-to-br from-purple-500 to-pink-500 hover:bg-slate-800 text-white mt-3"
+                className="px-1 inline-block py-1  rounded-full bg-gradient-to-br from-purple-500 to-pink-500 hover:bg-slate-800 text-white mt-3"
                 >
                 <span className="block bg-[#121212] hover:bg-slate-800 rounded-full px-5 py-2">
                     Download CV
