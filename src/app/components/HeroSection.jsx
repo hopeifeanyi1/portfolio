@@ -26,7 +26,9 @@ const HeroSection = () => {
                     sequence={[
                     'Ifeanyi Hope',
                     1000,
-                    'A Fullstack Web Developer',
+                    'A MERN stack Web Developer',
+                    1000,
+                    'A React-Native Developer',
                     1000,
                     'A Cyber Security Enthusiast',
                     1000,
@@ -38,7 +40,7 @@ const HeroSection = () => {
                     repeat={Infinity}
                 /> 
                 </h1>
-                <p className="text-[#ADB7BE] text-base sm:text-lg mb-6 lg:text-xl ">I&apos;m a Fullstack web developer</p>
+                <p className="text-[#ADB7BE] text-base sm:text-lg mb-6 lg:text-xl ">I&apos;m a Mobile and MERN stack web developer</p>
                 <div>
                 
                 <Link
@@ -48,11 +50,11 @@ const HeroSection = () => {
                     Hire Me
                 </Link>
                 <Link
-                href="/"
+                href="https://docs.google.com/document/d/1LWVJ7ks2IhjsPu_2IzWmtXraDaD2rQPc/edit?usp=drive_link&ouid=108743916711759175387&rtpof=true&sd=true"
                 className="px-1 inline-block py-1  rounded-full bg-gradient-to-br from-purple-500 to-pink-500 hover:bg-slate-800 text-white mt-3"
                 >
                 <span className="block bg-[#121212] hover:bg-slate-800 rounded-full px-5 py-2">
-                    Download CV
+                    View CV
                 </span>
                 </Link>
                 </div>
