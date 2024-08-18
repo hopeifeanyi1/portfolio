@@ -62,11 +62,11 @@ const AboutSection = () => {
     <section className="" id="about">
         <div className=" items-center py-8 px-4  sm:py-16 xl:px-16">
             
-            <div className='mt-4 md:mt-0 text-left flex flex-col h-full '>
+            <div className='mt-4 md:mt-0 text-white text-left flex flex-col h-full '>
                 <h2 className="text-4xl md:text-5xl font-bold mb-4">About Me</h2>
                 <p className="text-base md:text-xl">As a 3rd year software engineering student at Babcock University, I have a diverse range of interests that spans beyond software development, I am keen to leverage my skills and knowledge in areas like web development, mobile development and cybersecurity. I have gained valuable experience in web development technologies like HTML, CSS, Tailwind CSS, BootStrap, JavaScript, React, Typescript, mongodb, Node, Express and Next js and also mobile development technologies like React-Native and expo.
                 </p>
-                <div className="flex flex-row justify-start mt-8">
+                <div className="flex flex-row justify-start mt-8 text-white">
                     <TabButton
                       selectTab={() => handleTabChange("skills")}
                       active={tab === "skills"}
