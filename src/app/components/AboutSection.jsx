@@ -1,6 +1,13 @@
 "use client"
 import React, { useTransition, useState } from 'react'
 import TabButton from './TabButton'
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+} from "@/components/ui/carousel"
 
 const TAB_DATA = [
   {
@@ -36,14 +43,32 @@ const TAB_DATA = [
     title: "Certification",
     id: "certifications",
     content:(
-      <ul className='list-disc pl-2'>
-        <li>Cyber Security and Ethical Hacking</li>
-        <li>Full-Stack Web Design and Development</li>      
-        <li>HTML, CSS, Javascript for Web Developers</li> 
-        <li><a href='https://learn.microsoft.com/api/credentials/share/en-us/HopeIFEANYI/3B11AE95D51C7AD?sharingId=B4D7060416A0FE6B'>Microsoft Certified: Azure AI Fundamentals</a></li>     
-        <li><a href='https://learn.microsoft.com/api/credentials/share/en-us/HopeIFEANYI/F96AC56F66AF7953?sharingId=B4D7060416A0FE6B'>Microsoft Certified: Azure Data Fundamentals</a></li>            
-        <li><a href='https://learn.microsoft.com/api/credentials/share/en-us/HopeIFEANYI/D93D7739FAD1104?sharingId=B4D7060416A0FE6B'>Microsoft Certified: Azure Fundamentals</a></li>      
-      </ul>
+      <div className='list-disc pl-2'>
+        <Carousel>
+          <CarouselContent>
+            <CarouselItem>
+              <a href='https://learn.microsoft.com/api/credentials/share/en-us/HopeIFEANYI/3B11AE95D51C7AD?sharingId=B4D7060416A0FE6B'>
+              <img src="/ai900.png" alt="Description of Image" className="w-5/6 h-auto mx-auto"/></a>
+              <p className='text-sm text-center pt-3'>Microsoft Certified: Azure AI Fundamentals</p>
+            </CarouselItem>
+            <CarouselItem>
+              <a href='https://learn.microsoft.com/api/credentials/share/en-us/HopeIFEANYI/F96AC56F66AF7953?sharingId=B4D7060416A0FE6B'>
+              <img src="/dp900.png" alt="Description of Image" className="w-5/6 h-auto mx-auto"/>
+              </a>
+              <p className='text-sm text-center pt-3'>Microsoft Certified: Azure Data Fundamentals</p>
+            </CarouselItem>
+            <CarouselItem><a href='https://learn.microsoft.com/api/credentials/share/en-us/HopeIFEANYI/D93D7739FAD1104?sharingId=B4D7060416A0FE6B'>
+            <img src="/az900.png" alt="Description of Image" className="w-5/6 h-auto mx-auto"/>
+            <p className='text-sm text-center pt-3'>Microsoft Certified: Azure Fundamentals</p>
+            </a></CarouselItem>
+            <CarouselItem><p className='text-center '>Cyber Security and Ethical Hacking</p></CarouselItem>
+            <CarouselItem><p className='text-center'>Full-Stack Web Design and Development</p></CarouselItem>
+            <CarouselItem><p className='text-center'>HTML, CSS, Javascript for Web Developers</p></CarouselItem>
+            </CarouselContent>
+          <CarouselPrevious />
+          <CarouselNext />
+        </Carousel>    
+      </div>
     )    
   },
 ] 
