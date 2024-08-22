@@ -1,5 +1,6 @@
 "use client"
 import React, { useTransition, useState } from 'react'
+import Image from 'next/image'
 import TabButton from './TabButton'
 import {
   Carousel,
@@ -47,20 +48,38 @@ const TAB_DATA = [
         <Carousel>
           <CarouselContent>
             <CarouselItem>
-              <a href='https://learn.microsoft.com/api/credentials/share/en-us/HopeIFEANYI/3B11AE95D51C7AD?sharingId=B4D7060416A0FE6B'>
-              <img src="/ai900.png" alt="Description of Image" className="w-5/6 h-auto mx-auto"/></a>
-              <p className='text-sm text-center pt-3'>Microsoft Certified: Azure AI Fundamentals</p>
+              <a href='https://learn.microsoft.com/api/credentials/share/en-us/HopeIFEANYI/3B11AE95D51C7AD?sharingId=B4D7060416A0FE6B' className='hover:text-slate-400'>
+                <Image
+                src="/ai900.png"
+                alt="cert"
+                className="w-5/6 h-auto mx-auto"
+                width={200}
+                height={200}/>          
+                <p className='text-sm text-center pt-3'>Microsoft Certified: Azure AI Fundamentals</p>
+              </a>
             </CarouselItem>
             <CarouselItem>
-              <a href='https://learn.microsoft.com/api/credentials/share/en-us/HopeIFEANYI/F96AC56F66AF7953?sharingId=B4D7060416A0FE6B'>
-              <img src="/dp900.png" alt="Description of Image" className="w-5/6 h-auto mx-auto"/>
+              <a href='https://learn.microsoft.com/api/credentials/share/en-us/HopeIFEANYI/F96AC56F66AF7953?sharingId=B4D7060416A0FE6B' className='hover:text-slate-400'>
+                <Image
+                  src="/dp900.png"
+                  alt="cert"
+                  className="w-5/6 h-auto mx-auto"
+                  width={200}
+                  height={200}/>
+                <p className='text-sm text-center pt-3'>Microsoft Certified: Azure Data Fundamentals</p>
               </a>
-              <p className='text-sm text-center pt-3'>Microsoft Certified: Azure Data Fundamentals</p>
             </CarouselItem>
-            <CarouselItem><a href='https://learn.microsoft.com/api/credentials/share/en-us/HopeIFEANYI/D93D7739FAD1104?sharingId=B4D7060416A0FE6B'>
-            <img src="/az900.png" alt="Description of Image" className="w-5/6 h-auto mx-auto"/>
-            <p className='text-sm text-center pt-3'>Microsoft Certified: Azure Fundamentals</p>
-            </a></CarouselItem>
+            <CarouselItem>
+              <a href='https://learn.microsoft.com/api/credentials/share/en-us/HopeIFEANYI/D93D7739FAD1104?sharingId=B4D7060416A0FE6B' className='hover:text-slate-400'>
+                <Image
+                  src="/az900.png"
+                  alt="cert"
+                  className="w-5/6 h-auto mx-auto"
+                  width={200}
+                  height={200}/>
+                <p className='text-sm text-center pt-3'>Microsoft Certified: Azure Fundamentals</p>
+              </a>
+            </CarouselItem>
             <CarouselItem><p className='text-center '>Cyber Security and Ethical Hacking</p></CarouselItem>
             <CarouselItem><p className='text-center'>Full-Stack Web Design and Development</p></CarouselItem>
             <CarouselItem><p className='text-center'>HTML, CSS, Javascript for Web Developers</p></CarouselItem>
@@ -89,7 +108,7 @@ const AboutSection = () => {
             
             <div className='mt-4 md:mt-0 text-white text-left flex flex-col h-full '>
                 <h2 className="text-4xl md:text-5xl font-bold mb-4">About Me</h2>
-                <p className="text-base md:text-xl">As a 3rd year software engineering student at Babcock University, I have a diverse range of interests that spans beyond software development, I am keen to leverage my skills and knowledge in areas like web development, mobile development and cybersecurity. I have gained valuable experience in web development technologies like HTML, CSS, Tailwind CSS, BootStrap, JavaScript, React, Typescript, mongodb, Node, Express and Next js and also mobile development technologies like React-Native and expo.
+                <p className="md:text-xl text-[14px]">As a passionate software engineering student at Babcock University, I’m eager to apply my skills across web, mobile, and cybersecurity. I’ve gained experience with technologies like React, TypeScript, Node.js, MongoDB, and React Native, and I’m driven to keep pushing my knowledge and building innovative solutions.
                 </p>
                 <div className="flex flex-row justify-start mt-8 text-white">
                     <TabButton
