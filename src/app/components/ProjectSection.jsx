@@ -36,7 +36,7 @@ const projectData = [
         image: "/images/movie.png",
         tag: ["All", "Web"],
         gitUrl: "https://github.com/hopeifeanyi1",
-        previewUrl: "https://movies-ten-alpha.vercel.app/"
+        previewUrl: "https://movies-ticketing.vercel.app/"
     },
     {
         id: 4,
