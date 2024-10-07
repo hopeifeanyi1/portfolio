@@ -30,6 +30,16 @@ const projectData = [
     },
     {
         id: 3,
+        title: "Weather App",
+        description: "This is a Weather Application that allows users to search and view the current weather conditions in their desired cities.",
+        tools: "TypeScript, React, Next, Openweather API",
+        image: "/images/weatherapp.png",
+        tag: ["All", "Web"],
+        gitUrl: "https://github.com/hopeifeanyi1",
+        previewUrl: "https://hope-weather-app.vercel.app/",
+    },
+    {
+        id: 4,
         title: "Movies",
         description: "This website is a movie catalog showcasing films with titles, images, descriptions, and genres from a JSON file. Users can browse popular movies.",
         tools: "React js",
@@ -39,7 +49,7 @@ const projectData = [
         previewUrl: "https://movies-ticketing.vercel.app/"
     },
     {
-        id: 4,
+        id: 5,
         title: "Shuttle Bus Tracker",
         description: "A frontend-only shuttle bus tracker that allows users to locate nearby shuttle buses and provides features for chatting and calling drivers, offering an intuitive user interface for seamless interaction,",
         tools: "React js, Tailwind, Next",
@@ -49,7 +59,7 @@ const projectData = [
         previewUrl: "https://bus-tracker-tawny.vercel.app/"
     },
     {
-        id: 5,
+        id: 6,
         title: "Task Management Website",
         description: "A website that helps users organize and track their tasks. It features tools for creating and setting deadlines for tasks, offering an interface for better productivity and time management.",
         tools: "React js",
@@ -60,7 +70,7 @@ const projectData = [
         
     },
     {
-        id: 6,
+        id: 7,
         title: "Bitcoin Trading Website",
         description: "A frontend-only website for trading bitcion",
         tools: "React js",
@@ -70,21 +80,11 @@ const projectData = [
         previewUrl: "/",
     },
     {
-        id: 7,
+        id: 8,
         title: "Store Inventory Website",
         description: "a frontend-only inventory management website for a store. It allows users to view and interact with an intuitive interface designed to manage product inventory.",
         tools: "React js",
         image: "/images/inventory.png",
-        tag: ["All", "Web"],
-        gitUrl: "https://github.com/hopeifeanyi1",
-        previewUrl: "/",
-    },
-    {
-        id: 8,
-        title: "Weather App",
-        description: "A weather website that displays the current weather conditions for any city worldwide. Users can search for a city and get real-time updates",
-        tools: "React js",
-        image: "/images/project.jpg",
         tag: ["All", "Web"],
         gitUrl: "https://github.com/hopeifeanyi1",
         previewUrl: "/",
