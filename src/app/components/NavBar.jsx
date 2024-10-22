@@ -34,7 +34,7 @@ const NavBar = () => {
             H.I
           </span>
         </Link>
-        <div className="mobile-menu block md:hidden">
+        <div className="mobile-menu block md:hidden lg:hidden">
           {!navbarOpen ? (
             <button
               onClick={() => setNavbarOpen(!navbarOpen)}
@@ -55,7 +55,7 @@ const NavBar = () => {
           <ul className="flex p-4 md:p-0 md:flex-row md:space-x-8 mt-0 ">
             {navLinks.map((link, index) => (
               <li key={index}>
-                <NavLink href={link.path} title={link.title} onClick={() => setNavbarOpen(!navbarOpen)} />
+                <NavLink href={link.path} title={link.title}  />
               </li>
             ))}
           </ul>
