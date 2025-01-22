@@ -19,7 +19,6 @@ const ProjectCard = ({ imgUrl, title, description, gitUrl, previewUrl, tool}) =>
             <h5 className='text-xl font-semibold mb-2'>{title}</h5>
             <p className='text-[#ADB7BE] text-[14px]'>{description}</p>
             <p className='text-[#ADB7BE] text-[14px]'>Built with <span className='text-purple-100 text-[15px]'>{tool}</span></p>
-
         </div>
     </div>
   )

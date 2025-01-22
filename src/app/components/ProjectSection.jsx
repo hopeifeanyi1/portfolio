@@ -8,17 +8,6 @@ import { motion, useInView } from 'framer-motion'
 const projectData = [
     {
         id: 1,
-        title: "Portfolio Website",
-        description: "My portfolio website.",
-        tools: "React js",
-        image: "/images/portfoli.png",
-        tag: ["All", "Web"],
-        gitUrl: "https://github.com/hopeifeanyi1",
-        previewUrl: "/",
-        
-    },
-    {
-        id: 2,
         title: "Krist E-Commerce Website",
         description: "Krist is a shopping E-commerce website.",
         tools: "React js, Tailwind, Next.js",
@@ -29,7 +18,7 @@ const projectData = [
         
     },
     {
-        id: 3,
+        id: 2,
         title: "Weather App",
         description: "This is a Weather Application that allows users to search and view the current weather conditions in their desired cities.",
         tools: "TypeScript, React, Next, Openweather API",
@@ -37,9 +26,30 @@ const projectData = [
         tag: ["All", "Web"],
         gitUrl: "https://github.com/hopeifeanyi1",
         previewUrl: "https://hope-weather-app.vercel.app/",
+        
+    },
+    {
+        id: 3,
+        title: "Pomat Health",
+        description: "I collaborated as a frontend developer to build a website for a biolab conducting clinical trials and research aimed at developing solutions to human health challenges.",
+        tools: "TypeScript, React, Next, Taiwind",
+        image: "/images/pomat.png",
+        tag: ["All", "Web"],
+        gitUrl: "https://github.com/hopeifeanyi1",
+        previewUrl: "https://www.pomathealth.com/",
     },
     {
         id: 4,
+        title: "Portfolio Website",
+        description: "My portfolio website.",
+        tools: "React js",
+        image: "/images/portfoli.png",
+        tag: ["All", "Web"],
+        gitUrl: "https://github.com/hopeifeanyi1",
+        previewUrl: "/",
+    },
+    {
+        id: 5,
         title: "Movies",
         description: "This website is a movie catalog showcasing films with titles, images, descriptions, and genres from a JSON file. Users can browse popular movies.",
         tools: "React js",
@@ -49,7 +59,7 @@ const projectData = [
         previewUrl: "https://movies-ticketing.vercel.app/"
     },
     {
-        id: 5,
+        id: 6,
         title: "Shuttle Bus Tracker",
         description: "A frontend-only shuttle bus tracker that allows users to locate nearby shuttle buses and provides features for chatting and calling drivers, offering an intuitive user interface for seamless interaction,",
         tools: "React js, Tailwind, Next",
@@ -57,9 +67,10 @@ const projectData = [
         tag: ["All", "Web"],
         gitUrl: "https://github.com/hopeifeanyi1",
         previewUrl: "https://bus-tracker-tawny.vercel.app/"
+        
     },
     {
-        id: 6,
+        id: 7,
         title: "Task Management Website",
         description: "A website that helps users organize and track their tasks. It features tools for creating and setting deadlines for tasks, offering an interface for better productivity and time management.",
         tools: "React js",
@@ -67,10 +78,9 @@ const projectData = [
         tag: ["All", "Web"],
         gitUrl: "https://github.com/hopeifeanyi1",
         previewUrl: "/",
-        
     },
     {
-        id: 7,
+        id: 8,
         title: "Bitcoin Trading Website",
         description: "A frontend-only website for trading bitcion",
         tools: "React js",
@@ -80,7 +90,7 @@ const projectData = [
         previewUrl: "/",
     },
     {
-        id: 8,
+        id: 9,
         title: "Store Inventory Website",
         description: "a frontend-only inventory management website for a store. It allows users to view and interact with an intuitive interface designed to manage product inventory.",
         tools: "React js",
@@ -88,9 +98,10 @@ const projectData = [
         tag: ["All", "Web"],
         gitUrl: "https://github.com/hopeifeanyi1",
         previewUrl: "/",
+        
     },
     {
-        id: 9,
+        id: 10,
         title: "Transportation Booking Website",
         description: "A frontend-only website that allows users to book and get tickets",
         tools: "React js",
@@ -123,7 +134,7 @@ const ProjectSection = () => {
     return (
         <section id="projects">
             <h2 className='text-center text-4xl font-bold text-white mt-4'>My Projects</h2>
-            <p className='text-slate-300 text-[11-px] text-center mt-4'>My portfolio features various projects, with some completed and others in progress. Each one emphasizes my focus on <span className='font-montserrat text-transparent bg-clip-text bg-gradient-to-r from-purple-300 to-purple-400'>beautiful UI design</span> and <span className='font-montserrat text-transparent bg-clip-text bg-gradient-to-r from-purple-300 to-purple-400'>elegant code</span> for easy maitenance and reusability.</p>
+            <p className='text-slate-300 text-[19px] md:w-1/2 w-full mx-auto text-center mt-4'>My portfolio features various projects, with some completed and others in progress. Each one emphasizes my focus on <span className='font-montserrat text-transparent bg-clip-text bg-gradient-to-r from-purple-300 to-purple-400'>beautiful UI design</span> and <span className='font-montserrat text-transparent bg-clip-text bg-gradient-to-r from-purple-300 to-purple-400'>elegant code</span> for easy maitenance and re-usability.</p>
             <div className='text-white flex flex-row justify-center items-center gap-2 py-6'>
                 <ProjectTag 
                     onClick={() => handleTabChange("All")} 
