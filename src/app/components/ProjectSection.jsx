@@ -8,6 +8,17 @@ import { motion, useInView } from 'framer-motion'
 const projectData = [
     {
         id: 1,
+        title: "Easy Therapy",
+        description: "Mental health chatbot website website.",
+        tools: "Typescript, QrodCloud API, Tailwind, Next.js",
+        image: "/images/Easy.png",
+        tag: ["All", "Web"],
+        gitUrl: "https://github.com/hopeifeanyi1",
+        previewUrl: "https://github.com/hopeifeanyi1/mental-health",
+        
+    },
+    {
+        id: 2,
         title: "Krist E-Commerce Website",
         description: "Krist is a shopping E-commerce website.",
         tools: "React js, Tailwind, Next.js",
@@ -15,17 +26,6 @@ const projectData = [
         tag: ["All", "Web"],
         gitUrl: "https://github.com/hopeifeanyi1",
         previewUrl: "https://krist-mu.vercel.app/",
-        
-    },
-    {
-        id: 2,
-        title: "Weather App",
-        description: "This is a Weather Application that allows users to search and view the current weather conditions in their desired cities.",
-        tools: "TypeScript, React, Next, Openweather API",
-        image: "/images/weatherapp.png",
-        tag: ["All", "Web"],
-        gitUrl: "https://github.com/hopeifeanyi1",
-        previewUrl: "https://hope-weather-app.vercel.app/",
         
     },
     {
@@ -47,16 +47,17 @@ const projectData = [
         tag: ["All", "Web"],
         gitUrl: "https://github.com/hopeifeanyi1",
         previewUrl: "/",
+        
     },
     {
         id: 5,
-        title: "Movies",
-        description: "This website is a movie catalog showcasing films with titles, images, descriptions, and genres from a JSON file. Users can browse popular movies.",
-        tools: "React js",
-        image: "/images/movie.png",
+        title: "Weather App",
+        description: "This is a Weather Application that allows users to search and view the current weather conditions in their desired cities.",
+        tools: "TypeScript, React, Next, Openweather API",
+        image: "/images/weatherapp.png",
         tag: ["All", "Web"],
         gitUrl: "https://github.com/hopeifeanyi1",
-        previewUrl: "https://movies-ticketing.vercel.app/"
+        previewUrl: "https://hope-weather-app.vercel.app/",
     },
     {
         id: 6,
@@ -71,13 +72,13 @@ const projectData = [
     },
     {
         id: 7,
-        title: "Task Management Website",
-        description: "A website that helps users organize and track their tasks. It features tools for creating and setting deadlines for tasks, offering an interface for better productivity and time management.",
+        title: "Movies",
+        description: "This website is a movie catalog showcasing films with titles, images, descriptions, and genres from a JSON file. Users can browse popular movies.",
         tools: "React js",
-        image: "/images/project.jpg",
+        image: "/images/movie.png",
         tag: ["All", "Web"],
         gitUrl: "https://github.com/hopeifeanyi1",
-        previewUrl: "/",
+        previewUrl: "https://movies-ticketing.vercel.app/"
     },
     {
         id: 8,
@@ -102,6 +103,17 @@ const projectData = [
     },
     {
         id: 10,
+        title: "Task Management Website",
+        description: "A website that helps users organize and track their tasks. It features tools for creating and setting deadlines for tasks, offering an interface for better productivity and time management.",
+        tools: "React js",
+        image: "/images/project.jpg",
+        tag: ["All", "Web"],
+        gitUrl: "https://github.com/hopeifeanyi1",
+        previewUrl: "/",
+        
+    },
+    {
+        id: 11,
         title: "Transportation Booking Website",
         description: "A frontend-only website that allows users to book and get tickets",
         tools: "React js",
