@@ -9,12 +9,12 @@ const projectData = [
     {
         id: 1,
         title: "Easy Therapy",
-        description: "Mental health chatbot website website.",
+        description: "Mental health chatbot website.",
         tools: "Typescript, QrodCloud API, Tailwind, Next.js",
         image: "/images/easy.png",
         tag: ["All", "Web"],
         gitUrl: "https://github.com/hopeifeanyi1",
-        previewUrl: "mental-health-chatbot-one.vercel.app",
+        previewUrl: "https://mental-health-chatbot-one.vercel.app",
         
     },
     {
