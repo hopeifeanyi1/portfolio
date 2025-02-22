@@ -22,7 +22,7 @@ const TAB_DATA = [
         <li>React Native</li>
         <li>Typescript</li>
         <li>Tailwind</li>
-        <li>Bootsrap</li>
+        <li>Bootstrap</li>
         <li>Next.js</li>
       </ul>
     )    
