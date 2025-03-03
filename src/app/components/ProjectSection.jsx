@@ -13,8 +13,8 @@ const projectData = [
         tools: "Typescript, QrodCloud API, Tailwind, Next.js",
         image: "/images/easy.png",
         tag: ["All", "Web"],
-        gitUrl: "https://github.com/hopeifeanyi1",
-        previewUrl: "https://mental-health-chatbot-one.vercel.app",
+        gitUrl: "https://github.com/hopeifeanyi1/mental-health",
+        previewUrl: "https://easy-therapy.vercel.app",
         
     },
     {
