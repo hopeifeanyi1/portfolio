@@ -10,7 +10,7 @@ const projectData = [
         id: 1,
         title: "Easy Therapy",
         description: "Mental health chatbot website.",
-        tools: "Typescript, QrodCloud API, Tailwind, Next.js",
+        tools: "Typescript, Tailwind, QrodCloud API, Firebase, Next.js",
         image: "/images/easy.png",
         tag: ["All", "Web"],
         gitUrl: "https://github.com/hopeifeanyi1/mental-health",
