@@ -10,7 +10,7 @@ const projectData = [
         id: 1,
         title: "Easy Therapy",
         description: "Mental health chatbot website.",
-        tools: "Typescript, Tailwind, QrodCloud API, Firebase, Next.js",
+        tools: "Typescript, Tailwind, Groq AI, Firebase, Next.js",
         image: "/images/easy.png",
         tag: ["All", "Web"],
         gitUrl: "https://github.com/hopeifeanyi1/mental-health",
@@ -19,6 +19,17 @@ const projectData = [
     },
     {
         id: 2,
+        title: "Careerly",
+        description: "Career Navigator AI.",
+        tools: "Next.js, React, Typescript, Tailwind, Rapid API, Groq AI, Firebase",
+        image: "/careerly.png",
+        tag: ["All", "Web"],
+        gitUrl: "https://github.com/hopeifeanyi1",
+        previewUrl: "https://carerly.vercel.app",
+        
+    },
+    {
+        id: 3,
         title: "Krist E-Commerce Website",
         description: "Krist is a shopping E-commerce website.",
         tools: "React js, Tailwind, Next.js",
@@ -29,7 +40,7 @@ const projectData = [
         
     },
     {
-        id: 3,
+        id: 4,
         title: "Pomat Health",
         description: "I collaborated as a frontend developer to build a website for a biolab conducting clinical trials and research aimed at developing solutions to human health challenges.",
         tools: "TypeScript, React, Next, Taiwind",
@@ -39,7 +50,7 @@ const projectData = [
         previewUrl: "https://www.pomathealth.com/",
     },
     {
-        id: 4,
+        id: 5,
         title: "Portfolio Website",
         description: "My portfolio website.",
         tools: "React js",
@@ -50,7 +61,7 @@ const projectData = [
         
     },
     {
-        id: 5,
+        id: 6,
         title: "Weather App",
         description: "This is a Weather Application that allows users to search and view the current weather conditions in their desired cities.",
         tools: "TypeScript, React, Next, Openweather API",
@@ -60,7 +71,7 @@ const projectData = [
         previewUrl: "https://hope-weather-app.vercel.app/",
     },
     {
-        id: 6,
+        id: 7,
         title: "Shuttle Bus Tracker",
         description: "A frontend-only shuttle bus tracker that allows users to locate nearby shuttle buses and provides features for chatting and calling drivers, offering an intuitive user interface for seamless interaction,",
         tools: "React js, Tailwind, Next",
@@ -71,7 +82,7 @@ const projectData = [
         
     },
     {
-        id: 7,
+        id: 8,
         title: "Movies",
         description: "This website is a movie catalog showcasing films with titles, images, descriptions, and genres from a JSON file. Users can browse popular movies.",
         tools: "React js",
@@ -81,7 +92,7 @@ const projectData = [
         previewUrl: "https://movies-ticketing.vercel.app/"
     },
     {
-        id: 8,
+        id: 9,
         title: "Bitcoin Trading Website",
         description: "A frontend-only website for trading bitcion",
         tools: "React js",
@@ -91,7 +102,7 @@ const projectData = [
         previewUrl: "/",
     },
     {
-        id: 9,
+        id: 10,
         title: "Store Inventory Website",
         description: "a frontend-only inventory management website for a store. It allows users to view and interact with an intuitive interface designed to manage product inventory.",
         tools: "React js",
@@ -102,7 +113,7 @@ const projectData = [
         
     },
     {
-        id: 10,
+        id: 11,
         title: "Task Management Website",
         description: "A website that helps users organize and track their tasks. It features tools for creating and setting deadlines for tasks, offering an interface for better productivity and time management.",
         tools: "React js",
@@ -113,7 +124,7 @@ const projectData = [
         
     },
     {
-        id: 11,
+        id: 12,
         title: "Transportation Booking Website",
         description: "A frontend-only website that allows users to book and get tickets",
         tools: "React js",
