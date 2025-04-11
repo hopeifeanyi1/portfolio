@@ -16,14 +16,14 @@ const TAB_DATA = [
     id: "skills",
     content:(
       <ul className='list-disc pl-2'>
-        <li>Node.js</li>
         <li>JavaScript</li>
         <li>React</li>
         <li>React Native</li>
         <li>Typescript</li>
         <li>Tailwind</li>
-        <li>Bootstrap</li>
         <li>Next.js</li>
+        <li>Express</li>
+        <li>Firebase</li>
       </ul>
     )    
   },
@@ -108,7 +108,7 @@ const AboutSection = () => {
             
             <div className='mt-4 md:mt-0 text-white text-left flex flex-col h-full '>
                 <h2 className="text-4xl md:text-5xl font-bold mb-4">About Me</h2>
-                <p className="md:text-xl text-[14px]">As a passionate software engineering student at Babcock University, I’m eager to apply my skills across web, mobile, and cybersecurity. I’ve gained experience with technologies like React, TypeScript, Node.js, MongoDB, and React Native, and I’m driven to keep pushing my knowledge and building innovative solutions.
+                <p className="md:text-xl text-[14px]">I&apos;m Hope, a driven software engineering student at Babcock University, with a passion for building innovative solutions that make a real impact. With expertise in React.js, Next.js, and TypeScript, I&apos;ve developed projects like a mental health chatbot and AI-powered career navigator. A proud winner of 3 hackathon awards, including GDG Babcock x Ready Tensor&apos;s Chatbothon and Babcock Innovation Challenge, I&apos;m committed to driving growth and innovation in tech. Let&apos;s connect and explore the possibilities together!
                 </p>
                 <div className="flex flex-row justify-start mt-8 text-white">
                     <TabButton

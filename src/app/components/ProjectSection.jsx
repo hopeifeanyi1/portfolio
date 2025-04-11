@@ -21,7 +21,7 @@ const projectData = [
         id: 2,
         title: "Careerly",
         description: "Career Navigator AI.",
-        tools: "Next.js, React, Typescript, Tailwind, Rapid API, Groq AI, Firebase",
+        tools: "Next.js, React, Typescript, Tailwind, Rapid API, Groq AI, Firebase, Express",
         image: "/careerly.png",
         tag: ["All", "Web"],
         gitUrl: "https://github.com/hopeifeanyi1",
