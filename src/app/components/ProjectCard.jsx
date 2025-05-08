@@ -1,27 +1,59 @@
 import React from 'react'
-import { CodeBracketIcon, EyeIcon } from '@heroicons/react/24/outline'
+import { motion } from 'framer-motion'
+import { GithubIcon, ExternalLinkIcon } from 'lucide-react'
 import Link from 'next/link'
+import Image from 'next/image'
 
 const ProjectCard = ({ imgUrl, title, description, gitUrl, previewUrl, tool}) => {
   return (
-    <div>
-        <div className='h-52 md:h-72 rounded-t-xl relative group bg-cover' style={{background: `url(${imgUrl})`, backgroundSize: "cover"}}>
-            <div className='overlay items-center justify-center absolute top-0 left-0 w-full h-full bg-[#181818] bg-opacity-0 hidden group-hover:flex group-hover:bg-opacity-80 transition-all duration-500 '>
-                <Link href={gitUrl} className='h-14 w-14 mr-2 border-2 relative rounded-full border-[#ADB7BE] hover:border-white group/link'>
-                    <CodeBracketIcon className='h-10 w-10 text-[#ADB7BE] absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 cursor-pointer group-hover/link:text-white '/>
-                </Link>
-                <Link href={previewUrl} className='h-14 w-14 border-2 relative rounded-full border-[#ADB7BE] hover:border-white group/link'>
-                    <EyeIcon className='h-10 w-10 text-[#ADB7BE] absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 cursor-pointer group-hover/link:text-white '/>
-                </Link>
-            </div>
+    <motion.div 
+      whileHover={{ y: -5 }}
+      className="overflow-hidden rounded-xl bg-white dark:bg-gray-900 border border-gray-100 dark:border-gray-800 shadow-sm hover:shadow-md transition-all duration-300"
+    >
+      <div className='aspect-video relative overflow-hidden'>
+        <Image 
+          src={imgUrl} 
+          alt={title} 
+          fill 
+          className="object-cover transition-transform duration-500 hover:scale-110"
+        />
+        <div className='absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 hover:opacity-100 transition-opacity duration-300 flex items-end justify-end p-4'>
+          <div className="flex gap-2">
+            <Link 
+              href={gitUrl} 
+              className="p-2 bg-white/20 backdrop-blur-sm rounded-full hover:bg-white/30 transition-colors"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <GithubIcon size={20} className="text-white" />
+            </Link>
+            <Link 
+              href={previewUrl} 
+              className="p-2 bg-white/20 backdrop-blur-sm rounded-full hover:bg-white/30 transition-colors"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <ExternalLinkIcon size={20} className="text-white" />
+            </Link>
+          </div>
         </div>
-        <div className='text-white rounded-b-xl mt-3 bg-[#181818]py-6 px-4'>
-            <h5 className='text-xl font-semibold mb-2'>{title}</h5>
-            <p className='text-[#ADB7BE] text-[14px]'>{description}</p>
-            <p className='text-[#ADB7BE] text-[14px]'>Built with <span className='text-purple-100 text-[15px]'>{tool}</span></p>
+      </div>
+      <div className='p-5'>
+        <h3 className='text-xl font-semibold mb-2'>{title}</h3>
+        <p className='text-gray-600 dark:text-gray-400 text-sm mb-4'>{description}</p>
+        <div className="flex flex-wrap gap-2">
+          {tool.split(', ').map((tech, index) => (
+            <span 
+              key={index} 
+              className="text-xs px-2 py-1 rounded-full bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-300"
+            >
+              {tech}
+            </span>
+          ))}
         </div>
-    </div>
+      </div>
+    </motion.div>
   )
 }
 
-export default ProjectCard
+export default ProjectCard;

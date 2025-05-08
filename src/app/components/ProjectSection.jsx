@@ -150,9 +150,9 @@ const projectData = [
 const ProjectSection = () => {
     const [tag, setTag] = useState("All")
     const ref = useRef(null)
-    const isInView = useInView(ref, { once: true})
+    const isInView = useInView(ref, { once: true, margin: "0px 0px -200px 0px" })
 
-    const handleTabChange = (newTag) => {
+    const handleTagChange = (newTag) => {
         setTag(newTag)
     }
 
@@ -160,52 +160,58 @@ const ProjectSection = () => {
         project.tag.includes(tag)
     )
 
-    const cardVariants = {
-        initial: { y: 50, opacity: 0 },
-        animate: { y: 0, opacity: 1 },
-    };
-
     return (
-        <section id="projects">
-            <h2 className='text-center text-4xl font-bold text-white mt-4'>My Projects</h2>
-            <p className='text-slate-300 text-[19px] md:w-1/2 w-full mx-auto text-center mt-4'>My portfolio features various projects, with some completed and others in progress. Each one emphasizes my focus on <span className='font-montserrat text-transparent bg-clip-text bg-gradient-to-r from-purple-300 to-purple-400'>beautiful UI design</span> and <span className='font-montserrat text-transparent bg-clip-text bg-gradient-to-r from-purple-300 to-purple-400'>elegant code</span> for easy maitenance and re-usability.</p>
-            <div className='text-white flex flex-row justify-center items-center gap-2 py-6'>
+        <section id="projects" className="py-20">
+            <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5 }}
+                viewport={{ once: true }}
+                className="text-center max-w-3xl mx-auto mb-16"
+            >
+                <h2 className="text-3xl font-bold mb-6">My Projects</h2>
+                <div className="w-24 h-1.5 bg-gradient-to-r from-purple-500 to-pink-500 mx-auto rounded-full mb-8"></div>
+                <p className="text-gray-600 dark:text-gray-300 text-lg">
+                    My portfolio features various projects, with some completed and others in progress. Each one emphasizes my focus on <span className='text-transparent bg-clip-text bg-gradient-to-r from-purple-500 to-pink-500'>beautiful UI design</span> and <span className='text-transparent bg-clip-text bg-gradient-to-r from-purple-500 to-pink-500'>elegant code</span> for easy maintenance and re-usability.
+                </p>
+            </motion.div>
+            
+            <div className='flex flex-wrap justify-center gap-3 mb-12'>
                 <ProjectTag 
-                    onClick={() => handleTabChange("All")} 
+                    onClick={() => handleTagChange("All")} 
                     name="All" 
                     isSelected={tag === "All"} /> 
                 <ProjectTag 
-                    onClick={() => handleTabChange("Web")} 
+                    onClick={() => handleTagChange("Web")} 
                     name="Web" 
                     isSelected={tag === "Web"} /> 
                 <ProjectTag 
-                    onClick={() => handleTabChange("Mobile")} 
+                    onClick={() => handleTagChange("Mobile")} 
                     name="Mobile" 
                     isSelected={tag === "Mobile"} /> 
             </div>
-            <ul ref={ref} className="grid md:grid-cols-3 gap-8 md:gap-12">
+            
+            <div ref={ref} className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
                 {filteredProjects.map((project, index) => (
-                <motion.li
-                    key={index}
-                    variants={cardVariants}
-                    initial="initial"
-                    animate={isInView ? "animate" : "initial"}
-                    transition={{ duration: 0.3, delay: index * 0.4 }}
-                >
-                    <ProjectCard
-                    key={project.id}
-                    title={project.title}
-                    description={project.description}
-                    imgUrl={project.image}
-                    gitUrl={project.gitUrl}
-                    previewUrl={project.previewUrl}
-                    tool={project.tools}
-                    />
-                </motion.li>
+                    <motion.div
+                        key={project.id}
+                        initial={{ opacity: 0, y: 20 }}
+                        animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+                        transition={{ duration: 0.5, delay: index * 0.1 }}
+                    >
+                        <ProjectCard
+                            title={project.title}
+                            description={project.description}
+                            imgUrl={project.image}
+                            gitUrl={project.gitUrl}
+                            previewUrl={project.previewUrl}
+                            tool={project.tools}
+                        />
+                    </motion.div>
                 ))}
-            </ul>
+            </div>
         </section>
     )
 }
 
-export default ProjectSection
+export default ProjectSection;
