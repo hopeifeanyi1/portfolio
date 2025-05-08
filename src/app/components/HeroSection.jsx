@@ -1,84 +1,140 @@
 "use client"
-import React from 'react'
+import React, { useEffect } from 'react'
 import Image from 'next/image'
 import { TypeAnimation } from 'react-type-animation'
 import { motion } from 'framer-motion'
 import Link from 'next/link'
-    
 
 const HeroSection = () => {
   return (
-    <section className='lg:py-16 text-white'>
-        <div className="grid grid-cols-1 sm:grid-cols-12">
+    <section className="pt-24 pb-16 md:pt-32 md:pb-24 overflow-hidden">
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
         <motion.div
-          initial={{ opacity: 0, scale: 0.5 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 1 }}
-          className="col-span-8 place-self-center text-center sm:text-left md:justify-self-start"
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ 
+            duration: 0.8,
+            ease: [0.25, 0.1, 0.25, 1]
+          }}
+          className="order-2 lg:order-1"
         >
-                <h1 className="mb-4 text-4xl sm:text-5xl lg:text-7xl lg:leading-snug font-extrabold">
-                <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-pink-600">
-                     Hello, I&apos;m{" "}
-                </span>
-                <br/>
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 0.2, duration: 0.5 }}
+          >
+            <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight mb-4">
+              <span className="block">Hello, I&apos;m</span>
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-black to-gray-600 dark:from-white dark:to-gray-400">
                 <TypeAnimation
-                    sequence={[
+                  sequence={[
                     'Ifeanyi Hope',
                     1000,
-                    'A MERN stack Web Developer',
+                    'A MERN Stack Dev',
                     1000,
-                    'A React-Native Developer',
+                    'A React Native Dev',
                     1000,
-                    'A Cyber Security Enthusiast',
+                    'A Security Expert',
                     1000,
-                    'An Aspiring Software Engineer',
-                    1000
-                    ]}
-                    wrapper="span"
-                    speed={30}
-                    repeat={Infinity}
-                /> 
-                </h1>
-                <p className="text-[#ADB7BE] text-base sm:text-lg mb-6 lg:text-xl ">I&apos;m Ifeanyi Hope, a web and mobile developer specializing in the MERN stack.</p>
-                <div>
-                
-                <Link
-                href="/#contact"
-                className="px-6 inline-block py-3 rounded-full mr-4 bg-gradient-to-br from-purple-500 to-pink-500 hover:bg-slate-200 text-white"
-                >
-                    Hire Me
-                </Link>
-                <a
-                href="/hope.pdf"
-                download="Hope_CV.pdf"
-                className="px-1 inline-block py-1  rounded-full bg-gradient-to-br from-purple-500 to-pink-500 hover:bg-slate-800 text-white mt-3"
-                >
-                <span className="block bg-[#121212] hover:bg-slate-800 rounded-full px-5 py-2">
-                    Download CV
-                </span>
-                </a>
-                </div>
-                
-                </motion.div>
-                <motion.div
-                    initial={{ opacity: 0, scale: 0.5 }}
-                    animate={{ opacity: 1, scale: 1 }}
-                    transition={{ duration: 1 }}
-                    className="col-span-4 place-self-center mt-4 lg:mt-0"
-                >
-                <div className="rounded-full bg-[#181818] w-[250px] h-[250px] lg:w-[480px] lg:h-[480px]  relative">
-                <Image
-                src="/images/IMG.JPG"
-                alt="profile image"
-                className="absolute transform -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2 rounded-full"
-                width={300}
-                height={280}
+                  ]}
+                  wrapper="span"
+                  speed={40}
+                  repeat={Infinity}
                 />
-                </div>
-                </motion.div>
+              </span>
+            </h1>
+          </motion.div>
+          
+          <motion.p 
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 0.4, duration: 0.5 }}
+            className="text-lg md:text-xl text-gray-600 dark:text-gray-300 mb-8 max-w-lg"
+          >
+            I&apos;m Ifeanyi Hope, a web and mobile developer specializing in the MERN stack, creating elegant solutions with modern technologies.
+          </motion.p>
+          
+          <motion.div 
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 0.6, duration: 0.5 }}
+            className="flex flex-col sm:flex-row gap-4"
+          >
+            <Link href="/#contact" className="group">
+              <motion.div
+                whileHover={{ scale: 1.02 }}
+                whileTap={{ scale: 0.98 }}
+                className="inline-block"
+              >
+                <span className="relative inline-flex overflow-hidden rounded-full p-0.5 bg-gradient-to-r from-gray-900 to-black dark:from-white dark:to-gray-300">
+                  <span className="px-6 py-3 rounded-full bg-white dark:bg-black relative group-hover:bg-transparent transition-all duration-300 ease-out">
+                    <span className="relative text-black dark:text-white group-hover:text-white dark:group-hover:text-black">
+                      Hire Me
+                    </span>
+                  </span>
+                </span>
+              </motion.div>
+            </Link>
             
-            
-        </div>
+            <a href="/hope.pdf" download="Hope_CV.pdf" className="group">
+              <motion.div
+                whileHover={{ scale: 1.02 }}
+                whileTap={{ scale: 0.98 }}
+                className="inline-block"
+              >
+                <span className="relative inline-flex overflow-hidden rounded-full p-0.5 border border-gray-900 dark:border-white">
+                  <span className="px-6 py-3 rounded-full relative">
+                    <span className="relative text-black dark:text-white flex items-center">
+                      <span>Download CV</span>
+                      <svg className="w-4 h-4 ml-2 transition-transform group-hover:translate-x-1" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 14l-7 7m0 0l-7-7m7 7V3" />
+                      </svg>
+                    </span>
+                  </span>
+                </span>
+              </motion.div>
+            </a>
+          </motion.div>
+        </motion.div>
+        
+        <motion.div
+          initial={{ opacity: 0, scale: 0.9 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.8 }}
+          className="order-1 lg:order-2 flex justify-center"
+        >
+          <div className="relative w-64 h-64 md:w-80 md:h-80">
+            <motion.div
+              animate={{ 
+                boxShadow: [
+                  "0 0 0 0 rgba(0,0,0,0)", 
+                  "0 0 0 20px rgba(0,0,0,0.1)", 
+                  "0 0 0 0 rgba(0,0,0,0)"
+                ]
+              }}
+              transition={{ 
+                repeat: Infinity, 
+                duration: 3,
+                ease: "easeInOut" 
+              }}
+              className="absolute inset-0 rounded-full bg-gradient-to-tr from-gray-100 to-gray-300 dark:from-gray-800 dark:to-gray-900"
+            />
+            <motion.div 
+              className="absolute inset-0 rounded-full overflow-hidden"
+              whileHover={{ scale: 1.05 }}
+              transition={{ duration: 0.3 }}
+            >
+              <Image
+                src="/images/IMG.JPG"
+                alt="Ifeanyi Hope"
+                fill
+                className="object-cover"
+                priority
+              />
+            </motion.div>
+          </div>
+        </motion.div>
+      </div>
     </section>
   )
 }
