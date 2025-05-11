@@ -3,7 +3,6 @@ import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import NavLink from "./NavLink";
 import { motion } from "framer-motion";
-// import { useTheme } from "next-themes";
 import { SunIcon, MoonIcon, MenuIcon, XIcon } from "lucide-react";
 
 const navLinks = [
@@ -23,15 +22,47 @@ const navLinks = [
 
 const NavBar = () => {
   const [navbarOpen, setNavbarOpen] = useState(false);
-  // const { theme, setTheme } = useTheme();
+  const [isDarkMode, setIsDarkMode] = useState(false);
   const [mounted, setMounted] = useState(false);
   
+  // Effect to check system preferences and set initial theme
   useEffect(() => {
+    // Check if we're in the browser
+    if (typeof window !== 'undefined') {
+      // Check for stored preference or use system preference
+      const savedTheme = localStorage.getItem('theme');
+      const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+      
+      const initialDarkMode = savedTheme 
+        ? savedTheme === 'dark'
+        : prefersDark;
+      
+      setIsDarkMode(initialDarkMode);
+      
+      // Apply the theme to document
+      if (initialDarkMode) {
+        document.documentElement.classList.add('dark');
+      } else {
+        document.documentElement.classList.remove('dark');
+      }
+    }
+    
     setMounted(true);
   }, []);
 
   const toggleTheme = () => {
-    setTheme(theme === 'dark' ? 'light' : 'dark');
+    const newDarkMode = !isDarkMode;
+    setIsDarkMode(newDarkMode);
+    
+    // Save to localStorage
+    localStorage.setItem('theme', newDarkMode ? 'dark' : 'light');
+    
+    // Apply to document
+    if (newDarkMode) {
+      document.documentElement.classList.add('dark');
+    } else {
+      document.documentElement.classList.remove('dark');
+    }
   };
 
   return (
@@ -52,13 +83,13 @@ const NavBar = () => {
         </Link>
         
         <div className="flex items-center space-x-4">
-          {/* <button 
+          <button 
             onClick={toggleTheme}
             className="p-2 rounded-full bg-gray-100 dark:bg-gray-800 text-gray-800 dark:text-white"
             aria-label="Toggle theme"
           >
-            {mounted && theme === 'dark' ? <SunIcon size={18} /> : <MoonIcon size={18} />}
-          </button> */}
+            {mounted && isDarkMode ? <SunIcon size={18} /> : <MoonIcon size={18} />}
+          </button>
           
           <div className="md:hidden">
             <button
