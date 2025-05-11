@@ -46,7 +46,7 @@ const TAB_DATA = [
     content: (
       <div className="w-full">
         <Carousel className="w-full">
-          <CarouselContent>
+          <CarouselContent className='md:w-auto w-[97vw]'>
             <CarouselItem>
               <a href='https://learn.microsoft.com/api/credentials/share/en-us/HopeIFEANYI/3B11AE95D51C7AD?sharingId=B4D7060416A0FE6B' className='hover:opacity-90 block'>
                 <div className="bg-gray-50 dark:bg-gray-800/50 p-6 rounded-xl text-center">

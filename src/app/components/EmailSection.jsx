@@ -102,7 +102,7 @@ const EmailSection = () => {
         className="mb-16 text-center"
       >
         <h2 className="text-3xl md:text-4xl font-bold tracking-tight mb-2">Get In Touch</h2>
-        <div className="h-1 w-12 bg-black mx-auto"></div>
+        <div className="h-1 w-12 bg-gradient-to-r from-purple-500 to-pink-500 mx-auto"></div>
       </motion.div>
 
       <div className="grid md:grid-cols-5 gap-10 items-start">
@@ -112,7 +112,7 @@ const EmailSection = () => {
         >
           <motion.div variants={itemVariants}>
             <h3 className="text-xl font-semibold mb-3">Let&apos;s Connect</h3>
-            <p className="text-gray-700 mb-6">
+            <p className="text-gray-700 dark:text-gray-300 mb-6">
               I&apos;m currently looking for new opportunities. Whether you have a question or just want to say hi, I&apos;ll try my best to get back to you!
             </p>
           </motion.div>
@@ -124,8 +124,9 @@ const EmailSection = () => {
             <motion.div
               variants={socialIconVariants}
               whileHover="hover"
+              
             >
-              <Link href="https://github.com/hopeifeanyi1" className="block p-2 bg-white rounded-full shadow-md hover:shadow-lg transition-shadow">
+              <Link href="https://github.com/hopeifeanyi1" className="block p-2  bg-gray-800/50 rounded-full shadow-md hover:shadow-lg transition-shadow">
                 <Image src={GithubIcon} alt="Github Icon" width={24} height={24} />
               </Link>
             </motion.div>
@@ -134,7 +135,7 @@ const EmailSection = () => {
               variants={socialIconVariants}
               whileHover="hover"
             >
-              <Link href="https://www.linkedin.com/in/hope-ifeanyi" className="block p-2 bg-white rounded-full shadow-md hover:shadow-lg transition-shadow">
+              <Link href="https://www.linkedin.com/in/hope-ifeanyi" className="block p-2 bg-gray-800/50 rounded-full shadow-md hover:shadow-lg transition-shadow">
                 <Image src={LinkedinIcon} alt="Linkedin Icon" width={24} height={24} />
               </Link>
             </motion.div>
@@ -143,7 +144,7 @@ const EmailSection = () => {
               variants={socialIconVariants}
               whileHover="hover"
             >
-              <Link href="mailto:hopeifeanyi2@gmail.com" className="block p-2 bg-white rounded-full shadow-md hover:shadow-lg transition-shadow">
+              <Link href="mailto:hopeifeanyi2@gmail.com" className="block p-2 bg-gray-800/50 rounded-full shadow-md hover:shadow-lg transition-shadow">
                 <Image src={MailIcon} alt="Mail Icon" width={24} height={24} />
               </Link>
             </motion.div>
@@ -151,7 +152,7 @@ const EmailSection = () => {
         </motion.div>
 
         <motion.div 
-          className="md:col-span-3 bg-white rounded-2xl shadow-xl p-6 md:p-8"
+          className="md:col-span-3 bg-white dark:bg-gray-800/50 rounded-2xl shadow-xl p-6 md:p-8"
           variants={itemVariants}
         >
           <form className="space-y-5" onSubmit={handleSubmit}>
@@ -160,7 +161,7 @@ const EmailSection = () => {
               animate={focused === "email" ? "focus" : "blur"}
               className="space-y-2"
             >
-              <label htmlFor="email" className="block text-sm font-medium text-gray-700">
+              <label htmlFor="email" className="block text-sm font-medium text-gray-700 dark:text-gray-300">
                 Email Address
               </label>
               <input
@@ -173,7 +174,7 @@ const EmailSection = () => {
                 onChange={handleChange}
                 onFocus={() => setFocused("email")}
                 onBlur={() => setFocused(null)}
-                className="w-full px-4 py-3 rounded-lg bg-gray-50 border border-gray-200 focus:outline-none transition-all"
+                className="w-full px-4 py-3 rounded-lg bg-gray-50 dark:bg-gray-700 border border-gray-200 dark:border-gray-600 focus:outline-none transition-all dark:text-white"
               />
             </motion.div>
 
@@ -182,7 +183,7 @@ const EmailSection = () => {
               animate={focused === "subject" ? "focus" : "blur"}
               className="space-y-2"
             >
-              <label htmlFor="subject" className="block text-sm font-medium text-gray-700">
+              <label htmlFor="subject" className="block text-sm font-medium text-gray-700 dark:text-gray-300">
                 Subject
               </label>
               <input
@@ -195,7 +196,7 @@ const EmailSection = () => {
                 onChange={handleChange}
                 onFocus={() => setFocused("subject")}
                 onBlur={() => setFocused(null)}
-                className="w-full px-4 py-3 rounded-lg bg-gray-50 border border-gray-200 focus:outline-none transition-all"
+                className="w-full px-4 py-3 rounded-lg bg-gray-50 dark:bg-gray-700 border border-gray-200 dark:border-gray-600 focus:outline-none transition-all dark:text-white"
               />
             </motion.div>
 
@@ -204,7 +205,7 @@ const EmailSection = () => {
               animate={focused === "message" ? "focus" : "blur"}
               className="space-y-2"
             >
-              <label htmlFor="message" className="block text-sm font-medium text-gray-700">
+              <label htmlFor="message" className="block text-sm font-medium text-gray-700 dark:text-gray-300">
                 Message
               </label>
               <textarea
@@ -216,7 +217,7 @@ const EmailSection = () => {
                 onChange={handleChange}
                 onFocus={() => setFocused("message")}
                 onBlur={() => setFocused(null)}
-                className="w-full px-4 py-3 rounded-lg bg-gray-50 border border-gray-200 focus:outline-none transition-all h-32 resize-none"
+                className="w-full px-4 py-3 rounded-lg bg-gray-50 dark:bg-gray-700 border border-gray-200 dark:border-gray-600 focus:outline-none transition-all h-32 resize-none dark:text-white"
               />
             </motion.div>
 
@@ -225,7 +226,7 @@ const EmailSection = () => {
               variants={buttonVariants}
               whileHover="hover"
               whileTap="tap"
-              className="w-full px-5 py-3 bg-black text-white font-medium rounded-lg transition-all"
+              className="w-full px-5 py-3 bg-gradient-to-r from-purple-500 to-pink-500 text-white font-medium rounded-lg transition-all"
             >
               {emailSubmitted ? "Message Sent!" : "Send Message"}
             </motion.button>
@@ -234,7 +235,7 @@ const EmailSection = () => {
               <motion.div 
                 initial={{ opacity: 0, y: 10 }}
                 animate={{ opacity: 1, y: 0 }}
-                className="mt-3 flex items-center justify-center text-sm text-green-600"
+                className="mt-3 flex items-center justify-center text-sm text-green-600 dark:text-green-400"
               >
                 <svg className="w-4 h-4 mr-1.5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
                   <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd"></path>
