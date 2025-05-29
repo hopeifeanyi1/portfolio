@@ -33,7 +33,7 @@ const projectData = [
         title: "Life Ledger",
         description: "Life Ledger is your AI-powered decision tracker",
         tools: "React js, Tailwind, Next.js, Typescript, Supabase, PostgreSQL",
-        image: "/images/LLedger.png",
+        image: "/images/LLEDGER.png",
         tag: ["All", "Web"],
         gitUrl: "https://github.com/hopeifeanyi1/lledger",
         previewUrl: "https://lledger.vercel.app/",
