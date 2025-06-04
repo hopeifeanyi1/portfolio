@@ -25,11 +25,7 @@ const HeroSection = () => {
               sequence={[
                 'Ifeanyi Hope',
                 1000,
-                'A MERN stack Web Developer',
-                1000,
-                'A React-Native Developer',
-                1000,
-                'A Cyber Security Enthusiast',
+                'A Fullstack Web Developer',
                 1000,
                 'An Aspiring Software Engineer',
                 1000
@@ -41,7 +37,7 @@ const HeroSection = () => {
             /> 
           </h1>
           <p className="text-gray-600 dark:text-gray-300 text-lg mb-8">
-            I&apos;m a web and mobile developer specializing in the MERN stack, creating elegant, efficient, and user-centered digital experiences.
+            I&apos;m a web developer specializing in creating elegant, efficient, and user-centered digital experiences.
           </p>
           
           <div className="flex flex-wrap gap-4">
