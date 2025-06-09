@@ -25,7 +25,6 @@ const NavBar = () => {
   const [isDarkMode, setIsDarkMode] = useState(false);
   const [mounted, setMounted] = useState(false);
   
-  // Effect to check system preferences and set initial theme
   useEffect(() => {
     // Check if we're in the browser
     if (typeof window !== 'undefined') {

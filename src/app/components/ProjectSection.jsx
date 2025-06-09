@@ -10,7 +10,7 @@ const projectData = [
         id: 1,
         title: "Easy Therapy",
         description: "Mental health chatbot website.",
-        tools: "Typescript, Tailwind, Groq AI, Firebase, Next.js",
+        tools: "Typescript, Tailwind, Groq AI, Firebase, Express, Next.js",
         image: "/images/easy.png",
         tag: ["All", "Web"],
         gitUrl: "https://github.com/hopeifeanyi1/mental-health",

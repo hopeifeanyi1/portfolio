@@ -138,7 +138,7 @@ const AboutSection = () => {
           <h2 className="text-3xl font-bold mb-6">About Me</h2>
           <div className="w-24 h-1.5 bg-gradient-to-r from-purple-500 to-pink-500 mx-auto rounded-full mb-8"></div>
           <p className="text-gray-600 dark:text-gray-300 text-lg leading-relaxed mb-8">
-            I&apos;m Hope, a driven software engineering student at Babcock University, with a passion for building innovative solutions that make a real impact. With expertise in React.js, Next.js, and TypeScript, I&apos;ve developed projects like a mental health chatbot and AI-powered career navigator. A proud winner of 3 hackathon awards, including GDG Babcock x Ready Tensor&apos;s Chatbothon and Babcock Innovation Challenge, I&apos;m committed to driving growth and innovation in tech. Let&apos;s connect and explore the possibilities together!
+            I&apos;m Hope, a driven software engineering student at Babcock University, with a passion for building innovative solutions that make a real impact. With expertise in React.js, Next.js, TypeScript, Express and Nest.js, I&apos;ve developed projects like a mental health chatbot and AI-powered career navigator. A proud winner of 3 hackathon awards, including GDG Babcock x Ready Tensor&apos;s Chatbothon, AI for Social Good Hackathon and Babcock Innovation Challenge, I&apos;m committed to driving growth and innovation in tech. Let&apos;s connect and explore the possibilities together!
           </p>
           
           <div className="flex flex-wrap justify-center gap-6 mb-10">
