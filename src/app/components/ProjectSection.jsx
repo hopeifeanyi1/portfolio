@@ -8,6 +8,17 @@ import { motion, useInView } from 'framer-motion'
 const projectData = [
     {
         id: 1,
+        title: "AppEasy",
+        description: "Track Your Job Application and Analze Job Description",
+        tools: "Three js, Next js, Tailwind, Typescript, Groq AI, Express, Firebase",
+        image: "/images/appeasy.png",
+        tag: ["All", "Web"],
+        gitUrl: "https://github.com/hopeifeanyi1/job-tracker",
+        previewUrl: "https://appeasy-alpha.vercel.app",
+        
+    },
+    {
+        id: 2,
         title: "Easy Therapy",
         description: "Mental health chatbot website.",
         tools: "Typescript, Tailwind, Groq AI, Firebase, Express, Next.js",
@@ -18,25 +29,14 @@ const projectData = [
         
     },
     {
-        id: 2,
+        id: 3,
         title: "Careerly",
-        description: "Career Navigator AI",
+        description: "Career Navigator AI, Tailored Job Posting, Learning Resources, and AI Mentorship",
         tools: "Next.js, React, Typescript, Tailwind, Rapid API, Groq AI, Firebase, Express",
         image: "/careerly.png",
         tag: ["All", "Web"],
         gitUrl: "https://github.com/hopeifeanyi1",
         previewUrl: "https://carerly.vercel.app",
-        
-    },
-    {
-        id: 3,
-        title: "Life Ledger",
-        description: "Life Ledger is your AI-powered decision tracker",
-        tools: "React js, Tailwind, Next.js, Typescript, Supabase, PostgreSQL",
-        image: "/images/LLEDGER.png",
-        tag: ["All", "Web"],
-        gitUrl: "https://github.com/hopeifeanyi1/lledger",
-        previewUrl: "https://lledger.vercel.app/",
         
     },
     {
@@ -52,6 +52,17 @@ const projectData = [
     },
     {
         id: 5,
+        title: "Life Ledger",
+        description: "Life Ledger is your AI-powered decision tracker",
+        tools: "React js, Tailwind, Next.js, Typescript, Supabase, PostgreSQL",
+        image: "/images/LLEDGER.png",
+        tag: ["All", "Web"],
+        gitUrl: "https://github.com/hopeifeanyi1/lledger",
+        previewUrl: "https://lledger.vercel.app",
+        
+    },
+    {
+        id: 6,
         title: "Pomat Health",
         description: "I collaborated as a frontend developer to build a website for a biolab conducting clinical trials and research aimed at developing solutions to human health challenges.",
         tools: "TypeScript, React, Next, Taiwind",
@@ -61,7 +72,7 @@ const projectData = [
         previewUrl: "https://www.pomathealth.com/",
     },
     {
-        id: 6,
+        id: 7,
         title: "Portfolio Website",
         description: "My portfolio website.",
         tools: "React js",
@@ -72,7 +83,7 @@ const projectData = [
         
     },
     {
-        id: 7,
+        id: 8,
         title: "Weather App",
         description: "This is a Weather Application that allows users to search and view the current weather conditions in their desired cities.",
         tools: "TypeScript, React, Next, Openweather API",
@@ -82,7 +93,7 @@ const projectData = [
         previewUrl: "https://hope-weather-app.vercel.app/",
     },
     {
-        id: 8,
+        id: 9,
         title: "Shuttle Bus Tracker",
         description: "A frontend-only shuttle bus tracker that allows users to locate nearby shuttle buses and provides features for chatting and calling drivers, offering an intuitive user interface for seamless interaction,",
         tools: "React js, Tailwind, Next",
@@ -93,7 +104,7 @@ const projectData = [
         
     },
     {
-        id: 9,
+        id: 10,
         title: "Movies",
         description: "This website is a movie catalog showcasing films with titles, images, descriptions, and genres from a JSON file. Users can browse popular movies.",
         tools: "React js",
@@ -103,7 +114,7 @@ const projectData = [
         previewUrl: "https://movies-ticketing.vercel.app/"
     },
     {
-        id: 10,
+        id: 11,
         title: "Bitcoin Trading Website",
         description: "A frontend-only website for trading bitcion",
         tools: "React js",
@@ -111,17 +122,6 @@ const projectData = [
         tag: ["All", "Web"],
         gitUrl: "https://github.com/hopeifeanyi1",
         previewUrl: "/",
-    },
-    {
-        id: 11,
-        title: "Store Inventory Website",
-        description: "a frontend-only inventory management website for a store. It allows users to view and interact with an intuitive interface designed to manage product inventory.",
-        tools: "React js",
-        image: "/images/inventory.png",
-        tag: ["All", "Web"],
-        gitUrl: "https://github.com/hopeifeanyi1",
-        previewUrl: "/",
-        
     },
     {
         id: 12,
