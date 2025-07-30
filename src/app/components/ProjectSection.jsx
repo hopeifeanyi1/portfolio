@@ -10,7 +10,7 @@ const projectData = [
         id: 1,
         title: "AppEasy",
         description: "Track Your Job Application and Analze Job Description",
-        tools: "Three js, Next js, Tailwind, Typescript, Groq AI, Express, Firebase",
+        tools: "Three js, Next js, Tailwind, Typescript, Groq AI, Next API, Firebase",
         image: "/images/appeasy.png",
         tag: ["All", "Web"],
         gitUrl: "https://github.com/hopeifeanyi1/job-tracker",
@@ -73,17 +73,6 @@ const projectData = [
     },
     {
         id: 7,
-        title: "Portfolio Website",
-        description: "My portfolio website.",
-        tools: "React js",
-        image: "/images/portfoli.png",
-        tag: ["All", "Web"],
-        gitUrl: "https://github.com/hopeifeanyi1",
-        previewUrl: "/",
-        
-    },
-    {
-        id: 8,
         title: "Weather App",
         description: "This is a Weather Application that allows users to search and view the current weather conditions in their desired cities.",
         tools: "TypeScript, React, Next, Openweather API",
@@ -93,10 +82,10 @@ const projectData = [
         previewUrl: "https://hope-weather-app.vercel.app/",
     },
     {
-        id: 9,
+        id: 8,
         title: "Shuttle Bus Tracker",
         description: "A frontend-only shuttle bus tracker that allows users to locate nearby shuttle buses and provides features for chatting and calling drivers, offering an intuitive user interface for seamless interaction,",
-        tools: "React js, Tailwind, Next",
+        tools: "React js, Tailwind, Next js",
         image: "/images/bus.png",
         tag: ["All", "Web"],
         gitUrl: "https://github.com/hopeifeanyi1",
@@ -104,7 +93,7 @@ const projectData = [
         
     },
     {
-        id: 10,
+        id: 9,
         title: "Movies",
         description: "This website is a movie catalog showcasing films with titles, images, descriptions, and genres from a JSON file. Users can browse popular movies.",
         tools: "React js",
@@ -112,38 +101,6 @@ const projectData = [
         tag: ["All", "Web"],
         gitUrl: "https://github.com/hopeifeanyi1",
         previewUrl: "https://movies-ticketing.vercel.app/"
-    },
-    {
-        id: 11,
-        title: "Bitcoin Trading Website",
-        description: "A frontend-only website for trading bitcion",
-        tools: "React js",
-        image: "/images/bitcoi.png",
-        tag: ["All", "Web"],
-        gitUrl: "https://github.com/hopeifeanyi1",
-        previewUrl: "/",
-    },
-    {
-        id: 12,
-        title: "Task Management Website",
-        description: "A website that helps users organize and track their tasks. It features tools for creating and setting deadlines for tasks, offering an interface for better productivity and time management.",
-        tools: "React js",
-        image: "/images/project.jpg",
-        tag: ["All", "Web"],
-        gitUrl: "https://github.com/hopeifeanyi1",
-        previewUrl: "/",
-        
-    },
-    {
-        id: 13,
-        title: "Transportation Booking Website",
-        description: "A frontend-only website that allows users to book and get tickets",
-        tools: "React js",
-        image: "/images/project.jpg",
-        tag: ["All", "Web"],
-        gitUrl: "https://github.com/hopeifeanyi1",
-        previewUrl: "/",
-        
     }
 ]
 
@@ -161,7 +118,7 @@ const ProjectSection = () => {
     )
 
     return (
-        <section id="projects" className="py-20">
+        <section id="projects" className="py-10">
             <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}

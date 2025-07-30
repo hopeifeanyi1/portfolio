@@ -8,7 +8,7 @@ import { ArrowDownIcon } from 'lucide-react'
 
 const HeroSection = () => {
   return (
-    <section className='py-16 lg:py-32'>
+    <section className='py-10 lg:pt-32 lg:pb-26 '>
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-12">
         <motion.div
           initial={{ opacity: 0, y: 20 }}

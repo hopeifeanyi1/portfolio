@@ -1,3 +1,4 @@
+//src/app/components/EmailSection.jsx
 "use client";
 import React, { useState } from "react";
 import Link from "next/link";
@@ -6,9 +7,10 @@ import { motion } from "framer-motion";
 import GithubIcon from "../../../public/github-icon.svg";
 import LinkedinIcon from "../../../public/linkedin-icon.svg";
 import MailIcon from "../../../public/mail-icon.svg";
+import { toast } from "sonner";
 
 const EmailSection = () => {
-  const [emailSubmitted, setEmailSubmitted] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
   const [formData, setFormData] = useState({
     email: "",
     subject: "",
@@ -23,19 +25,52 @@ const EmailSection = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    setIsSubmitting(true);
 
-    const response = await fetch("/api/send", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(formData),
+    // Show loading toast
+    const loadingToast = toast.loading("Sending your message...", {
+      description: "Please wait while we process your request"
     });
 
-    if (response.ok) {
-      console.log("Message sent.");
-      setEmailSubmitted(true);
-      setFormData({ email: "", subject: "", message: "" });
-    } else {
-      console.error("Error sending message.");
+    try {
+      const response = await fetch("/api/send", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(formData),
+      });
+
+      const data = await response.json();
+
+      // Dismiss loading toast
+      toast.dismiss(loadingToast);
+
+      if (response.ok) {
+        // Success toast
+        toast.success("Message sent successfully!", {
+          description: "Thank you! I'll respond as soon as possible.",
+          duration: 5000,
+        });
+        
+        // Reset form
+        setFormData({ email: "", subject: "", message: "" });
+      } else {
+        // Error toast with specific message from server
+        toast.error("Failed to send message", {
+          description: data.message || "Please try again later.",
+          duration: 6000,
+        });
+      }
+    } catch (error) {
+      // Dismiss loading toast
+      toast.dismiss(loadingToast);
+      
+      // Network error toast
+      toast.error("Network error", {
+        description: "Please check your connection and try again.",
+        duration: 6000,
+      });
+    } finally {
+      setIsSubmitting(false);
     }
   };
 
@@ -124,9 +159,8 @@ const EmailSection = () => {
             <motion.div
               variants={socialIconVariants}
               whileHover="hover"
-              
             >
-              <Link href="https://github.com/hopeifeanyi1" className="block p-2  bg-gray-800/50 rounded-full shadow-md hover:shadow-lg transition-shadow">
+              <Link href="https://github.com/hopeifeanyi1" className="block p-2 bg-gray-800/50 rounded-full shadow-md hover:shadow-lg transition-shadow">
                 <Image src={GithubIcon} alt="Github Icon" width={24} height={24} />
               </Link>
             </motion.div>
@@ -174,7 +208,8 @@ const EmailSection = () => {
                 onChange={handleChange}
                 onFocus={() => setFocused("email")}
                 onBlur={() => setFocused(null)}
-                className="w-full px-4 py-3 rounded-lg bg-gray-50 dark:bg-gray-700 border border-gray-200 dark:border-gray-600 focus:outline-none transition-all dark:text-white"
+                disabled={isSubmitting}
+                className="w-full px-4 py-3 rounded-lg bg-gray-50 dark:bg-gray-700 border border-gray-200 dark:border-gray-600 focus:outline-none transition-all dark:text-white disabled:opacity-50 disabled:cursor-not-allowed"
               />
             </motion.div>
 
@@ -196,7 +231,8 @@ const EmailSection = () => {
                 onChange={handleChange}
                 onFocus={() => setFocused("subject")}
                 onBlur={() => setFocused(null)}
-                className="w-full px-4 py-3 rounded-lg bg-gray-50 dark:bg-gray-700 border border-gray-200 dark:border-gray-600 focus:outline-none transition-all dark:text-white"
+                disabled={isSubmitting}
+                className="w-full px-4 py-3 rounded-lg bg-gray-50 dark:bg-gray-700 border border-gray-200 dark:border-gray-600 focus:outline-none transition-all dark:text-white disabled:opacity-50 disabled:cursor-not-allowed"
               />
             </motion.div>
 
@@ -217,32 +253,31 @@ const EmailSection = () => {
                 onChange={handleChange}
                 onFocus={() => setFocused("message")}
                 onBlur={() => setFocused(null)}
-                className="w-full px-4 py-3 rounded-lg bg-gray-50 dark:bg-gray-700 border border-gray-200 dark:border-gray-600 focus:outline-none transition-all h-32 resize-none dark:text-white"
+                disabled={isSubmitting}
+                className="w-full px-4 py-3 rounded-lg bg-gray-50 dark:bg-gray-700 border border-gray-200 dark:border-gray-600 focus:outline-none transition-all h-32 resize-none dark:text-white disabled:opacity-50 disabled:cursor-not-allowed"
               />
             </motion.div>
 
             <motion.button
               type="submit"
               variants={buttonVariants}
-              whileHover="hover"
-              whileTap="tap"
-              className="w-full px-5 py-3 bg-gradient-to-r from-purple-500 to-pink-500 text-white font-medium rounded-lg transition-all"
+              whileHover={!isSubmitting ? "hover" : {}}
+              whileTap={!isSubmitting ? "tap" : {}}
+              disabled={isSubmitting}
+              className="w-full px-5 py-3 bg-gradient-to-r from-purple-500 to-pink-500 text-white font-medium rounded-lg transition-all disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center"
             >
-              {emailSubmitted ? "Message Sent!" : "Send Message"}
+              {isSubmitting ? (
+                <>
+                  <svg className="animate-spin -ml-1 mr-3 h-5 w-5 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                    <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
+                    <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.964 7.964 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                  </svg>
+                  Sending...
+                </>
+              ) : (
+                "Send Message"
+              )}
             </motion.button>
-            
-            {emailSubmitted && (
-              <motion.div 
-                initial={{ opacity: 0, y: 10 }}
-                animate={{ opacity: 1, y: 0 }}
-                className="mt-3 flex items-center justify-center text-sm text-green-600 dark:text-green-400"
-              >
-                <svg className="w-4 h-4 mr-1.5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-                  <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd"></path>
-                </svg>
-                Thank you! I&apos;ll respond as soon as possible.
-              </motion.div>
-            )}
           </form>
         </motion.div>
       </div>
