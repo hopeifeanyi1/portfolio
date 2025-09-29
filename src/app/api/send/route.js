@@ -34,34 +34,27 @@ export async function POST(request) {
         'X-Entity-Ref-ID': new Date().getTime().toString(),
       },
       html: `
-        <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto; padding: 20px;">
-          <div style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); padding: 30px; border-radius: 10px 10px 0 0; text-align: center;">
-            <h1 style="color: white; margin: 0; font-size: 24px;">New Contact Form Submission</h1>
+        <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto; padding: 10px;">
+          <div style="text-align: center;">
+            <h1 style="color: white; margin: 0; font-size: 24px;">Portfolio Reach Out</h1>
           </div>
           
-          <div style="background: white; padding: 30px; border-radius: 0 0 10px 10px; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
-            <div style="margin-bottom: 25px;">
-              <h3 style="color: #374151; margin-bottom: 8px; font-size: 16px; font-weight: 600;">From:</h3>
-              <p style="margin: 0; padding: 12px; background-color: #f9fafb; border-radius: 6px; border-left: 4px solid #667eea;">
-                ${email}
-              </p>
+          <div style=""margin-top: 15px;"">
+            <div style="margin-bottom: 15px;">
+              <h3 style="color: #374151; margin-bottom: 8px; font-size: 16px; font-weight: 600;">From: <span style="margin: 0; padding-left: 12px;">${email}</span></h3>
             </div>
 
-            <div style="margin-bottom: 25px;">
-              <h3 style="color: #374151; margin-bottom: 8px; font-size: 16px; font-weight: 600;">Subject:</h3>
-              <p style="margin: 0; padding: 12px; background-color: #f9fafb; border-radius: 6px; border-left: 4px solid #667eea;">
-                ${subject}
-              </p>
+            <div style="margin-bottom: 15px;">
+              <h3 style="color: #374151; margin-bottom: 8px; font-size: 16px; font-weight: 600;">Subject: <span style="margin: 0; padding-left: 12px;">${subject}</span></h3>
             </div>
 
-            <div style="margin-bottom: 25px;">
-              <h3 style="color: #374151; margin-bottom: 8px; font-size: 16px; font-weight: 600;">Message:</h3>
-              <div style="margin: 0; padding: 12px; background-color: #f9fafb; border-radius: 6px; border-left: 4px solid #667eea;">
+            <div style="margin-bottom: 15px;">
+              <div style="margin: 0; ">
                 ${message}
               </div>
             </div>
 
-            <div style="margin-top: 30px; padding: 15px; background-color: #eff6ff; border-radius: 6px; border-left: 4px solid #3b82f6;">
+            <div style="margin-top: 30px; ">
               <p style="margin: 0; color: #1e40af; font-size: 14px;">
                 📧 This message was sent from your portfolio contact form.<br>
                 💡 You can reply directly to this email to respond to the sender.
