@@ -68,7 +68,7 @@ const HeroSection = () => {
             <div className="absolute inset-0 rounded-full bg-gradient-to-r from-purple-300 to-pink-300 blur-3xl opacity-20 animate-pulse" />
             <div className="absolute inset-2 rounded-full bg-white dark:bg-black overflow-hidden border-4 border-gray-100 dark:border-gray-800">
               <Image
-                src="/images/IMG.JPG"
+                src="/images/IMG.jpeg"
                 alt="Ifeanyi Hope"
                 fill
                 className="object-cover"
