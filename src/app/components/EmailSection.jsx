@@ -125,7 +125,7 @@ const EmailSection = () => {
 
   return (
     <motion.section 
-      className="max-w-6xl mx-auto py-24 px-4 md:px-8"
+      className="max-w-6xl mx-auto py-12 lg:py-20 px-4 md:px-8"
       initial="hidden"
       whileInView="visible"
       viewport={{ once: true }}
@@ -134,7 +134,7 @@ const EmailSection = () => {
     >
       <motion.div 
         variants={itemVariants}
-        className="mb-16 text-center"
+        className="mb-12 text-center"
       >
         <h2 className="text-3xl md:text-4xl font-bold tracking-tight mb-2">Get In Touch</h2>
         <div className="h-1 w-12 bg-gradient-to-r from-purple-500 to-pink-500 mx-auto"></div>

@@ -5,7 +5,7 @@ const TabButton = ({active, selectTab, children}) => {
   return (
     <button 
       onClick={selectTab}
-      className={`relative px-4 py-2 rounded-md text-sm font-medium transition-all duration-300
+      className={`relative lg:px-4 px-3 py-2 rounded-md text-sm font-medium transition-all duration-300
         ${active 
           ? 'text-black dark:text-white bg-gray-100 dark:bg-gray-800' 
           : 'text-gray-600 dark:text-gray-400 hover:text-black dark:hover:text-white'

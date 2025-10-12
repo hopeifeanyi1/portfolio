@@ -1,44 +1,69 @@
-"use client"
-import React, { useTransition, useState } from 'react'
-import Image from 'next/image'
-import { motion } from 'framer-motion'
-import TabButton from './TabButton'
+"use client";
+import React, { useTransition, useState } from "react";
+import Image from "next/image";
+import { motion } from "framer-motion";
+import TabButton from "./TabButton";
 import {
   Carousel,
   CarouselContent,
   CarouselItem,
   CarouselNext,
   CarouselPrevious,
-} from "@/components/ui/carousel"
+} from "@/components/ui/carousel";
 
 const TAB_DATA = [
   {
-    title: "Skills",
+    title: "Tech Stack",
     id: "skills",
     content: (
       <div className="grid grid-cols-2 sm:grid-cols-3 gap-4">
-        {["TypeScript", "Next js", "React", "Three js", "React Native", "Tailwind", "Nest js", "Express", "Firebase", "PostgreSQL", "MongoDB", "Node js"].map((skill, index) => (
-          <div key={index} className="flex items-center p-3 rounded-lg bg-gray-50 dark:bg-gray-800/50">
+        {[
+          "TypeScript",
+          "Next js",
+          "React",
+          "Three js",
+          "React Native",
+          "Tailwind",
+          "Nest js",
+          "Express",
+          "Firebase",
+          "PostgreSQL",
+          "MongoDB",
+          "Node js",
+        ].map((skill, index) => (
+          <div
+            key={index}
+            className="flex items-center p-3 rounded-lg bg-gray-50 dark:bg-gray-800/50"
+          >
             <span className="h-2 w-2 rounded-full bg-gradient-to-r from-purple-500 to-pink-500 mr-3"></span>
             <span>{skill}</span>
           </div>
         ))}
       </div>
-    )    
+    ),
   },
   {
     title: "Education",
     id: "education",
     content: (
       <div className="space-y-4">
-        {["Babcock University, Software Engineering", "Microsoft Learn", "Udemy", "Code with Mosh", "Coursera"].map((edu, index) => (
-          <div key={index} className="flex items-center p-3 rounded-lg bg-gray-50 dark:bg-gray-800/50">
+        {[
+          "Babcock University, Software Engineering",
+          "Microsoft Learn",
+          "Udemy",
+          "Code with Mosh",
+          "Coursera",
+        ].map((edu, index) => (
+          <div
+            key={index}
+            className="flex items-center p-3 rounded-lg bg-gray-50 dark:bg-gray-800/50"
+          >
             <span className="h-2 w-2 rounded-full bg-gradient-to-r from-purple-500 to-pink-500 mr-3"></span>
             <span>{edu}</span>
           </div>
         ))}
       </div>
-    )    
+    ),
   },
   {
     title: "Certification",
@@ -46,9 +71,12 @@ const TAB_DATA = [
     content: (
       <div className="w-full">
         <Carousel className="w-full">
-          <CarouselContent className='md:w-auto w-[97vw]'>
-            <CarouselItem>
-              <a href='https://learn.microsoft.com/api/credentials/share/en-us/HopeIFEANYI/3B11AE95D51C7AD?sharingId=B4D7060416A0FE6B' className='hover:opacity-90 block'>
+          <CarouselContent className="md:w-auto w-[97vw]" opts={{ align: "start" }}>
+            <CarouselItem className="md:basis-1/2">
+              <a
+                href="https://learn.microsoft.com/api/credentials/share/en-us/HopeIFEANYI/3B11AE95D51C7AD?sharingId=B4D7060416A0FE6B"
+                className="hover:opacity-90 block"
+              >
                 <div className="bg-gray-50 dark:bg-gray-800/50 p-6 rounded-xl text-center">
                   <Image
                     src="/ai900.png"
@@ -56,13 +84,18 @@ const TAB_DATA = [
                     className="mx-auto"
                     width={200}
                     height={200}
-                  />          
-                  <p className='text-sm font-medium mt-4'>Microsoft Certified: Azure AI Fundamentals</p>
+                  />
+                  <p className="text-sm font-medium mt-4">
+                    Microsoft Certified: Azure AI Fundamentals
+                  </p>
                 </div>
               </a>
             </CarouselItem>
-            <CarouselItem>
-              <a href='https://learn.microsoft.com/api/credentials/share/en-us/HopeIFEANYI/F96AC56F66AF7953?sharingId=B4D7060416A0FE6B' className='hover:opacity-90 block'>
+            <CarouselItem className="md:basis-1/2">
+              <a
+                href="https://learn.microsoft.com/api/credentials/share/en-us/HopeIFEANYI/F96AC56F66AF7953?sharingId=B4D7060416A0FE6B"
+                className="hover:opacity-90 block"
+              >
                 <div className="bg-gray-50 dark:bg-gray-800/50 p-6 rounded-xl text-center">
                   <Image
                     src="/dp900.png"
@@ -71,12 +104,17 @@ const TAB_DATA = [
                     width={200}
                     height={200}
                   />
-                  <p className='text-sm font-medium mt-4'>Microsoft Certified: Azure Data Fundamentals</p>
+                  <p className="text-sm font-medium mt-4">
+                    Microsoft Certified: Azure Data Fundamentals
+                  </p>
                 </div>
               </a>
             </CarouselItem>
-            <CarouselItem>
-              <a href='https://learn.microsoft.com/api/credentials/share/en-us/HopeIFEANYI/D93D7739FAD1104?sharingId=B4D7060416A0FE6B' className='hover:opacity-90 block'>
+            <CarouselItem className="md:basis-1/2">
+              <a
+                href="https://learn.microsoft.com/api/credentials/share/en-us/HopeIFEANYI/D93D7739FAD1104?sharingId=B4D7060416A0FE6B"
+                className="hover:opacity-90 block"
+              >
                 <div className="bg-gray-50 dark:bg-gray-800/50 p-6 rounded-xl text-center">
                   <Image
                     src="/az900.png"
@@ -85,23 +123,31 @@ const TAB_DATA = [
                     width={200}
                     height={200}
                   />
-                  <p className='text-sm font-medium mt-4'>Microsoft Certified: Azure Fundamentals</p>
+                  <p className="text-sm font-medium mt-4">
+                    Microsoft Certified: Azure Fundamentals
+                  </p>
                 </div>
               </a>
             </CarouselItem>
-            <CarouselItem>
+            <CarouselItem className="md:basis-1/2">
               <div className="bg-gray-50 dark:bg-gray-800/50 p-6 rounded-xl text-center flex items-center justify-center min-h-48">
-                <p className='font-medium'>Cyber Security and Ethical Hacking</p>
+                <p className="font-medium">
+                  Cyber Security and Ethical Hacking
+                </p>
               </div>
             </CarouselItem>
-            <CarouselItem>
+            <CarouselItem className="md:basis-1/2">
               <div className="bg-gray-50 dark:bg-gray-800/50 p-6 rounded-xl text-center flex items-center justify-center min-h-48">
-                <p className='font-medium'>Full-Stack Web Design and Development</p>
+                <p className="font-medium">
+                  Full-Stack Web Design and Development
+                </p>
               </div>
             </CarouselItem>
-            <CarouselItem>
+            <CarouselItem className="md:basis-1/2">
               <div className="bg-gray-50 dark:bg-gray-800/50 p-6 rounded-xl text-center flex items-center justify-center min-h-48">
-                <p className='font-medium'>HTML, CSS, Javascript for Web Developers</p>
+                <p className="font-medium">
+                  HTML, CSS, Javascript for Web Developers
+                </p>
               </div>
             </CarouselItem>
           </CarouselContent>
@@ -109,38 +155,44 @@ const TAB_DATA = [
             <CarouselPrevious className="static translate-y-0 bg-gray-100 dark:bg-gray-800 border-none" />
             <CarouselNext className="static translate-y-0 bg-gray-100 dark:bg-gray-800 border-none" />
           </div>
-        </Carousel>    
+        </Carousel>
       </div>
-    )    
+    ),
   },
-]
+];
 
 const AboutSection = () => {
-  const [tab, setTab] = useState("skills")
-  const [isPending, startTransition] = useTransition()
+  const [tab, setTab] = useState("skills");
+  const [isPending, startTransition] = useTransition();
 
   const handleTabChange = (id) => {
     startTransition(() => {
-      setTab(id)
+      setTab(id);
     });
   };
 
   return (
-    <section id="about" className="py-20">
+    <section id="about" className="py-14 max-w-6xl mx-auto">
       <div className="grid grid-cols-1 gap-12">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
           viewport={{ once: true }}
-          className="mx-auto max-w-3xl text-center"
+          className=""
         >
-          <h2 className="text-3xl font-bold mb-6">About Me</h2>
-          <div className="w-24 h-1.5 bg-gradient-to-r from-purple-500 to-pink-500 mx-auto rounded-full mb-8"></div>
-          <p className="text-gray-600 dark:text-gray-300 text-lg leading-relaxed mb-8">
-           I&apos;m Hope, a full-stack software engineer with 4 years of frontend and 2 years of backend experience. I hold a B.Sc. in Software Engineering from Babcock University and specialize in React.js, Next.js, TypeScript, Express, and Nest.js. I&apos;ve built impactful projects like a mental health chatbot and an AI-powered career navigator, and I&apos;m a 3-time hackathon winner. I&apos;m passionate about building innovative solutions that make a difference.
+          <p className="text-gray-600 dark:text-gray-300 text-[16px] leading-relaxed mb-8">
+            I&apos;m a full-stack software engineer with 4 years of frontend and
+            2 years of backend experience. I&apos;m passionate about solving
+            real-world problems through high-performance, scalable systems.
+            Deeply product and process-driven, I focus on delivering reliable
+            solutions with exceptional performance at scale. I specialize in
+            React.js, Next.js, TypeScript, and Nest.js, with a strong emphasis
+            on performance optimization, system reliability, and scalable
+            architecture. As a 3-time hackathon winner, I bring both speed and
+            quality to every project I build.
           </p>
-          
+
           <div className="flex flex-wrap justify-center gap-6 mb-10">
             {TAB_DATA.map((item) => (
               <TabButton
@@ -152,7 +204,7 @@ const AboutSection = () => {
               </TabButton>
             ))}
           </div>
-          
+
           <motion.div
             key={tab}
             initial={{ opacity: 0, y: 10 }}
@@ -165,7 +217,7 @@ const AboutSection = () => {
         </motion.div>
       </div>
     </section>
-  )
-}
+  );
+};
 
 export default AboutSection;
