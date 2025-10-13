@@ -120,7 +120,7 @@ const HeroSection = () => {
               onClick={handleHireMeClick}
               className="px-6 py-2.5 dynamic-rounded bg-gradient-to-r from-purple-500 to-pink-500 text-white font-medium hover:shadow-lg hover:opacity-90 transition-all duration-300 cursor-pointer"
             >
-              Hire Me
+              Get in Touch
             </button>
 
             <Link
