@@ -8,7 +8,7 @@ const ProjectCard = ({ imgUrl, title, description, gitUrl, previewUrl, tool}) =>
   return (
     <motion.div 
       whileHover={{ y: -5 }}
-      className="overflow-hidden rounded-xl bg-white dark:bg-gray-900 border border-gray-100 dark:border-gray-800 shadow-sm hover:shadow-md transition-all duration-300"
+      className="overflow-hidden dynamic-rounded bg-white dark:bg-gray-900 border border-gray-100 dark:border-gray-800 shadow-sm hover:shadow-md transition-all duration-300"
     >
       <div className='aspect-video relative overflow-hidden'>
         <Image 
@@ -21,7 +21,7 @@ const ProjectCard = ({ imgUrl, title, description, gitUrl, previewUrl, tool}) =>
           <div className="flex gap-2">
             <Link 
               href={gitUrl} 
-              className="p-2 bg-white/20 backdrop-blur-sm rounded-full hover:bg-white/30 transition-colors"
+              className="p-2 bg-white/20 backdrop-blur-sm dynamic-rounded hover:bg-white/30 transition-colors"
               target="_blank"
               rel="noopener noreferrer"
             >
@@ -29,7 +29,7 @@ const ProjectCard = ({ imgUrl, title, description, gitUrl, previewUrl, tool}) =>
             </Link>
             <Link 
               href={previewUrl} 
-              className="p-2 bg-white/20 backdrop-blur-sm rounded-full hover:bg-white/30 transition-colors"
+              className="p-2 bg-white/20 backdrop-blur-sm dynamic-rounded hover:bg-white/30 transition-colors"
               target="_blank"
               rel="noopener noreferrer"
             >
@@ -45,7 +45,7 @@ const ProjectCard = ({ imgUrl, title, description, gitUrl, previewUrl, tool}) =>
           {tool.split(', ').map((tech, index) => (
             <span 
               key={index} 
-              className="text-xs px-2 py-1 rounded-full bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-300"
+              className="text-xs px-2 py-1 dynamic-rounded bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-300"
             >
               {tech}
             </span>

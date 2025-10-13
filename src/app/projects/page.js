@@ -127,7 +127,7 @@ const ProjectSection = () => {
                 className="text-center max-w-3xl mx-auto mb-16"
             >
                 <h2 className="text-3xl font-bold mb-6">My Projects</h2>
-                <div className="w-24 h-1.5 bg-gradient-to-r from-purple-500 to-pink-500 mx-auto rounded-full mb-8"></div>
+                <div className="w-24 h-1.5 bg-gradient-to-r from-purple-500 to-pink-500 mx-auto dynamic-rounded mb-8"></div>
                 <p className="text-gray-600 dark:text-gray-300 text-lg">
                     My portfolio features various projects, with some completed and others in progress. Each one emphasizes my focus on <span className='text-transparent bg-clip-text bg-gradient-to-r from-purple-500 to-pink-500'>beautiful UI design</span> and <span className='text-transparent bg-clip-text bg-gradient-to-r from-purple-500 to-pink-500'>elegant code</span> for easy maintenance and re-usability.
                 </p>

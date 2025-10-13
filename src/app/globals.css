@@ -2,3 +2,20 @@
 @tailwind components;
 @tailwind utilities;
   
+/* Dynamic border radius classes */
+[data-shape="conservative"] .dynamic-rounded {
+  border-radius: 10px;
+}
+
+[data-shape="rounded"] .dynamic-rounded {
+  border-radius: 15px; 
+}
+
+[data-shape="playful"] .dynamic-rounded {
+  border-radius: 23px; 
+}
+
+/* Default if no data-shape attribute */
+.dynamic-rounded {
+  border-radius: 15px;
+}

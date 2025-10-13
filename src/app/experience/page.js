@@ -111,7 +111,7 @@ const Experience = () => {
         className="text-center max-w-3xl mx-auto mb-10"
       >
         <h2 className="text-3xl font-bold mb-6">My Work Experience</h2>
-        <div className="w-24 h-1.5 bg-gradient-to-r from-purple-500 to-pink-500 mx-auto rounded-full mb-8" />
+        <div className="w-24 h-1.5 bg-gradient-to-r from-purple-500 to-pink-500 mx-auto dynamic-rounded mb-8" />
       </motion.div>
 
       <div ref={ref} className="max-w-4xl mx-auto space-y-4">
@@ -146,7 +146,7 @@ const Experience = () => {
               {experience.technologies.map((tech, i) => (
                 <span
                   key={i}
-                  className="text-xs px-2 py-1 rounded bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-300"
+                  className="text-xs px-2 py-1 dynamic-rounded bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-300"
                 >
                   {tech}
                 </span>

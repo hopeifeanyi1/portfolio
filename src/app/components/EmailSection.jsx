@@ -160,7 +160,7 @@ const EmailSection = () => {
               variants={socialIconVariants}
               whileHover="hover"
             >
-              <Link href="https://github.com/hopeifeanyi1" className="block p-2 bg-gray-800/50 rounded-full shadow-md hover:shadow-lg transition-shadow">
+              <Link href="https://github.com/hopeifeanyi1" className="block p-2 bg-gray-800/50 dynamic-rounded shadow-md hover:shadow-lg transition-shadow">
                 <Image src={GithubIcon} alt="Github Icon" width={24} height={24} />
               </Link>
             </motion.div>
@@ -169,7 +169,7 @@ const EmailSection = () => {
               variants={socialIconVariants}
               whileHover="hover"
             >
-              <Link href="https://www.linkedin.com/in/hope-ifeanyi" className="block p-2 bg-gray-800/50 rounded-full shadow-md hover:shadow-lg transition-shadow">
+              <Link href="https://www.linkedin.com/in/hope-ifeanyi" className="block p-2 bg-gray-800/50 dynamic-rounded shadow-md hover:shadow-lg transition-shadow">
                 <Image src={LinkedinIcon} alt="Linkedin Icon" width={24} height={24} />
               </Link>
             </motion.div>
@@ -178,7 +178,7 @@ const EmailSection = () => {
               variants={socialIconVariants}
               whileHover="hover"
             >
-              <Link href="mailto:hopeifeanyi2@gmail.com" className="block p-2 bg-gray-800/50 rounded-full shadow-md hover:shadow-lg transition-shadow">
+              <Link href="mailto:hopeifeanyi2@gmail.com" className="block p-2 bg-gray-800/50 dynamic-rounded shadow-md hover:shadow-lg transition-shadow">
                 <Image src={MailIcon} alt="Mail Icon" width={24} height={24} />
               </Link>
             </motion.div>
@@ -186,7 +186,7 @@ const EmailSection = () => {
         </motion.div>
 
         <motion.div 
-          className="md:col-span-3 bg-white dark:bg-gray-800/50 rounded-2xl shadow-xl p-6 md:p-8"
+          className="md:col-span-3 bg-white dark:bg-gray-800/50 dynamic-rounded shadow-xl p-6 md:p-8"
           variants={itemVariants}
         >
           <form className="space-y-5" onSubmit={handleSubmit}>
@@ -209,7 +209,7 @@ const EmailSection = () => {
                 onFocus={() => setFocused("email")}
                 onBlur={() => setFocused(null)}
                 disabled={isSubmitting}
-                className="w-full px-4 py-3 rounded-lg bg-gray-50 dark:bg-gray-700 border border-gray-200 dark:border-gray-600 focus:outline-none transition-all dark:text-white disabled:opacity-50 disabled:cursor-not-allowed"
+                className="w-full px-4 py-3 dynamic-rounded bg-gray-50 dark:bg-gray-700 border border-gray-200 dark:border-gray-600 focus:outline-none transition-all dark:text-white disabled:opacity-50 disabled:cursor-not-allowed"
               />
             </motion.div>
 
@@ -232,7 +232,7 @@ const EmailSection = () => {
                 onFocus={() => setFocused("subject")}
                 onBlur={() => setFocused(null)}
                 disabled={isSubmitting}
-                className="w-full px-4 py-3 rounded-lg bg-gray-50 dark:bg-gray-700 border border-gray-200 dark:border-gray-600 focus:outline-none transition-all dark:text-white disabled:opacity-50 disabled:cursor-not-allowed"
+                className="w-full px-4 py-3 dynamic-rounded bg-gray-50 dark:bg-gray-700 border border-gray-200 dark:border-gray-600 focus:outline-none transition-all dark:text-white disabled:opacity-50 disabled:cursor-not-allowed"
               />
             </motion.div>
 
@@ -254,7 +254,7 @@ const EmailSection = () => {
                 onFocus={() => setFocused("message")}
                 onBlur={() => setFocused(null)}
                 disabled={isSubmitting}
-                className="w-full px-4 py-3 rounded-lg bg-gray-50 dark:bg-gray-700 border border-gray-200 dark:border-gray-600 focus:outline-none transition-all h-32 resize-none dark:text-white disabled:opacity-50 disabled:cursor-not-allowed"
+                className="w-full px-4 py-3 dynamic-rounded bg-gray-50 dark:bg-gray-700 border border-gray-200 dark:border-gray-600 focus:outline-none transition-all h-32 resize-none dark:text-white disabled:opacity-50 disabled:cursor-not-allowed"
               />
             </motion.div>
 
@@ -264,7 +264,7 @@ const EmailSection = () => {
               whileHover={!isSubmitting ? "hover" : {}}
               whileTap={!isSubmitting ? "tap" : {}}
               disabled={isSubmitting}
-              className="w-full px-5 py-3 bg-gradient-to-r from-purple-500 to-pink-500 text-white font-medium rounded-lg transition-all disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center"
+              className="w-full px-5 py-3 bg-gradient-to-r from-purple-500 to-pink-500 text-white font-medium dynamic-rounded transition-all disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center"
             >
               {isSubmitting ? (
                 <>

@@ -33,9 +33,9 @@ const TAB_DATA = [
         ].map((skill, index) => (
           <div
             key={index}
-            className="flex items-center p-3 rounded-lg bg-gray-50 dark:bg-gray-800/50"
+            className="flex items-center p-3 dynamic-rounded bg-gray-50 dark:bg-gray-800/50"
           >
-            <span className="h-2 w-2 rounded-full bg-gradient-to-r from-purple-500 to-pink-500 mr-3"></span>
+            <span className="h-2 w-2 dynamic-rounded bg-gradient-to-r from-purple-500 to-pink-500 mr-3"></span>
             <span>{skill}</span>
           </div>
         ))}
@@ -56,9 +56,9 @@ const TAB_DATA = [
         ].map((edu, index) => (
           <div
             key={index}
-            className="flex items-center p-3 rounded-lg bg-gray-50 dark:bg-gray-800/50"
+            className="flex items-center p-3 dynamic-rounded bg-gray-50 dark:bg-gray-800/50"
           >
-            <span className="h-2 w-2 rounded-full bg-gradient-to-r from-purple-500 to-pink-500 mr-3"></span>
+            <span className="h-2 w-2 dynamic-rounded bg-gradient-to-r from-purple-500 to-pink-500 mr-3"></span>
             <span>{edu}</span>
           </div>
         ))}
@@ -77,7 +77,7 @@ const TAB_DATA = [
                 href="https://learn.microsoft.com/api/credentials/share/en-us/HopeIFEANYI/3B11AE95D51C7AD?sharingId=B4D7060416A0FE6B"
                 className="hover:opacity-90 block"
               >
-                <div className="bg-gray-50 dark:bg-gray-800/50 p-6 rounded-xl text-center">
+                <div className="bg-gray-50 dark:bg-gray-800/50 p-6 dynamic-rounded text-center">
                   <Image
                     src="/ai900.png"
                     alt="Microsoft Certified: Azure AI Fundamentals"
@@ -96,7 +96,7 @@ const TAB_DATA = [
                 href="https://learn.microsoft.com/api/credentials/share/en-us/HopeIFEANYI/F96AC56F66AF7953?sharingId=B4D7060416A0FE6B"
                 className="hover:opacity-90 block"
               >
-                <div className="bg-gray-50 dark:bg-gray-800/50 p-6 rounded-xl text-center">
+                <div className="bg-gray-50 dark:bg-gray-800/50 p-6 dynamic-rounded text-center">
                   <Image
                     src="/dp900.png"
                     alt="Microsoft Certified: Azure Data Fundamentals"
@@ -115,7 +115,7 @@ const TAB_DATA = [
                 href="https://learn.microsoft.com/api/credentials/share/en-us/HopeIFEANYI/D93D7739FAD1104?sharingId=B4D7060416A0FE6B"
                 className="hover:opacity-90 block"
               >
-                <div className="bg-gray-50 dark:bg-gray-800/50 p-6 rounded-xl text-center">
+                <div className="bg-gray-50 dark:bg-gray-800/50 p-6 dynamic-rounded text-center">
                   <Image
                     src="/az900.png"
                     alt="Microsoft Certified: Azure Fundamentals"
@@ -130,21 +130,21 @@ const TAB_DATA = [
               </a>
             </CarouselItem>
             <CarouselItem className="md:basis-1/2">
-              <div className="bg-gray-50 dark:bg-gray-800/50 p-6 rounded-xl text-center flex items-center justify-center min-h-48">
+              <div className="bg-gray-50 dark:bg-gray-800/50 p-6 dynamic-rounded text-center flex items-center justify-center min-h-48">
                 <p className="font-medium">
                   Cyber Security and Ethical Hacking
                 </p>
               </div>
             </CarouselItem>
             <CarouselItem className="md:basis-1/2">
-              <div className="bg-gray-50 dark:bg-gray-800/50 p-6 rounded-xl text-center flex items-center justify-center min-h-48">
+              <div className="bg-gray-50 dark:bg-gray-800/50 p-6 dynamic-rounded text-center flex items-center justify-center min-h-48">
                 <p className="font-medium">
                   Full-Stack Web Design and Development
                 </p>
               </div>
             </CarouselItem>
             <CarouselItem className="md:basis-1/2">
-              <div className="bg-gray-50 dark:bg-gray-800/50 p-6 rounded-xl text-center flex items-center justify-center min-h-48">
+              <div className="bg-gray-50 dark:bg-gray-800/50 p-6 dynamic-rounded text-center flex items-center justify-center min-h-48">
                 <p className="font-medium">
                   HTML, CSS, Javascript for Web Developers
                 </p>
@@ -172,7 +172,7 @@ const AboutSection = () => {
   };
 
   return (
-    <section id="about" className="py-14 max-w-6xl mx-auto">
+    <section id="about" className="py-14 max-w-6xl mx-auto px-1">
       <div className="grid grid-cols-1 gap-12">
         <motion.div
           initial={{ opacity: 0, y: 20 }}

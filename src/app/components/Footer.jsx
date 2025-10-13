@@ -17,13 +17,13 @@ const Footer = () => {
         <div className="flex">
           <Link
             href="https://github.com/hopeifeanyi1"
-            className="block bg-gray-800/50 rounded-full shadow-md hover:shadow-lg transition-shadow"
+            className="block bg-gray-800/50 dynamic-rounded shadow-md hover:shadow-lg transition-shadow"
           >
             <Image src={GithubIcon} alt="Github Icon" width={28} height={28} />
           </Link>
           <Link
             href="https://www.linkedin.com/in/hope-ifeanyi"
-            className="block pl-2 bg-gray-800/50 rounded-full shadow-md hover:shadow-lg transition-shadow"
+            className="block pl-2 bg-gray-800/50 dynamic-rounded shadow-md hover:shadow-lg transition-shadow"
           >
             <Image
               src={LinkedinIcon}

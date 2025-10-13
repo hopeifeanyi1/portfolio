@@ -93,7 +93,7 @@ const HeroSection = () => {
                 href="https://github.com/hopeifeanyi1" 
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center justify-center w-10 h-10 rounded-full bg-gray-100 dark:bg-gray-800 border border-gray-300 dark:border-gray-700 hover:bg-gradient-to-r hover:from-purple-500 hover:to-pink-500 hover:border-transparent hover:text-white text-gray-700 dark:text-gray-300 transition-all duration-300 shadow-sm hover:shadow-md"
+                className="flex items-center justify-center w-10 h-10 dynamic-rounded bg-gray-100 dark:bg-gray-800 border border-gray-300 dark:border-gray-700 hover:bg-gradient-to-r hover:from-purple-500 hover:to-pink-500 hover:border-transparent hover:text-white text-gray-700 dark:text-gray-300 transition-all duration-300 shadow-sm hover:shadow-md"
               >
                 <FaGithub size={18} />
               </Link>
@@ -107,7 +107,7 @@ const HeroSection = () => {
                 href="https://www.linkedin.com/in/hope-ifeanyi" 
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center justify-center w-10 h-10 rounded-full bg-gray-100 dark:bg-gray-800 border border-gray-300 dark:border-gray-700 hover:bg-gradient-to-r hover:from-purple-500 hover:to-pink-500 hover:border-transparent hover:text-white text-gray-700 dark:text-gray-300 transition-all duration-300 shadow-sm hover:shadow-md"
+                className="flex items-center justify-center w-10 h-10 dynamic-rounded bg-gray-100 dark:bg-gray-800 border border-gray-300 dark:border-gray-700 hover:bg-gradient-to-r hover:from-purple-500 hover:to-pink-500 hover:border-transparent hover:text-white text-gray-700 dark:text-gray-300 transition-all duration-300 shadow-sm hover:shadow-md"
               >
                 <FaLinkedin size={18} />
               </Link>
@@ -118,7 +118,7 @@ const HeroSection = () => {
           <div className="flex flex-wrap gap-4 justify-center lg:justify-start">
             <button
               onClick={handleHireMeClick}
-              className="px-6 py-2.5 rounded-full bg-gradient-to-r from-purple-500 to-pink-500 text-white font-medium hover:shadow-lg hover:opacity-90 transition-all duration-300 cursor-pointer"
+              className="px-6 py-2.5 dynamic-rounded bg-gradient-to-r from-purple-500 to-pink-500 text-white font-medium hover:shadow-lg hover:opacity-90 transition-all duration-300 cursor-pointer"
             >
               Hire Me
             </button>
@@ -126,7 +126,7 @@ const HeroSection = () => {
             <Link
               href="/hope.pdf"
               download="Hope_CV.pdf"
-              className="px-6 py-2.5 rounded-full border border-gray-300 dark:border-gray-700 text-gray-900 dark:text-white font-medium hover:bg-gray-100 dark:hover:bg-gray-800 transition-all duration-300 flex items-center gap-2"
+              className="px-6 py-2.5 dynamic-rounded border border-gray-300 dark:border-gray-700 text-gray-900 dark:text-white font-medium hover:bg-gray-100 dark:hover:bg-gray-800 transition-all duration-300 flex items-center gap-2"
             >
               Download CV <ArrowDown size={16} />
             </Link>
