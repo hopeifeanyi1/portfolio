@@ -242,7 +242,7 @@ const StylePanel = ({ isOpen, onClose, originPosition }) => {
             style={{
               transformOrigin: "top right",
             }}
-            className={`fixed right-2 top-5 bottom-5 lg:w-[450px] w-[90vw] bg-gray-900 text-white shadow-2xl z-[70] overflow-y-auto dynamic-rounded`}
+            className={`fixed right-2 top-5 bottom-5 lg:w-[420px] w-[90vw] bg-gray-900 text-white shadow-2xl z-[70] overflow-y-auto dynamic-rounded`}
           >
             {/* Header */}
             <div className="px-3 py-2 flex items-start justify-between">
@@ -319,7 +319,7 @@ const StylePanel = ({ isOpen, onClose, originPosition }) => {
               </div>
 
               {/* Color Section */}
-              {/* <div>
+              <div>
                 <h3 className="text-lg font-semibold mb-1 pl-3">Color</h3>
                 <p className="text-sm text-gray-400 pl-3">
                   Customize color schemes
@@ -400,7 +400,7 @@ const StylePanel = ({ isOpen, onClose, originPosition }) => {
                     </div>
                   </div>
                 </div>
-              </div> */}
+              </div>
 
               {/* Solid Style */}
               {/* <div>

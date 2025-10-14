@@ -27,7 +27,7 @@ const NavBar = () => {
   const [isStylePanelOpen, setIsStylePanelOpen] = useState(false)
   const [buttonPosition, setButtonPosition] = useState({ x: 0, y: 0 })
   const buttonRef = useRef(null)
-  const pathname = '/'
+  const pathname = usePathname()
 
   useEffect(() => {
     setMounted(true)
@@ -59,10 +59,10 @@ const NavBar = () => {
           {/* Home Button */}
           <Link
             href="/"
-            className={`flex items-center justify-center px-4 h-10 dynamic-rounded transition-all ${
+            className={`flex items-center justify-center px-4 h-10 dynamic-rounded transition-all hover:bg-gray-100 dark:hover:bg-gray-800 ${
               isActive("/")
                 ? "bg-gray-100 dark:bg-gray-800"
-                : "hover:bg-gray-100 dark:hover:bg-gray-800"
+                : ""
             }`}
           >
             <GoHome className="w-5 h-5 text-gray-700 dark:text-gray-200" />
@@ -73,10 +73,10 @@ const NavBar = () => {
             <Link
               key={index}
               href={link.path}
-              className={`flex items-center gap-2 px-4 h-10 dynamic-rounded text-gray-700 dark:text-gray-200 transition-all whitespace-nowrap font-medium text-sm ${
+              className={`flex items-center gap-2 px-4 h-10 dynamic-rounded text-gray-700 dark:text-gray-200 transition-all whitespace-nowrap font-medium text-sm hover:bg-gray-100 dark:hover:bg-gray-800 ${
                 isActive(link.path)
                   ? "bg-gray-100 dark:bg-gray-800"
-                  : "hover:bg-gray-100 dark:hover:bg-gray-800"
+                  : ""
               }`}
             >
               <link.icon className="w-4 h-4" />

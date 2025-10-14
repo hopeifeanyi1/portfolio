@@ -4,7 +4,7 @@
   
 /* Dynamic border radius classes */
 [data-shape="conservative"] .dynamic-rounded {
-  border-radius: 10px;
+  border-radius: 7px;
 }
 
 [data-shape="rounded"] .dynamic-rounded {
