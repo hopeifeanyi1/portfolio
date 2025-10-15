@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import {
   HiOutlineSparkles,
@@ -8,6 +8,13 @@ import {
   HiOutlineMoon,
 } from "react-icons/hi2";
 import { X } from "lucide-react";
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+} from "@/components/ui/carousel";
 
 const StylePanel = ({ isOpen, onClose, originPosition }) => {
   const [mounted, setMounted] = useState(false);
@@ -23,8 +30,6 @@ const StylePanel = ({ isOpen, onClose, originPosition }) => {
   const [surface, setSurface] = useState("translucent");
   const [scaling, setScaling] = useState("100");
   const [transition, setTransition] = useState("all");
-
-  const panelRef = useRef(null);
 
   const shapes = [
     { value: "conservative", label: "Conservative", radius: "rounded-md" },
@@ -48,9 +53,9 @@ const StylePanel = ({ isOpen, onClose, originPosition }) => {
       { name: "emerald", bg: "bg-emerald-500" },
     ],
     neutral: [
-      { name: "sand", bg: "bg-amber-200" },
-      { name: "gray", bg: "bg-gray-500" },
-      { name: "slate", bg: "bg-slate-500" },
+      { name: "sand", bg: "bg-[#26262f]" },
+      { name: "gray", bg: "bg-[#1b2b20]" },
+      { name: "slate", bg: "bg-black" },
     ],
   };
 
@@ -58,33 +63,31 @@ const StylePanel = ({ isOpen, onClose, originPosition }) => {
     setMounted(true);
 
     // Load saved preferences
-    if (typeof window !== "undefined") {
-      const saved = {
-        theme: localStorage.getItem("theme") || "dark",
-        shape: localStorage.getItem("design-shape") || "conservative",
-        brandColor: localStorage.getItem("design-brand") || "cyan",
-        accentColor: localStorage.getItem("design-accent") || "cyan",
-        neutralColor: localStorage.getItem("design-neutral") || "gray",
-        solidStyle: localStorage.getItem("design-solid") || "color",
-        effect: localStorage.getItem("design-effect") || "flat",
-        surface: localStorage.getItem("design-surface") || "translucent",
-        scaling: localStorage.getItem("design-scaling") || "100",
-        transition: localStorage.getItem("design-transition") || "all",
-      };
+    const saved = {
+      theme: "dark",
+      shape: "conservative",
+      brandColor: "cyan",
+      accentColor: "cyan",
+      neutralColor: "gray",
+      solidStyle: "color",
+      effect: "flat",
+      surface: "translucent",
+      scaling: "100",
+      transition: "all",
+    };
 
-      setTheme(saved.theme);
-      setShape(saved.shape);
-      setBrandColor(saved.brandColor);
-      setAccentColor(saved.accentColor);
-      setNeutralColor(saved.neutralColor);
-      setSolidStyle(saved.solidStyle);
-      setEffect(saved.effect);
-      setSurface(saved.surface);
-      setScaling(saved.scaling);
-      setTransition(saved.transition);
+    setTheme(saved.theme);
+    setShape(saved.shape);
+    setBrandColor(saved.brandColor);
+    setAccentColor(saved.accentColor);
+    setNeutralColor(saved.neutralColor);
+    setSolidStyle(saved.solidStyle);
+    setEffect(saved.effect);
+    setSurface(saved.surface);
+    setScaling(saved.scaling);
+    setTransition(saved.transition);
 
-      applyStyles(saved);
-    }
+    applyStyles(saved);
   }, []);
 
   const applyStyles = (styles) => {
@@ -175,20 +178,7 @@ const StylePanel = ({ isOpen, onClose, originPosition }) => {
         break;
     }
 
-    if (typeof window !== "undefined") {
-      const storageKey =
-        key === "theme"
-          ? "theme"
-          : `design-${key.replace(/([A-Z])/g, "-$1").toLowerCase()}`;
-      localStorage.setItem(storageKey, value);
-    }
-
     applyStyles(updates);
-  };
-
-  // Get current radius class
-  const getCurrentRadiusClass = () => {
-    return shapes.find((s) => s.value === shape)?.radius || "rounded-md";
   };
 
   if (!mounted) return null;
@@ -208,7 +198,6 @@ const StylePanel = ({ isOpen, onClose, originPosition }) => {
 
           {/* Panel Content */}
           <motion.div
-            ref={panelRef}
             initial={{
               scale: 0,
               opacity: 0,
@@ -242,13 +231,13 @@ const StylePanel = ({ isOpen, onClose, originPosition }) => {
             style={{
               transformOrigin: "top right",
             }}
-            className={`fixed right-2 top-5 bottom-5 lg:w-[420px] w-[90vw] bg-gray-900 text-white shadow-2xl z-[70] overflow-y-auto dynamic-rounded`}
+            className={`fixed right-2 top-5 bottom-5 lg:w-[420px] w-[90vw] bg-zinc-900 text-white shadow-2xl z-[70] overflow-y-auto dynamic-rounded`}
           >
             {/* Header */}
             <div className="px-3 py-2 flex items-start justify-between">
               <div className="pl-3 pt-4">
                 <h2 className="text-lg font-semibold mb-1">Customize</h2>
-                <p className="text-sm text-gray-400">
+                <p className="text-sm text-gray-400 ">
                   Customize global design settings
                 </p>
               </div>
@@ -298,7 +287,7 @@ const StylePanel = ({ isOpen, onClose, originPosition }) => {
                 <div className="border-t border-gray-800 px-6 py-3 flex items-center justify-between">
                   <span className="text-sm font-medium">Shape</span>
                   <div className="flex gap-2">
-                    {shapes.map((s, idx) => {
+                    {shapes.map((s) => {
                       const radiusClass = s.radius;
                       return (
                         <button
@@ -328,55 +317,91 @@ const StylePanel = ({ isOpen, onClose, originPosition }) => {
                 <div
                   className={`dynamic-rounded overflow-hidden border-[1px] border-gray-500 mt-4`}
                 >
-            
-                  <div className="px-6 py-4 flex items-center justify-between gap-4">
-                    <span className="text-sm font-medium min-w-[60px]">
-                      Brand
-                    </span>
-                    <div className="flex gap-2 flex-wrap justify-end">
-                      {colors.brand.map((c) => (
-                        <button
-                          key={c.name}
-                          onClick={() =>
-                            handleStyleChange("brandColor", c.name)
-                          }
-                          className={`relative w-9 h-9 dynamic-rounded transition-all ${
-                            c.bg
-                          } ${
-                            brandColor === c.name
-                              ? "ring-2 ring-white ring-offset-2 ring-offset-gray-900"
-                              : "hover:scale-110"
-                          }`}
-                        />
-                      ))}
+                  {/* Brand Colors with Carousel */}
+                  <div className="pl-6 pr-4 py-4">
+                    <div className="flex items-center justify-between gap-3">
+                      <span className="text-sm font-medium whitespace-nowrap">
+                        Brand
+                      </span>
+                      <div className="flex items-center gap-2 flex-1 min-w-0">
+                        <Carousel
+                          opts={{
+                            align: "start",
+                            slidesToScroll: 3,
+                          }}
+                          className="w-full flex "
+                        >
+                          <CarouselPrevious className="static translate-y-0 w-7 h-7 flex-shrink-0 bg-gray-600 border-0 text-white hover:bg-gray-700 hover:text-white disabled:opacity-30 my-auto" />
+                          <CarouselContent className="ml-2 mr-2 pt-2">
+                            {colors.brand.map((c) => (
+                              <CarouselItem
+                                key={c.name}
+                                className="basis-auto pl-2"
+                              >
+                                <button
+                                  onClick={() =>
+                                    handleStyleChange("brandColor", c.name)
+                                  }
+                                  className={`relative w-9 h-9 flex-shrink-0 dynamic-rounded transition-all ${
+                                    c.bg
+                                  } ${
+                                    brandColor === c.name
+                                      ? "ring-2 ring-white ring-offset-2 ring-offset-gray-900"
+                                      : "hover:scale-110"
+                                  }`}
+                                />
+                              </CarouselItem>
+                            ))}
+                          </CarouselContent>
+                          <CarouselNext className="static translate-y-0 w-7 h-7 flex-shrink-0 bg-gray-800 border-0 text-white hover:bg-gray-700 hover:text-white disabled:opacity-30 my-auto" />
+                        </Carousel>
+                      </div>
                     </div>
                   </div>
 
-                 
-                  <div className="border-t border-gray-800 px-6 py-4 flex items-center justify-between gap-4">
-                    <span className="text-sm font-medium min-w-[60px]">
-                      Accent
-                    </span>
-                    <div className="flex gap-2 flex-wrap justify-end">
-                      {colors.brand.map((c) => (
-                        <button
-                          key={c.name}
-                          onClick={() =>
-                            handleStyleChange("accentColor", c.name)
-                          }
-                          className={`relative w-9 h-9 dynamic-rounded transition-all ${
-                            c.bg
-                          } ${
-                            accentColor === c.name
-                              ? "ring-2 ring-white ring-offset-2 ring-offset-gray-900"
-                              : "hover:scale-110"
-                          }`}
-                        />
-                      ))}
+                  {/* Accent Colors with Carousel */}
+                  <div className="border-t border-gray-800 pl-6 pr-4 py-4">
+                    <div className="flex items-center justify-between gap-3">
+                      <span className="text-sm font-medium whitespace-nowrap">
+                        Accent
+                      </span>
+                      <div className="flex items-center gap-2 flex-1 min-w-0 ">
+                        <Carousel
+                          opts={{
+                            align: "start",
+                            slidesToScroll: 3,
+                          }}
+                          className="w-full flex"
+                        >
+                          <CarouselPrevious className="static translate-y-0 w-7 h-7 flex-shrink-0 bg-gray-800 border-0 text-white hover:bg-gray-700 hover:text-white disabled:opacity-30 my-auto" />
+                          <CarouselContent className="ml-2 mr-2 pt-2">
+                            {colors.brand.map((c) => (
+                              <CarouselItem
+                                key={c.name}
+                                className="basis-auto pl-2"
+                              >
+                                <button
+                                  onClick={() =>
+                                    handleStyleChange("accentColor", c.name)
+                                  }
+                                  className={`relative w-9 h-9 flex-shrink-0 dynamic-rounded transition-all ${
+                                    c.bg
+                                  } ${
+                                    accentColor === c.name
+                                      ? "ring-2 ring-white ring-offset-2 ring-offset-gray-900"
+                                      : "hover:scale-110"
+                                  }`}
+                                />
+                              </CarouselItem>
+                            ))}
+                          </CarouselContent>
+                          <CarouselNext className="static translate-y-0 w-7 h-7 flex-shrink-0 bg-gray-800 border-0 text-white hover:bg-gray-700 hover:text-white disabled:opacity-30 my-auto" />
+                        </Carousel>
+                      </div>
                     </div>
                   </div>
 
-                  
+                  {/* Neutral Colors */}
                   <div className="border-t border-gray-800 px-6 py-4 flex items-center justify-between gap-4">
                     <span className="text-sm font-medium min-w-[60px]">
                       Neutral
@@ -388,7 +413,7 @@ const StylePanel = ({ isOpen, onClose, originPosition }) => {
                           onClick={() =>
                             handleStyleChange("neutralColor", c.name)
                           }
-                          className={`relative w-9 h-9 dynamic-rounded transition-all ${
+                          className={`relative w-9 h-9 dynamic-rounded transition-all  brightness-200 ${
                             c.bg
                           } ${
                             neutralColor === c.name
@@ -401,160 +426,6 @@ const StylePanel = ({ isOpen, onClose, originPosition }) => {
                   </div>
                 </div>
               </div>
-
-              {/* Solid Style */}
-              {/* <div>
-                <h3 className="text-lg font-semibold mb-1">Solid style</h3>
-                <p className="text-sm text-gray-400 mb-4">
-                  Customize the appearance of interactive elements
-                </p>
-
-                <div className={`dynamic-rounded overflow-hidden`}>
-                  <div className="px-6 py-4 flex items-center justify-between">
-                    <span className="text-sm font-medium">Style</span>
-                    <div
-                      className={`flex gap-2 bg-gray-800 dynamic-rounded p-1`}
-                    >
-                      {[
-                        {
-                          value: "color",
-                          label: "Color",
-                          color: "bg-cyan-500/30 border-cyan-500",
-                        },
-                        {
-                          value: "inverse",
-                          label: "Inverse",
-                          color: "bg-cyan-500 border-cyan-500",
-                        },
-                        {
-                          value: "contrast",
-                          label: "Contrast",
-                          color: "bg-white border-cyan-500",
-                        },
-                      ].map((s) => (
-                        <button
-                          key={s.value}
-                          onClick={() =>
-                            handleStyleChange("solidStyle", s.value)
-                          }
-                          className={`px-3 py-2 dynamic-rounded text-xs font-medium transition-all flex items-center gap-2 ${
-                            solidStyle === s.value
-                              ? "bg-gray-700 text-white"
-                              : "text-gray-400 hover:text-white"
-                          }`}
-                        >
-                          <div
-                            className={`w-5 h-5 dynamic-rounded border-2 ${s.color}`}
-                          />
-                          {s.label}
-                        </button>
-                      ))}
-                    </div>
-                  </div>
-
-                  <div className="border-t border-gray-800 px-6 py-4 flex items-center justify-between">
-                    <span className="text-sm font-medium">Effect</span>
-                    <div
-                      className={`flex gap-2 bg-gray-800 dynamic-rounded p-1`}
-                    >
-                      {[
-                        { value: "flat", label: "Flat" },
-                        { value: "plastic", label: "Plastic" },
-                      ].map((e) => (
-                        <button
-                          key={e.value}
-                          onClick={() => handleStyleChange("effect", e.value)}
-                          className={`px-3 py-2 dynamic-rounded text-xs font-medium transition-all flex items-center gap-2 ${
-                            effect === e.value
-                              ? "bg-gray-700 text-white"
-                              : "text-gray-400 hover:text-white"
-                          }`}
-                        >
-                          <div
-                            className={`w-5 h-5 dynamic-rounded bg-cyan-500/30 border-2 border-cyan-500 ${
-                              e.value === "plastic" ? "shadow-inner" : ""
-                            }`}
-                          />
-                          {e.label}
-                        </button>
-                      ))}
-                    </div>
-                  </div>
-                </div>
-              </div> */}
-
-              {/* Advanced */}
-              {/* <div>
-                <h3 className="text-lg font-semibold mb-1">Advanced</h3>
-                <p className="text-sm text-gray-400 mb-4">
-                  Customize advanced styling options
-                </p>
-
-                <div className={`dynamic-rounded overflow-hidden`}>
-                  <div className="px-6 py-4 flex items-center justify-between">
-                    <span className="text-sm font-medium">Surface</span>
-                    <div
-                      className={`flex gap-2 bg-gray-800 dynamic-rounded p-1`}
-                    >
-                      {["filled", "translucent"].map((s) => (
-                        <button
-                          key={s}
-                          onClick={() => handleStyleChange("surface", s)}
-                          className={`px-4 py-2 dynamic-rounded text-xs font-medium transition-all capitalize ${
-                            surface === s
-                              ? "bg-gray-700 text-white"
-                              : "text-gray-400 hover:text-white"
-                          }`}
-                        >
-                          {s}
-                        </button>
-                      ))}
-                    </div>
-                  </div>
-
-                  <div className="border-t border-gray-800 px-6 py-4 flex items-center justify-between">
-                    <span className="text-sm font-medium">Scaling</span>
-                    <div
-                      className={`flex gap-1 bg-gray-800 dynamic-rounded p-1`}
-                    >
-                      {["90", "95", "100", "105", "110"].map((s) => (
-                        <button
-                          key={s}
-                          onClick={() => handleStyleChange("scaling", s)}
-                          className={`px-3 py-2 dynamic-rounded text-xs font-medium transition-all ${
-                            scaling === s
-                              ? "bg-gray-700 text-white"
-                              : "text-gray-400 hover:text-white"
-                          }`}
-                        >
-                          {s}
-                        </button>
-                      ))}
-                    </div>
-                  </div>
-
-                  <div className="border-t border-gray-800 px-6 py-4 flex items-center justify-between">
-                    <span className="text-sm font-medium">Transition</span>
-                    <div
-                      className={`flex gap-2 bg-gray-800 dynamic-rounded p-1`}
-                    >
-                      {["all", "micro", "macro", "none"].map((t) => (
-                        <button
-                          key={t}
-                          onClick={() => handleStyleChange("transition", t)}
-                          className={`px-3 py-2 dynamic-rounded text-xs font-medium transition-all capitalize ${
-                            transition === t
-                              ? "bg-gray-700 text-white"
-                              : "text-gray-400 hover:text-white"
-                          }`}
-                        >
-                          {t}
-                        </button>
-                      ))}
-                    </div>
-                  </div>
-                </div>
-              </div> */}
             </div>
           </motion.div>
         </>
