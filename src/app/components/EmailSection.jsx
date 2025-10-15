@@ -137,7 +137,7 @@ const EmailSection = () => {
         className="mb-12 text-center"
       >
         <h2 className="text-3xl md:text-4xl font-bold tracking-tight mb-2">Get In Touch</h2>
-        <div className="h-1 w-12 bg-gradient-to-r from-purple-500 to-pink-500 mx-auto"></div>
+        <div className="h-1 w-12 dynamic-gradient mx-auto"></div>
       </motion.div>
 
       <div className="grid md:grid-cols-5 gap-10 items-start">
@@ -264,7 +264,7 @@ const EmailSection = () => {
               whileHover={!isSubmitting ? "hover" : {}}
               whileTap={!isSubmitting ? "tap" : {}}
               disabled={isSubmitting}
-              className="w-full px-5 py-3 bg-gradient-to-r from-purple-500 to-pink-500 text-white font-medium dynamic-rounded transition-all disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center"
+              className="w-full px-5 py-3 dynamic-gradient text-white font-medium dynamic-rounded transition-all disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center"
             >
               {isSubmitting ? (
                 <>

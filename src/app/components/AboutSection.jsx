@@ -35,7 +35,7 @@ const TAB_DATA = [
             key={index}
             className="flex items-center p-3 dynamic-rounded bg-gray-50 dark:bg-gray-800/50"
           >
-            <span className="h-2 w-2 dynamic-rounded bg-gradient-to-r from-purple-500 to-pink-500 mr-3"></span>
+            <span className="h-2 w-2 dynamic-rounded dynamic-gradient mr-3"></span>
             <span>{skill}</span>
           </div>
         ))}
@@ -58,7 +58,7 @@ const TAB_DATA = [
             key={index}
             className="flex items-center p-3 dynamic-rounded bg-gray-50 dark:bg-gray-800/50"
           >
-            <span className="h-2 w-2 dynamic-rounded bg-gradient-to-r from-purple-500 to-pink-500 mr-3"></span>
+            <span className="h-2 w-2 dynamic-rounded dynamic-gradient mr-3"></span>
             <span>{edu}</span>
           </div>
         ))}

@@ -15,7 +15,7 @@ const TabButton = ({active, selectTab, children}) => {
       {active && (
         <motion.div
           layoutId="active-tab"
-          className="absolute bottom-0 left-0 right-0 h-0.5 bg-gradient-to-r from-purple-500 to-pink-500"
+          className="absolute bottom-0 left-0 right-0 h-0.5 dynamic-gradient"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.3 }}

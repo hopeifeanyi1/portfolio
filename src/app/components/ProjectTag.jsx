@@ -9,7 +9,7 @@ const ProjectTag = ({name, onClick, isSelected}) => {
       onClick={() => onClick(name)}
       className={`px-6 py-2 dynamic-rounded text-sm font-medium transition-all duration-300
         ${isSelected 
-          ? 'bg-gradient-to-r from-purple-500 to-pink-500 text-white' 
+          ? 'dynamic-gradient text-white' 
           : 'bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-300'
         }`}
     >

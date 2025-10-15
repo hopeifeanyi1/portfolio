@@ -96,7 +96,7 @@ const NavBar = () => {
         <button
           ref={buttonRef}
           onClick={handleOpenPanel}
-          className="flex items-center justify-center w-10 h-10 dynamic-rounded bg-gradient-to-r from-purple-500 to-pink-500 text-white transition-all shadow-lg hover:shadow-xl hover:scale-105"
+          className="flex items-center justify-center w-10 h-10 dynamic-rounded dynamic-gradient text-white transition-all shadow-lg hover:shadow-xl hover:scale-105"
           aria-label="Open style panel"
         >
           <HiOutlineSparkles className="w-5 h-5 text-white" />

@@ -38,7 +38,7 @@ const HeroSection = () => {
           className="order-1 lg:order-1 flex justify-center lg:justify-end"
         >
           <div className="relative w-56 h-56 lg:w-57 lg:h-57 lg:mr-20">
-            <div className="absolute inset-0 rounded-full bg-gradient-to-r from-purple-300 to-pink-300 blur-3xl opacity-20 animate-pulse" />
+            <div className="absolute inset-0 rounded-full dynamic-blur-gradient blur-3xl opacity-20 animate-pulse" />
             <div className="absolute inset-0 rounded-full bg-white dark:bg-black overflow-hidden border-4 border-gray-100 dark:border-gray-800">
               <Image
                 src="/images/IMG.jpeg"
@@ -59,7 +59,7 @@ const HeroSection = () => {
           className="order-2 lg:order-2 flex flex-col justify-center text-center lg:text-left"
         >
           <h1 className="mb-3">
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-500 to-pink-500 text-2xl lg:text-3xl font-extrabold block mb-1">
+            <span className="text-transparent bg-clip-text dynamic-text-gradient text-2xl lg:text-3xl font-extrabold block mb-1">
               Hello, I&apos;m{" "}
             </span>
             <TypeAnimation
@@ -93,7 +93,7 @@ const HeroSection = () => {
                 href="https://github.com/hopeifeanyi1" 
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center justify-center w-10 h-10 dynamic-rounded bg-gray-100 dark:bg-gray-800 border border-gray-300 dark:border-gray-700 hover:bg-gradient-to-r hover:from-purple-500 hover:to-pink-500 hover:border-transparent hover:text-white text-gray-700 dark:text-gray-300 transition-all duration-300 shadow-sm hover:shadow-md"
+                className="flex items-center justify-center w-10 h-10 dynamic-rounded bg-gray-100 dark:bg-gray-800 border border-gray-300 dark:border-gray-700 dynamic-hover-gradient hover:border-transparent hover:text-white text-gray-700 dark:text-gray-300 transition-all duration-300 shadow-sm hover:shadow-md"
               >
                 <FaGithub size={18} />
               </Link>
@@ -107,7 +107,7 @@ const HeroSection = () => {
                 href="https://www.linkedin.com/in/hope-ifeanyi" 
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center justify-center w-10 h-10 dynamic-rounded bg-gray-100 dark:bg-gray-800 border border-gray-300 dark:border-gray-700 hover:bg-gradient-to-r hover:from-purple-500 hover:to-pink-500 hover:border-transparent hover:text-white text-gray-700 dark:text-gray-300 transition-all duration-300 shadow-sm hover:shadow-md"
+                className="flex items-center justify-center w-10 h-10 dynamic-rounded bg-gray-100 dark:bg-gray-800 border border-gray-300 dark:border-gray-700 dynamic-hover-gradient hover:border-transparent hover:text-white text-gray-700 dark:text-gray-300 transition-all duration-300 shadow-sm hover:shadow-md"
               >
                 <FaLinkedin size={18} />
               </Link>
@@ -118,7 +118,7 @@ const HeroSection = () => {
           <div className="flex flex-wrap gap-4 justify-center lg:justify-start">
             <button
               onClick={handleHireMeClick}
-              className="px-6 py-2.5 dynamic-rounded bg-gradient-to-r from-purple-500 to-pink-500 text-white font-medium hover:shadow-lg hover:opacity-90 transition-all duration-300 cursor-pointer"
+              className="px-6 py-2.5 dynamic-rounded dynamic-gradient text-white font-medium hover:shadow-lg hover:opacity-90 transition-all duration-300 cursor-pointer"
             >
               Get in Touch
             </button>

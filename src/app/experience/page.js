@@ -111,7 +111,7 @@ const Experience = () => {
         className="text-center max-w-3xl mx-auto mb-10"
       >
         <h2 className="text-3xl font-bold mb-6">My Work Experience</h2>
-        <div className="w-24 h-1.5 bg-gradient-to-r from-purple-500 to-pink-500 mx-auto dynamic-rounded mb-8" />
+        <div className="w-24 h-1.5 dynamic-gradient mx-auto dynamic-rounded mb-8" />
       </motion.div>
 
       <div ref={ref} className="max-w-4xl mx-auto space-y-4">

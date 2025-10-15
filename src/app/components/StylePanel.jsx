@@ -22,8 +22,8 @@ const StylePanel = ({ isOpen, onClose, originPosition }) => {
   // Style states
   const [theme, setTheme] = useState("dark");
   const [shape, setShape] = useState("conservative");
-  const [brandColor, setBrandColor] = useState("cyan");
-  const [accentColor, setAccentColor] = useState("cyan");
+  const [brandColor, setBrandColor] = useState("purple");
+  const [accentColor, setAccentColor] = useState("pink");
   const [neutralColor, setNeutralColor] = useState("gray");
   const [solidStyle, setSolidStyle] = useState("color");
   const [effect, setEffect] = useState("flat");
@@ -53,21 +53,21 @@ const StylePanel = ({ isOpen, onClose, originPosition }) => {
       { name: "emerald", bg: "bg-emerald-500" },
     ],
     neutral: [
-      { name: "sand", bg: "bg-[#26262f]" },
-      { name: "gray", bg: "bg-[#1b2b20]" },
-      { name: "slate", bg: "bg-black" },
+      { name: "neutral-1", bg: "bg-[#26262f]" },
+      { name: "neutral-2", bg: "bg-[#1b2b20]" },
+      { name: "neutral-3", bg: "bg-black" },
     ],
   };
 
   useEffect(() => {
     setMounted(true);
 
-    // Load saved preferences
+    // Load saved preferences with purple/pink defaults
     const saved = {
       theme: "dark",
       shape: "conservative",
-      brandColor: "cyan",
-      accentColor: "cyan",
+      brandColor: "purple",
+      accentColor: "pink",
       neutralColor: "gray",
       solidStyle: "color",
       effect: "flat",
@@ -126,8 +126,10 @@ const StylePanel = ({ isOpen, onClose, originPosition }) => {
     // Set CSS custom property for border radius
     root.style.setProperty("--dynamic-radius", selectedRadius);
 
-    // Add data attribute to body for CSS targeting
+    // Add data attributes to body for CSS targeting
     document.body.setAttribute("data-shape", styles.shape);
+    document.body.setAttribute("data-brand", styles.brandColor);
+    document.body.setAttribute("data-accent", styles.accentColor);
   };
 
   const handleStyleChange = (key, value) => {
@@ -243,7 +245,7 @@ const StylePanel = ({ isOpen, onClose, originPosition }) => {
               </div>
               <button
                 onClick={onClose}
-                className={`flex items-center justify-center w-10 h-10 dynamic-rounded lg:bg-gradient-to-r lg:from-purple-500 lg:to-pink-500 lg:text-white transition-all shadow-lg hover:shadow-xl hover:scale-105`}
+                className={`flex items-center justify-center w-10 h-10 dynamic-rounded lg:dynamic-gradient lg:text-white transition-all shadow-lg hover:shadow-xl hover:scale-105`}
               >
                 <X className="block lg:hidden" />
                 <HiOutlineSparkles className="w-5 h-5 text-white hidden lg:block" />
@@ -373,7 +375,7 @@ const StylePanel = ({ isOpen, onClose, originPosition }) => {
                           }}
                           className="w-full flex"
                         >
-                          <CarouselPrevious className="static translate-y-0 w-7 h-7 flex-shrink-0 bg-gray-800 border-0 text-white hover:bg-gray-700 hover:text-white disabled:opacity-30 my-auto" />
+                          <CarouselPrevious className="static translate-y-0 w-7 h-7 flex-shrink-0 bg-gray-600 border-0 text-white hover:bg-gray-700 hover:text-white disabled:opacity-30 my-auto" />
                           <CarouselContent className="ml-2 mr-2 pt-2">
                             {colors.brand.map((c) => (
                               <CarouselItem

@@ -1,7 +1,93 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-  
+
+/* CSS Custom Properties for Dynamic Colors */
+:root {
+  /* Default colors - purple and pink */
+  --brand-color: 168, 85, 247; /* purple-500 */
+  --accent-color: 236, 72, 153; /* pink-500 */
+}
+
+/* Color mappings for brand */
+[data-brand="cyan"] { --brand-color: 6, 182, 212; }
+[data-brand="blue"] { --brand-color: 59, 130, 246; }
+[data-brand="indigo"] { --brand-color: 99, 102, 241; }
+[data-brand="violet"] { --brand-color: 139, 92, 246; }
+[data-brand="purple"] { --brand-color: 168, 85, 247; }
+[data-brand="magenta"] { --brand-color: 217, 70, 239; }
+[data-brand="pink"] { --brand-color: 236, 72, 153; }
+[data-brand="red"] { --brand-color: 239, 68, 68; }
+[data-brand="orange"] { --brand-color: 249, 115, 22; }
+[data-brand="yellow"] { --brand-color: 234, 179, 8; }
+[data-brand="green"] { --brand-color: 34, 197, 94; }
+[data-brand="emerald"] { --brand-color: 16, 185, 129; }
+
+/* Color mappings for accent */
+[data-accent="cyan"] { --accent-color: 6, 182, 212; }
+[data-accent="blue"] { --accent-color: 59, 130, 246; }
+[data-accent="indigo"] { --accent-color: 99, 102, 241; }
+[data-accent="violet"] { --accent-color: 139, 92, 246; }
+[data-accent="purple"] { --accent-color: 168, 85, 247; }
+[data-accent="magenta"] { --accent-color: 217, 70, 239; }
+[data-accent="pink"] { --accent-color: 236, 72, 153; }
+[data-accent="red"] { --accent-color: 239, 68, 68; }
+[data-accent="orange"] { --accent-color: 249, 115, 22; }
+[data-accent="yellow"] { --accent-color: 234, 179, 8; }
+[data-accent="green"] { --accent-color: 34, 197, 94; }
+[data-accent="emerald"] { --accent-color: 16, 185, 129; }
+
+/* Dynamic gradient backgrounds */
+.dynamic-gradient {
+  background: linear-gradient(to right, rgb(var(--brand-color)), rgb(var(--accent-color)));
+}
+
+/* Dynamic text gradient */
+.dynamic-text-gradient {
+  background: linear-gradient(to right, rgb(var(--brand-color)), rgb(var(--accent-color)));
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Dynamic border colors */
+.dynamic-border {
+  border-color: rgb(var(--brand-color));
+}
+
+/* Dynamic background with opacity */
+.dynamic-bg-brand {
+  background-color: rgb(var(--brand-color));
+}
+
+.dynamic-bg-accent {
+  background-color: rgb(var(--accent-color));
+}
+
+/* Dynamic ring colors */
+.dynamic-ring-brand {
+  --tw-ring-color: rgb(var(--brand-color));
+}
+
+.dynamic-ring-accent {
+  --tw-ring-color: rgb(var(--accent-color));
+}
+
+/* Dynamic shadow colors */
+.dynamic-shadow-brand {
+  box-shadow: 0 10px 15px -3px rgb(var(--brand-color) / 0.3), 0 4px 6px -4px rgb(var(--brand-color) / 0.3);
+}
+
+/* Dynamic hover effects */
+.dynamic-hover-gradient:hover {
+  background: linear-gradient(to right, rgb(var(--brand-color)), rgb(var(--accent-color)));
+}
+
+/* For blur effects with gradient */
+.dynamic-blur-gradient {
+  background: linear-gradient(to right, rgb(var(--brand-color) / 0.3), rgb(var(--accent-color) / 0.3));
+}
+
 /* Dynamic border radius classes */
 [data-shape="conservative"] .dynamic-rounded {
   border-radius: 7px;
