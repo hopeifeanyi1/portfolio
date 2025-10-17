@@ -1,3 +1,4 @@
+//src/app/page.js
 import { Inter } from 'next/font/google'
 import HeroSection from './components/HeroSection'
 import AboutSection from './components/AboutSection'

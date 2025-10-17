@@ -1,3 +1,4 @@
+//src/app/components/ProjectCard.jsx
 import React from 'react'
 import { motion } from 'framer-motion'
 import { GithubIcon, ExternalLinkIcon } from 'lucide-react'

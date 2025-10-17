@@ -99,7 +99,7 @@ const CursorSpotlight = () => {
     <div
       className="pointer-events-none fixed inset-0 -z-50 transition-all duration-200"
       style={{
-        background: `radial-gradient(${spotlightSize}px circle at ${position.x}px ${position.y}px, rgba(${brandColor}, 0.30), rgba(${brandColor}, 0.1) 60%, rgba(${brandColor}, 0.07) 70%, transparent 100%)`,
+        background: `radial-gradient(${spotlightSize}px circle at ${position.x}px ${position.y}px, rgba(${brandColor}, 0.20), rgba(${brandColor}, 0.1) 60%, rgba(${brandColor}, 0.07) 70%, transparent 100%)`,
       }}
     />
   )

@@ -1,3 +1,4 @@
+//src/app/project/page.js
 "use client"
 import React, { useState, useRef } from 'react'
 import ProjectCard from '../components/ProjectCard'

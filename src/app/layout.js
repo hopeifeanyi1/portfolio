@@ -1,8 +1,10 @@
+//src/app/layout.js
 import './globals.css'
 import { Inter } from 'next/font/google'
 import { Toaster } from '@/components/ui/sonner'
 import NavBar from './components/NavBar'
 import CursorSpotlight from './components/CursorSpotlight'
+import ChatBot from './components/ChatBot'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -18,6 +20,7 @@ export default function RootLayout({ children }) {
         <CursorSpotlight />
         <NavBar />
         {children}
+        <ChatBot />
         <Toaster position="bottom-left" />
       </body>
     </html>

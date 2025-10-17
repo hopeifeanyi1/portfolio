@@ -103,5 +103,5 @@
 
 /* Default if no data-shape attribute */
 .dynamic-rounded {
-  border-radius: 23px;
+  border-radius: 15px;
 }
