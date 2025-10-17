@@ -79,7 +79,7 @@ const ChatBot = () => {
 
   return (
     <>
-      {/* Chat Toggle Button */}
+      {/* Chat Toggle Button - Positioned on the left side */}
       <AnimatePresence>
         {!isOpen && (
           <motion.button
@@ -89,14 +89,14 @@ const ChatBot = () => {
             whileHover={{ scale: 1.1 }}
             whileTap={{ scale: 0.9 }}
             onClick={() => setIsOpen(true)}
-            className="fixed bottom-6 right-6 z-40 p-4 dynamic-rounded dynamic-gradient text-white shadow-lg hover:shadow-xl transition-all"
+            className="fixed bottom-6 left-6 z-40 p-3 dynamic-rounded dynamic-gradient text-white shadow-lg hover:shadow-xl transition-all"
           >
-            <MessageCircle className="w-6 h-6" />
+            <MessageCircle className="w-5 h-5" />
           </motion.button>
         )}
       </AnimatePresence>
 
-      {/* Chat Window */}
+      {/* Chat Window - Positioned on the left side */}
       <AnimatePresence>
         {isOpen && (
           <motion.div
@@ -104,7 +104,7 @@ const ChatBot = () => {
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: 20, scale: 0.95 }}
             transition={{ type: 'spring', damping: 25, stiffness: 300 }}
-            className="fixed bottom-6 right-6 z-50 w-[380px] h-[500px] bg-white dark:bg-gray-900 dynamic-rounded shadow-2xl border border-gray-200 dark:border-gray-800 flex flex-col overflow-hidden"
+            className="fixed bottom-6 left-6 z-50 w-[90vw] max-w-[380px] h-[500px] max-h-[80vh] bg-white dark:bg-gray-900 dynamic-rounded shadow-2xl border border-gray-200 dark:border-gray-800 flex flex-col overflow-hidden"
           >
             {/* Header */}
             <div className="px-4 py-3 text-white flex items-center justify-between">
