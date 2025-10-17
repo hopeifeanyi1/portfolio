@@ -1,5 +1,4 @@
 // src/app/api/chat/route.js
-import { NextResponse } from 'next/server';
 import Groq from 'groq-sdk';
 
 const groq = new Groq({
@@ -84,64 +83,91 @@ function isPortfolioRelated(message) {
   return true;
 }
 
-export async function POST(request) {
+export const maxDuration = 30;
+
+export async function POST(req) {
   try {
-    const { message, conversationHistory = [] } = await request.json();
+    const { messages } = await req.json();
 
-    if (!message || typeof message !== 'string') {
-      return NextResponse.json(
-        { error: 'Message is required' },
-        { status: 400 }
-      );
-    }
-
-    // Check if question is portfolio-related
-    if (!isPortfolioRelated(message)) {
-      return NextResponse.json({
-        message: "I'm specifically designed to answer questions about Ifeanyi Hope's portfolio and professional background. Please ask me about her experience, projects, skills, or how to contact her!",
-        success: true
+    if (!Array.isArray(messages)) {
+      return new Response(JSON.stringify({ 
+        error: "Invalid request format: messages must be an array"
+      }), { 
+        status: 400,
+        headers: {
+          'Content-Type': 'application/json',
+        }
       });
     }
 
-    // Build messages array for Groq
-    const messages = [
-      { role: 'system', content: SYSTEM_PROMPT },
-      ...conversationHistory.map(msg => ({
-        role: msg.role,
-        content: msg.content
-      })),
-      { role: 'user', content: message }
-    ];
-
-    // Call Groq API with supported model
-    const completion = await groq.chat.completions.create({
-      messages,
-      model: 'llama-3.3-70b-versatile',
-      temperature: 0.5, // Lower temperature for more consistent responses
-      max_tokens: 500,
-      top_p: 0.9
-    });
-
-    const assistantMessage = completion.choices[0]?.message?.content;
-
-    if (!assistantMessage) {
-      throw new Error('No response from AI');
+    // Get the most recent user message
+    const lastUserMessage = messages.filter(m => m.role === 'user').pop();
+    
+    // Check if question is portfolio-related
+    if (lastUserMessage && !isPortfolioRelated(lastUserMessage.content)) {
+      const offTopicResponse = "I'm specifically designed to answer questions about Ifeanyi Hope's portfolio and professional background. Please ask me about her experience, projects, skills, or how to contact her!";
+      
+      // Return a simple text response for off-topic questions
+      return new Response(offTopicResponse, {
+        headers: {
+          'Content-Type': 'text/plain',
+        }
+      });
     }
 
-    return NextResponse.json({ 
-      message: assistantMessage,
-      success: true 
+    // Use Groq SDK with streaming
+    const stream = await groq.chat.completions.create({
+      messages: [
+        { role: 'system', content: SYSTEM_PROMPT },
+        ...messages
+      ],
+      model: 'llama-3.3-70b-versatile',
+      temperature: 0.5,
+      max_tokens: 500,
+      top_p: 0.9,
+      stream: true,
+    });
+
+    // Create a custom streaming response with delay
+    const encoder = new TextEncoder();
+    const slowStream = new ReadableStream({
+      async start(controller) {
+        try {
+          for await (const chunk of stream) {
+            const content = chunk.choices[0]?.delta?.content || '';
+            if (content) {
+              // Encode the content with the proper data stream format
+              const text = `0:${JSON.stringify(content)}\n`;
+              controller.enqueue(encoder.encode(text));
+              
+              // Add delay between chunks for slower streaming effect
+              await new Promise(resolve => setTimeout(resolve, 30));
+            }
+          }
+          controller.close();
+        } catch (error) {
+          controller.error(error);
+        }
+      }
+    });
+
+    return new Response(slowStream, {
+      headers: {
+        'Content-Type': 'text/plain; charset=utf-8',
+        'Transfer-Encoding': 'chunked',
+      }
     });
 
   } catch (error) {
-    console.error('Chat API Error:', error);
-    
-    return NextResponse.json(
-      { 
-        error: 'Failed to process chat message',
-        message: "I apologize, but I'm having trouble responding right now. Please try again or use the contact form below to reach Hope directly."
-      },
-      { status: 500 }
-    );
+    console.error('API Error:', error);
+    return new Response(JSON.stringify({
+      error: "Internal server error",
+      details: error.message || 'Unknown error'
+    }), {
+      status: 500,
+      headers: {
+        'Content-Type': 'application/json',
+      }
+    });
   }
 }

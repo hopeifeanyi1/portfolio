@@ -53,6 +53,7 @@ const ChatBot = () => {
       timestamp: new Date()
     };
 
+    const currentInput = input;
     setMessages(prev => [...prev, userMessage]);
     setInput('');
     setIsLoading(true);
@@ -68,23 +69,70 @@ const ChatBot = () => {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ 
-          message: input,
-          conversationHistory: messages.slice(-6)
+          messages: [...messages, userMessage].map(m => ({
+            role: m.role,
+            content: m.content
+          }))
         })
       });
 
-      const data = await response.json();
-
-      if (response.ok) {
-        setMessages(prev => [...prev, {
-          role: 'assistant',
-          content: data.message,
-          timestamp: new Date()
-        }]);
-      } else {
-        throw new Error(data.error || 'Failed to get response');
+      if (!response.ok) {
+        throw new Error('Failed to get response');
       }
+
+      // Create assistant message placeholder
+      const assistantMessageId = Date.now();
+      setMessages(prev => [...prev, {
+        id: assistantMessageId,
+        role: 'assistant',
+        content: '',
+        timestamp: new Date()
+      }]);
+
+      // Read the stream
+      const reader = response.body.getReader();
+      const decoder = new TextDecoder();
+      let accumulatedContent = '';
+
+      while (true) {
+        const { done, value } = await reader.read();
+        
+        if (done) break;
+
+        const chunk = decoder.decode(value, { stream: true });
+        const lines = chunk.split('\n');
+
+        for (const line of lines) {
+          if (line.trim()) {
+            try {
+              // Parse the streamed data format: "0:"content""
+              if (line.startsWith('0:')) {
+                const jsonStr = line.slice(2);
+                const content = JSON.parse(jsonStr);
+                accumulatedContent += content;
+                
+                // Update the assistant message with accumulated content
+                setMessages(prev => prev.map(msg => 
+                  msg.id === assistantMessageId
+                    ? { ...msg, content: accumulatedContent }
+                    : msg
+                ));
+              }
+            } catch (e) {
+              // If parsing fails, treat the whole line as content
+              accumulatedContent += line;
+              setMessages(prev => prev.map(msg => 
+                msg.id === assistantMessageId
+                  ? { ...msg, content: accumulatedContent }
+                  : msg
+              ));
+            }
+          }
+        }
+      }
+
     } catch (error) {
+      console.error('Chat error:', error);
       setMessages(prev => [...prev, {
         role: 'assistant',
         content: "I apologize, but I'm having trouble responding right now. Please try again.",
@@ -169,7 +217,7 @@ const ChatBot = () => {
                 <>
                   {messages.map((message, index) => (
                     <motion.div
-                      key={index}
+                      key={message.id || index}
                       initial={{ opacity: 0, y: 10 }}
                       animate={{ opacity: 1, y: 0 }}
                       className={`flex ${message.role === 'user' ? 'justify-end' : 'justify-start'}`}
@@ -182,13 +230,15 @@ const ChatBot = () => {
                         }`}
                       >
                         <p className="text-sm whitespace-pre-wrap">{message.content}</p>
-                        <span className="text-xs opacity-70 mt-1 block">
-                          {message.timestamp.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })}
-                        </span>
+                        {message.content && (
+                          <span className="text-xs opacity-70 mt-1 block">
+                            {message.timestamp.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })}
+                          </span>
+                        )}
                       </div>
                     </motion.div>
                   ))}
-                  {isLoading && (
+                  {isLoading && messages[messages.length - 1]?.role === 'user' && (
                     <motion.div
                       initial={{ opacity: 0 }}
                       animate={{ opacity: 1 }}

@@ -66,8 +66,8 @@ const StylePanel = ({ isOpen, onClose, originPosition }) => {
     const saved = {
       theme: "dark",
       shape: "conservative",
-      brandColor: "",
-      accentColor: "",
+      brandColor: "cyan",
+      accentColor: "cyan",
       neutralColor: "gray",
       solidStyle: "color",
       effect: "flat",
