@@ -5,17 +5,12 @@ import { MessageCircle, X, Send, Loader2 } from 'lucide-react';
 
 const ChatBot = () => {
   const [isOpen, setIsOpen] = useState(false);
-  const [messages, setMessages] = useState([
-    {
-      role: 'assistant',
-      content: "Hi! I'm Hope's AI assistant. Ask me anything about her experience, projects, or skills!",
-      timestamp: new Date()
-    }
-  ]);
+  const [messages, setMessages] = useState([]);
   const [input, setInput] = useState('');
   const [isLoading, setIsLoading] = useState(false);
   const messagesEndRef = useRef(null);
-  const inputRef = useRef(null);
+  const textAreaRef = useRef(null);
+  const [isExpanded, setIsExpanded] = useState(false);
 
   const scrollToBottom = () => {
     messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' });
@@ -26,10 +21,27 @@ const ChatBot = () => {
   }, [messages]);
 
   useEffect(() => {
-    if (isOpen && inputRef.current) {
-      inputRef.current.focus();
+    if (isOpen && textAreaRef.current) {
+      textAreaRef.current.focus();
     }
   }, [isOpen]);
+
+  useEffect(() => {
+    if (!input && textAreaRef.current) {
+      textAreaRef.current.style.height = '52px';
+      setIsExpanded(false);
+    }
+  }, [input]);
+
+  const handleInput = (e) => {
+    setInput(e.target.value);
+    const textarea = e.target;
+    textarea.style.height = "auto";
+    const newHeight = Math.min(textarea.scrollHeight, 100);
+    textarea.style.height = `${newHeight}px`;
+    setIsExpanded(newHeight > 30);
+    textarea.style.overflowY = newHeight === 100 ? "auto" : "hidden";
+  };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -44,6 +56,12 @@ const ChatBot = () => {
     setMessages(prev => [...prev, userMessage]);
     setInput('');
     setIsLoading(true);
+
+    // Reset textarea height
+    if (textAreaRef.current) {
+      textAreaRef.current.style.height = '52px';
+      setIsExpanded(false);
+    }
 
     try {
       const response = await fetch('/api/chat', {
@@ -122,61 +140,95 @@ const ChatBot = () => {
 
             {/* Messages */}
             <div className="flex-1 overflow-y-auto p-4 space-y-4">
-              {messages.map((message, index) => (
+              {messages.length === 0 && !isLoading ? (
                 <motion.div
-                  key={index}
-                  initial={{ opacity: 0, y: 10 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  className={`flex ${message.role === 'user' ? 'justify-end' : 'justify-start'}`}
+                  initial={{ opacity: 0, scale: 0.9 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  className="flex items-center justify-center h-full"
                 >
-                  <div
-                    className={`max-w-[80%] px-4 py-2 rounded-2xl ${
-                      message.role === 'user'
-                        ? 'dynamic-gradient text-white'
-                        : 'bg-gray-100 dark:bg-gray-800 text-gray-900 dark:text-white'
-                    }`}
-                  >
-                    <p className="text-sm whitespace-pre-wrap">{message.content}</p>
-                    <span className="text-xs opacity-70 mt-1 block">
-                      {message.timestamp.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })}
-                    </span>
+                  <div className="text-center px-6">
+                    <motion.h3
+                      initial={{ y: -10, opacity: 0 }}
+                      animate={{ y: 0, opacity: 1 }}
+                      transition={{ delay: 0.3 }}
+                      className="text-lg font-semibold text-gray-900 dark:text-white mb-2"
+                    >
+                      Hi! I&apos;m Hope&apos;s AI assistant
+                    </motion.h3>
+                    <motion.p
+                      initial={{ y: -10, opacity: 0 }}
+                      animate={{ y: 0, opacity: 1 }}
+                      transition={{ delay: 0.4 }}
+                      className="text-sm text-gray-600 dark:text-gray-400"
+                    >
+                      Ask me anything about her experience, projects, or skills!
+                    </motion.p>
                   </div>
                 </motion.div>
-              ))}
-              {isLoading && (
-                <motion.div
-                  initial={{ opacity: 0 }}
-                  animate={{ opacity: 1 }}
-                  className="flex justify-start"
-                >
-                  <div className="bg-gray-100 dark:bg-gray-800 px-4 py-2 rounded-2xl">
-                    <Loader2 className="w-5 h-5 animate-spin text-gray-600 dark:text-gray-400" />
-                  </div>
-                </motion.div>
+              ) : (
+                <>
+                  {messages.map((message, index) => (
+                    <motion.div
+                      key={index}
+                      initial={{ opacity: 0, y: 10 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      className={`flex ${message.role === 'user' ? 'justify-end' : 'justify-start'}`}
+                    >
+                      <div
+                        className={`max-w-[80%] px-4 py-2 rounded-2xl ${
+                          message.role === 'user'
+                            ? 'dynamic-gradient text-white'
+                            : 'bg-gray-100 dark:bg-gray-800 text-gray-900 dark:text-white'
+                        }`}
+                      >
+                        <p className="text-sm whitespace-pre-wrap">{message.content}</p>
+                        <span className="text-xs opacity-70 mt-1 block">
+                          {message.timestamp.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })}
+                        </span>
+                      </div>
+                    </motion.div>
+                  ))}
+                  {isLoading && (
+                    <motion.div
+                      initial={{ opacity: 0 }}
+                      animate={{ opacity: 1 }}
+                      className="flex justify-start"
+                    >
+                      <div className="bg-gray-100 dark:bg-gray-800 px-4 py-2 rounded-2xl">
+                        <Loader2 className="w-5 h-5 animate-spin text-gray-600 dark:text-gray-400" />
+                      </div>
+                    </motion.div>
+                  )}
+                  <div ref={messagesEndRef} />
+                </>
               )}
-              <div ref={messagesEndRef} />
             </div>
 
             {/* Input */}
-            <form onSubmit={handleSubmit} className="p-4 border-t border-gray-200 dark:border-gray-800">
-              <div className="flex gap-2">
-                <input
-                  ref={inputRef}
-                  type="text"
-                  value={input}
-                  onChange={(e) => setInput(e.target.value)}
-                  placeholder="Ask me anything..."
-                  disabled={isLoading}
-                  className="flex-1 px-4 py-2 dynamic-rounded bg-gray-100 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 focus:outline-none focus:ring-2 focus:ring-purple-500 text-gray-900 dark:text-white placeholder-gray-500 disabled:opacity-50"
-                />
-                <button
-                  type="submit"
-                  disabled={isLoading || !input.trim()}
-                  className="p-2 dynamic-rounded dynamic-gradient text-white disabled:opacity-50 disabled:cursor-not-allowed hover:shadow-lg transition-all"
-                >
-                  <Send className="w-5 h-5" />
-                </button>
-              </div>
+            <form onSubmit={handleSubmit} className={`flex items-end absolute lg:bottom-2 bottom-1.5 left-[5%] bg-white dark:bg-gray-800 w-[90%] px-4 py-1 min-h-[50px] transition-all duration-300 ${isExpanded ? "rounded-2xl" : "rounded-full"}`}>
+              <textarea
+                ref={textAreaRef}
+                value={input}
+                onChange={handleInput}
+                placeholder="Type your message here..."
+                className="pl-2 lg:mr-5 mr-2 outline-none w-full resize-none bg-transparent max-h-[180px] overflow-y-hidden py-3 dark:text-white"
+                rows={1}
+                disabled={isLoading}
+              />
+
+              <button 
+                type="submit" 
+                className={`rounded-full dynamic-gradient w-10 h-10 flex items-center justify-center shrink-0 ${isExpanded ? "" : "my-auto"} ${
+                  isLoading ? 'opacity-50 cursor-not-allowed' : ''
+                }`}
+                disabled={isLoading}
+              >
+                {isLoading ? (
+                  <Loader2 className="w-5 h-5 animate-spin text-white dark:text-black" />
+                ) : (
+                  <Send className="w-6 h-6 text-white dark:text-black" />
+                )}
+              </button>
             </form>
           </motion.div>
         )}
