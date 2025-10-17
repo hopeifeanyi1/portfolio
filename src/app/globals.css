@@ -4,9 +4,9 @@
 
 /* CSS Custom Properties for Dynamic Colors */
 :root {
-  /* Default colors - purple and pink */
-  --brand-color: 168, 85, 247; /* purple-500 */
-  --accent-color: 236, 72, 153; /* pink-500 */
+  /* Default colors */
+  --brand-color: 6, 182, 212; 
+  --accent-color: 6, 182, 212; 
 }
 
 /* Color mappings for brand */

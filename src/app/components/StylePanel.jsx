@@ -22,8 +22,8 @@ const StylePanel = ({ isOpen, onClose, originPosition }) => {
   // Style states
   const [theme, setTheme] = useState("dark");
   const [shape, setShape] = useState("conservative");
-  const [brandColor, setBrandColor] = useState("purple");
-  const [accentColor, setAccentColor] = useState("pink");
+  const [brandColor, setBrandColor] = useState("");
+  const [accentColor, setAccentColor] = useState("");
   const [neutralColor, setNeutralColor] = useState("gray");
   const [solidStyle, setSolidStyle] = useState("color");
   const [effect, setEffect] = useState("flat");
@@ -66,8 +66,8 @@ const StylePanel = ({ isOpen, onClose, originPosition }) => {
     const saved = {
       theme: "dark",
       shape: "conservative",
-      brandColor: "purple",
-      accentColor: "pink",
+      brandColor: "",
+      accentColor: "",
       neutralColor: "gray",
       solidStyle: "color",
       effect: "flat",

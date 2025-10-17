@@ -4,7 +4,7 @@ import { useState, useEffect } from 'react'
 const CursorSpotlight = () => {
   const [position, setPosition] = useState({ x: 100, y: 100 })
   const [spotlightSize, setSpotlightSize] = useState(600)
-  const [brandColor, setBrandColor] = useState('168, 85, 247') // purple-500 default
+  const [brandColor, setBrandColor] = useState('6, 182, 212')
 
   // Color mapping
   const colorMap = {

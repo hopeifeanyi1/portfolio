@@ -139,7 +139,7 @@ const ChatBot = () => {
             </div>
 
             {/* Messages */}
-            <div className="flex-1 overflow-y-auto p-4 space-y-4">
+            <div className="flex-1 overflow-y-auto px-4 pt-4 pb-16 space-y-4">
               {messages.length === 0 && !isLoading ? (
                 <motion.div
                   initial={{ opacity: 0, scale: 0.9 }}
@@ -205,7 +205,7 @@ const ChatBot = () => {
             </div>
 
             {/* Input */}
-            <form onSubmit={handleSubmit} className={`flex items-end absolute lg:bottom-2 bottom-1.5 left-[5%] bg-white dark:bg-gray-800 w-[90%] px-4 py-1 min-h-[50px] transition-all duration-300 ${isExpanded ? "rounded-2xl" : "rounded-full"}`}>
+            <form onSubmit={handleSubmit} className={`dark:border-none border border-1 flex items-end absolute lg:bottom-2 bottom-1.5 left-[5%] bg-white dark:bg-gray-800 w-[90%] px-4 py-1 min-h-[50px] transition-all duration-300 ${isExpanded ? "rounded-2xl" : "rounded-full"}`}>
               <textarea
                 ref={textAreaRef}
                 value={input}
