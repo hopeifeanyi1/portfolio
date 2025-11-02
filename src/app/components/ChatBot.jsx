@@ -155,7 +155,7 @@ const ChatBot = () => {
             whileHover={{ scale: 1.1 }}
             whileTap={{ scale: 0.9 }}
             onClick={() => setIsOpen(true)}
-            className="fixed bottom-6 left-6 z-40 p-3 dynamic-rounded dynamic-gradient text-white shadow-lg hover:shadow-xl transition-all"
+            className="fixed bottom-8 left-6 z-40 p-3 dynamic-rounded dynamic-gradient text-white shadow-lg hover:shadow-xl transition-all"
           >
             <MessageCircle className="w-5 h-5" />
           </motion.button>

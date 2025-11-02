@@ -92,7 +92,7 @@ const NavBar = () => {
         initial={{ opacity: 0, y: -20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5, delay: 0.1 }}
-        className="fixed top-6 right-6 z-50 md:top-6 md:right-6 max-md:top-auto max-md:bottom-6"
+        className="fixed top-6 right-6 z-50 md:top-6 md:right-6 max-md:top-auto max-md:bottom-8"
       >
         <button
           ref={buttonRef}

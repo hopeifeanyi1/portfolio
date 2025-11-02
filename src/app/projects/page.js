@@ -9,39 +9,28 @@ import { motion, useInView } from 'framer-motion'
 const projectData = [
     {
         id: 1,
-        title: "AppEasy",
-        description: "Track Your Job Application and Analze Job Description",
-        tools: "Three js, Next js, Tailwind, Typescript, Groq AI, Next API, Firebase",
-        image: "/images/appeasy.png",
-        tag: ["All", "Web"],
-        gitUrl: "https://github.com/hopeifeanyi1/job-tracker",
-        previewUrl: "https://appeasy-alpha.vercel.app",
+        title: "CareerlyAI",
+        description: "AI-powered career platform that provides personalized career guidance, skill gap analysis, resume optimization, and job matching for students and graduates.",
+        tools: "Three js, Next.js, Typescript, Zustand, Groq AI, Nest.js, Postgres, Tailwind, Next API, Supabase",
+        image: "/images/careerlyai.png",
+        tag: ["All", "Web", "Mobile"],
+        gitUrl: "https://github.com/hopeifeanyi1",
+        previewUrl: "https://careerlyai.app",
         
     },
     {
         id: 2,
         title: "Easy Therapy",
         description: "Mental health chatbot website.",
-        tools: "Typescript, Tailwind, Groq AI, Firebase, Express, Next.js",
+        tools: "Typescript, Tailwind, Groq AI, Firebase, Express, Next.js, Context API",
         image: "/images/easy.png",
         tag: ["All", "Web"],
         gitUrl: "https://github.com/hopeifeanyi1/mental-health",
         previewUrl: "https://easy-therapy.vercel.app",
         
     },
-    {
+     {
         id: 3,
-        title: "Careerly",
-        description: "Career Navigator AI, Tailored Job Posting, Learning Resources, and AI Mentorship",
-        tools: "Next.js, React, Typescript, Tailwind, Rapid API, Groq AI, Firebase, Express",
-        image: "/careerly.png",
-        tag: ["All", "Web"],
-        gitUrl: "https://github.com/hopeifeanyi1",
-        previewUrl: "https://carerly.vercel.app",
-        
-    },
-    {
-        id: 4,
         title: "Krist E-Commerce Website",
         description: "Krist is a shopping E-commerce website.",
         tools: "React js, Tailwind, Next.js",
@@ -52,7 +41,29 @@ const projectData = [
         
     },
     {
+        id: 4,
+        title: "AppEasy",
+        description: "Track Your Job Application and Analze Job Description",
+        tools: "Three js, Next js, Tailwind, Typescript, Groq AI, Next API, Firebase, Context API",
+        image: "/images/appeasy.png",
+        tag: ["All", "Web"],
+        gitUrl: "https://github.com/hopeifeanyi1/job-tracker",
+        previewUrl: "https://appeasy-alpha.vercel.app",
+        
+    },
+    {
         id: 5,
+        title: "Careerly",
+        description: "Career Navigator AI, Tailored Job Posting, Learning Resources, and AI Mentorship",
+        tools: "Next.js, React, Typescript, Tailwind, Rapid API, Groq AI, Firebase, Express",
+        image: "/careerly.png",
+        tag: ["All", "Web"],
+        gitUrl: "https://github.com/hopeifeanyi1",
+        previewUrl: "https://carerly.vercel.app",
+        
+    },
+    {
+        id: 6,
         title: "Life Ledger",
         description: "Life Ledger is your AI-powered decision tracker",
         tools: "React js, Tailwind, Next.js, Typescript, Supabase, PostgreSQL",
@@ -63,7 +74,7 @@ const projectData = [
         
     },
     {
-        id: 6,
+        id: 7,
         title: "Pomat Health",
         description: "I collaborated as a frontend developer to build a website for a biolab conducting clinical trials and research aimed at developing solutions to human health challenges.",
         tools: "TypeScript, React, Next, Taiwind",
@@ -73,7 +84,7 @@ const projectData = [
         previewUrl: "https://www.pomathealth.com/",
     },
     {
-        id: 7,
+        id: 8,
         title: "Weather App",
         description: "This is a Weather Application that allows users to search and view the current weather conditions in their desired cities.",
         tools: "TypeScript, React, Next, Openweather API",
@@ -83,7 +94,7 @@ const projectData = [
         previewUrl: "https://hope-weather-app.vercel.app/",
     },
     {
-        id: 8,
+        id: 9,
         title: "Shuttle Bus Tracker",
         description: "A frontend-only shuttle bus tracker that allows users to locate nearby shuttle buses and provides features for chatting and calling drivers, offering an intuitive user interface for seamless interaction,",
         tools: "React js, Tailwind, Next js",
@@ -94,7 +105,7 @@ const projectData = [
         
     },
     {
-        id: 9,
+        id: 10,
         title: "Movies",
         description: "This website is a movie catalog showcasing films with titles, images, descriptions, and genres from a JSON file. Users can browse popular movies.",
         tools: "React js",
