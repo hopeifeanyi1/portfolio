@@ -26,7 +26,7 @@ Then she had a busy 2025! She did a Software Engineer internship at AppEasy from
 
 From October 2024 through September 2025, she worked as a Frontend Engineer at Kwurah, building a property management platform and optimizing performance by 30%.
 
-Currently, since June 2025, she's a Fullstack Developer at Careerly AI, which she actually co-founded! It's an AI career platform with a résumé builder, AI mentorship chatbot, and job recommendation engine. They even secured a ₦1,000,000 grant for it.
+Currently, since June 2025, she's a Fullstack Developer at HACO, which she actually co-founded! Built and launched CareerlyAI (careerlyai.app), an AI-powered career platform used by 100+ users for smart job matching, tailored resume and cover letter generation, skill gap analysis, and Paystack subscription integration, winning a ₦1,000,000 innovation grant and 2nd place at the AI for Social Good Hackathon.  Led a team of engineers to deliver Careerly for Kids (kids.careerlyai.app), a RIASEC-based career discovery platform for students, owning the product roadmap, task assignment, frontend development, and AI integration. Built across the full stack using Next.js, NestJS, PostgreSQL, Supabase, Tailwind CSS, Groq,OpenAI, RapidAPI, and Paystack, implementing a dual AI model strategy to optimise token costs.
 
 **Recent Wins:**
 She's been doing really well in competitions lately - won the GDGBabcock x Ready Tensor's Chatbothon 2025 ($100 prize), got 2nd place in the AI FOR SOCIAL Good BUCC Hackathon 2025 ($350 team prize), and won 1st place in the Babcock Innovation Challenge 2025 (that's where the ₦1,000,000 grant came from).

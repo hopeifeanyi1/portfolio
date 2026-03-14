@@ -7,18 +7,16 @@ const experiences = [
   {
     id: 1,
     role: "Fullstack Developer",
-    company: "Careerly AI",
+    company: "HACO",
     location: "Nigeria",
     period: "June 2025 - Present",
     description: "Co-founded Careerly AI: résumé builder, AI mentorship chatbot, and job recommendation engine.",
     achievements: [
-      "Built backend with NestJS, PostgreSQL, and Supabase",
-      "Integrated RapidAPI for real-time job listings across multiple platforms",
-      "Implemented AI personalization with Groq Cloud and OpenAI",
-      "Developed frontend with Next.js, React, and Tailwind CSS",
-      "Secured ₦1,000,000 innovation grant"
+      "Built and launched CareerlyAI (careerlyai.app), an AI-powered career platform used by 100+ users for smart job matching, tailored resume and cover letter generation, skill gap analysis, and Paystack subscription integration, winning a ₦1,000,000 innovation grant and 2nd place at the AI for Social Good Hackathon.",
+      "Led a team of engineers to deliver Careerly for Kids (kids.careerlyai.app), a RIASEC-based career discovery platform for students, owning the product roadmap, task assignment, frontend development, and AI integration",
+      " Built across the full stack using Next.js, NestJS, PostgreSQL, Supabase, Tailwind CSS, Groq, OpenAI, RapidAPI, and Paystack,implementing a dual AI model strategy to optimise token costs.",
     ],
-    technologies: ["NestJS", "PostgreSQL", "Next.js", "React", "Tailwind CSS", "Groq AI", "OpenAI"]
+    technologies: ["NestJS", "PostgreSQL", "Next.js", "React", "Three.js", "Tailwind CSS", "Groq AI", "OpenAI"]
   },
   {
     id: 2,
