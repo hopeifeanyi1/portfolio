@@ -10,27 +10,27 @@ const experiences = [
     company: "HACO",
     location: "Nigeria",
     period: "June 2025 - Present",
-    description: "Co-founded Careerly AI: résumé builder, AI mentorship chatbot, and job recommendation engine.",
+    description: "Built and scaled two AI-powered products serving students and graduates across Africa.",
     achievements: [
       "Built and launched CareerlyAI (careerlyai.app), an AI-powered career platform used by 100+ users for smart job matching, tailored resume and cover letter generation, skill gap analysis, and Paystack subscription integration, winning a ₦1,000,000 innovation grant and 2nd place at the AI for Social Good Hackathon.",
       "Led a team of engineers to deliver Careerly for Kids (kids.careerlyai.app), a RIASEC-based career discovery platform for students, owning the product roadmap, task assignment, frontend development, and AI integration",
       " Built across the full stack using Next.js, NestJS, PostgreSQL, Supabase, Tailwind CSS, Groq, OpenAI, RapidAPI, and Paystack,implementing a dual AI model strategy to optimise token costs.",
     ],
-    technologies: ["NestJS", "PostgreSQL", "Next.js", "React", "Three.js", "Tailwind CSS", "Groq AI", "OpenAI"]
+    technologies: ["NestJS", "PostgreSQL", "Next.js", "React", "Three.js", "Tailwind CSS", "Groq AI", "OpenAI", "Supabase", "Paystack"]
   },
   {
     id: 2,
     role: "Frontend Engineer",
     company: "Kwurah",
     location: "Canada",
-    period: "October 2024 - September 2025",
-    description: "Built scalable property management platform.",
+    period: "October 2024 - Present",
+    description: "First frontend engineer on a Canada-based property management startup.",
     achievements: [
-      "Developed platform using Next.js, TypeScript, React, and Tailwind CSS",
-      "Integrated multiple APIs to expand functionality",
-      "Optimized performance, reducing load times by 30%"
+      "Built the frontend of a property management platform (proptility.com) from scratch using Next.js, TypeScript, React, and Tailwind CSS,delivering 6 core modules, dashboard, properties, occupants financials, insights, and communications",
+      " Integrated location and device fingerprint APIs to enable property geolocation and secure new device/new location login detection",
+      "Optimised data fetching by prefetching and caching property data at login, eliminating redundant API calls and reducing loading states across the platform."
     ],
-    technologies: ["Next.js", "TypeScript", "React", "Tailwind CSS"]
+    technologies: ["Next.js", "TypeScript", "React", "Tailwind CSS", "Zustand"]
   },
   {
     id: 3,
@@ -38,13 +38,12 @@ const experiences = [
     company: "CenosTechnology",
     location: "Nigeria",
     period: "June 2025 - September 2025",
-    description: "Led e-commerce MVP development as Acting CTO.",
+    description: "Led frontend development and engineering team as Acting CTO during internship.",
     achievements: [
-      "Led cross-functional team and sprint planning",
-      "Delivered MVP within tight deadlines",
-      "Improved UX through iterative enhancements"
+      "Built the frontend of Bokimart, a role-based e-commerce platform with dedicated interfaces for shoppers, store keepers, and admins,featuring inventory management, product purchasing, and delivery tracking, using Next.js, React, TypeScript, Tailwind CSS, and Zustand",
+      "Led sprint planning and task delegation across the engineering team as Acting CTO, delivering the MVP within the internship timeline.",
     ],
-    technologies: ["React", "Next.js", "Tailwind CSS", "TypeScript"]
+    technologies: ["React", "Next.js", "Tailwind CSS", "TypeScript", "Zustand"]
   },
   {
     id: 4,
@@ -52,13 +51,13 @@ const experiences = [
     company: "AppEasy",
     location: "Los Angeles",
     period: "July 2025 - August 2025",
-    description: "Consolidated microservices and built fullstack features.",
+    description: "Worked across backend and frontend for a US-based job application platform.",
     achievements: [
-      "Unified four backend microservices (Stripe, email, résumé tools)",
-      "Optimized features using Next.js, React, Node.js, and MongoDB",
+      "Consolidated four backend microservices, Stripe payments, email service, Gemini AI resume analyzer, and job application matching, into a unified Express/Supabase system",
+      " Redesigned the landing page with 2D and 3D UI components, built reusable frontend components using React, Vite, and TypeScript",
       "Implemented deployment pipelines with Sentry monitoring"
     ],
-    technologies: ["Next.js", "React", "Node.js", "MongoDB", "Sentry"]
+    technologies: ["React", "Node.js", "Tailwind", "Supabase", "Express", "Sentry"]
   },
   {
     id: 5,
@@ -66,13 +65,12 @@ const experiences = [
     company: "MTN Nigeria",
     location: "Nigeria",
     period: "January 2024 - July 2024",
-    description: "Maintained SSP Backoffice and led frontend projects.",
+    description: "Contributed to mission-critical internal platforms at Nigeria's largest telecom company.",
     achievements: [
-      "Updated SSP Backoffice for SIM registrations",
-      "Led Bus Tracker Project frontend development",
-      "Built Avatar Portal website frontend"
+      "Maintained and developed new features for the SSP Backoffice, a mission-critical platform managing agent operations and SIM card registrations for 1,000,000+ agents across Nigeria's largest telecom network.",
+      " Built the frontend for two internal platforms (Bus Tracker and Avatar Portal) using Next.js, TypeScript, Tailwind CSS, and Shadcn.",
     ],
-    technologies: ["React", "JavaScript", "Tailwind CSS"]
+    technologies: ["React", "TypeScript", "Next.js", "Tailwind CSS"]
   },
   {
     id: 6,
@@ -80,20 +78,20 @@ const experiences = [
     company: "BUCC Software Development Team",
     location: "Nigeria",
     period: "June 2022 - July 2025",
-    description: "Maintained university portals and built authentication platform.",
+    description: "Maintained and built university platforms serving the Babcock student community.",
     achievements: [
-      "Maintained SIWES Portal with React and Redux",
-      "Developed Single Sign-On platform with Next.js and TypeScript",
-      "Collaborated with teams to enhance functionality"
+      "Maintained and enhanced the SIWES Portal serving 1,000+ active students per cycle, using React, JavaScript, Tailwind CSS, and Redux",
+      "Built the frontend of the BUCC Single Sign-On platform using Next.js, React, TypeScript, Tailwind CSS, and Zustand, streamlining authentication and user access.",
     ],
-    technologies: ["React", "Next.js", "TypeScript", "Tailwind CSS", "Redux", "Zustard"]
+    technologies: ["React", "Next.js", "TypeScript", "Tailwind CSS", "Redux"]
   }
 ]
 
 const awards = [
-  "Winner, GDGBabcock x Ready Tensor's Chatbothon, 2025 (Received $100 prize)",
+  
+  "1st Place, Babcock Innovation Challenge 2025 (Team earned ₦1,000,000 business grant)",
   "2nd Place, AI FOR SOCIAL Good - BUCC Hackathon Competition, 2025 (Team earned $350)",
-  "1st Place, Babcock Innovation Challenge 2025 (Team earned ₦1,000,000 business grant)"
+  "Winner, GDGBabcock x Ready Tensor's Chatbothon, 2025 (Received $100 prize)"
 ]
 
 const Experience = () => {
