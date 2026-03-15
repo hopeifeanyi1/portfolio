@@ -183,15 +183,7 @@ const AboutSection = () => {
           className=""
         >
           <p className="text-gray-600 dark:text-gray-300 text-[16px] leading-relaxed mb-8">
-            I&apos;m a full-stack software engineer with 4 years of frontend and
-            2 years of backend experience. I&apos;m passionate about solving
-            real-world problems through high-performance, scalable systems.
-            Deeply product and process-driven, I focus on delivering reliable
-            solutions with exceptional performance at scale. I specialize in
-            React.js, Next.js, TypeScript, and Nest.js, with a strong emphasis
-            on performance optimization, system reliability, and scalable
-            architecture. As a 3-time hackathon winner, I bring both speed and
-            quality to every project I build.
+            I&apos;m a Frontend & Full-Stack Engineer with 4 years of experience specialising in React, Next.js, TypeScript, and NestJS. Co-founder of Haco, builder of AI-powered products, hackathon winner, and grant recipient. I build things that ship, work, and scale.
           </p>
 
           <div className="flex flex-wrap justify-center gap-6 mb-10">

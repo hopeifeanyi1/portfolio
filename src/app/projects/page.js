@@ -1,194 +1,20 @@
-//src/app/project/page.js
-"use client";
-import React, { useState, useRef } from "react";
-import ProjectCard from "../components/ProjectCard";
-import ProjectTag from "../components/ProjectTag";
-import { motion, useInView } from "framer-motion";
+import ProjectClient from "./ProjectClient";
 
-const projectData = [
-  {
-    id: 1,
-    title: "CareerlyAI",
+export const metadata = {
+  title: "Projects",
+  description:
+    "Projects by Ifeanyi Hope — CareerlyAI, Easy Therapy, AppEasy, and more. Built with Next.js, React, TypeScript, NestJS, and AI APIs.",
+  alternates: {
+    canonical: "https://hopeifeanyi.vercel.app/project",
+  },
+  openGraph: {
+    title: "Projects — Ifeanyi Hope",
     description:
-      "AI-powered career platform that provides personalized career guidance, skill gap analysis, resume optimization, and job matching for students and graduates.",
-    tools:
-      "Three js, Next.js, Typescript, Zustand, Groq AI, openai, NestJS, Postgres, Tailwind, Supabase, Paystack",
-    image: "/images/careerlyai.png",
-    tag: ["All", "Web", "Mobile"],
-    gitUrl: "https://github.com/hopeifeanyi1",
-    previewUrl: "https://careerlyai.app",
+      "Portfolio of web apps and AI-powered tools built by Ifeanyi Hope using Next.js, React, TypeScript, and NestJS.",
+    url: "https://hopeifeanyi.vercel.app/project",
   },
-  {
-    id: 2,
-    title: "Easy Therapy",
-    description: "Mental health chatbot website.",
-    tools:
-      "Typescript, Tailwind, Groq AI, Firebase, Express, Next.js, Context API",
-    image: "/images/easy.png",
-    tag: ["All", "Web"],
-    gitUrl: "https://github.com/hopeifeanyi1/mental-health",
-    previewUrl: "https://easy-therapy.vercel.app",
-  },
-  {
-    id: 3,
-    title: "Krist E-Commerce Website",
-    description: "Krist is a shopping E-commerce website.",
-    tools: "React js, Tailwind, Next.js",
-    image: "/images/ecommerce.png",
-    tag: ["All", "Web"],
-    gitUrl: "https://github.com/hopeifeanyi1",
-    previewUrl: "https://krist-mu.vercel.app/",
-  },
-  {
-    id: 4,
-    title: "Pomat Health",
-    description:
-      "I collaborated as a frontend developer to build a website for a biolab conducting clinical trials and research aimed at developing solutions to human health challenges.",
-    tools: "TypeScript, React, Next, Taiwind",
-    image: "/images/pomat.png",
-    tag: ["All", "Web"],
-    gitUrl: "https://github.com/hopeifeanyi1",
-    previewUrl: "https://www.pomathealth.com/",
-  },
-  {
-    id: 5,
-    title: "AppEasy",
-    description: "Track Your Job Application and Analze Job Description",
-    tools:
-      "Three js, Next js, Tailwind, Typescript, Groq AI, Next API, Firebase, Context API",
-    image: "/images/appeasy.png",
-    tag: ["All", "Web"],
-    gitUrl: "https://github.com/hopeifeanyi1/job-tracker",
-    previewUrl: "https://appeasy-alpha.vercel.app",
-  },
-
-  {
-    id: 6,
-    title: "Life Ledger",
-    description: "Life Ledger is your AI-powered decision tracker",
-    tools: "React js, Tailwind, Next.js, Typescript, Supabase, PostgreSQL",
-    image: "/images/LLEDGER.png",
-    tag: ["All", "Web"],
-    gitUrl: "https://github.com/hopeifeanyi1/lledger",
-    previewUrl: "https://lledger.vercel.app",
-  },
-  {
-    id: 7,
-    title: "Finance Tracker",
-    description:
-      "Simple finance tracker dashboard",
-    tools:
-      "Next.js, React, Typescript, Tailwind",
-    image: "/images/finance.png",
-    tag: ["All", "Web"],
-    gitUrl: "https://github.com/hopeifeanyi1/LAF",
-    previewUrl: "https://laf-nine.vercel.app",
-  },
-  {
-    id: 8,
-    title: "Careerly",
-    description:
-      "Career Navigator AI, Tailored Job Posting, Learning Resources, and AI Mentorship",
-    tools:
-      "Next.js, React, Typescript, Tailwind, Rapid API, Groq AI, Firebase, Express",
-    image: "/careerly.png",
-    tag: ["All", "Web"],
-    gitUrl: "https://github.com/hopeifeanyi1",
-    previewUrl: "https://carerly.vercel.app",
-  },
-  {
-    id: 9,
-    title: "Weather App",
-    description:
-      "This is a Weather Application that allows users to search and view the current weather conditions in their desired cities.",
-    tools: "TypeScript, React, Next, Openweather API",
-    image: "/images/weatherapp.png",
-    tag: ["All", "Web"],
-    gitUrl: "https://github.com/hopeifeanyi1",
-    previewUrl: "https://hope-weather-app.vercel.app/",
-  },
-];
-
-const ProjectSection = () => {
-  const [tag, setTag] = useState("All");
-  const ref = useRef(null);
-  const isInView = useInView(ref, { once: true, margin: "0px 0px -200px 0px" });
-
-  const handleTagChange = (newTag) => {
-    setTag(newTag);
-  };
-
-  const filteredProjects = projectData.filter((project) =>
-    project.tag.includes(tag),
-  );
-
-  return (
-    <section
-      id="projects"
-      className="py-10 container max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-24 lg:pt-32"
-    >
-      <motion.div
-        initial={{ opacity: 0, y: 20 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.5 }}
-        viewport={{ once: true }}
-        className="text-center max-w-3xl mx-auto mb-16"
-      >
-        <h2 className="text-3xl font-bold mb-6">My Projects</h2>
-        <div className="w-24 h-1.5 dynamic-gradient mx-auto dynamic-rounded mb-8"></div>
-        <p className="text-gray-600 dark:text-gray-300 text-lg">
-          My portfolio features various projects, with some completed and others
-          in progress. Each one emphasizes my focus on{" "}
-          <span className="text-transparent bg-clip-text dynamic-text-gradient">
-            beautiful UI design
-          </span>{" "}
-          and{" "}
-          <span className="text-transparent bg-clip-text dynamic-text-gradient">
-            elegant code
-          </span>{" "}
-          for easy maintenance and re-usability.
-        </p>
-      </motion.div>
-
-      <div className="flex flex-wrap justify-center gap-3 mb-12">
-        <ProjectTag
-          onClick={() => handleTagChange("All")}
-          name="All"
-          isSelected={tag === "All"}
-        />
-        <ProjectTag
-          onClick={() => handleTagChange("Web")}
-          name="Web"
-          isSelected={tag === "Web"}
-        />
-        <ProjectTag
-          onClick={() => handleTagChange("Mobile")}
-          name="Mobile"
-          isSelected={tag === "Mobile"}
-        />
-      </div>
-
-      <div ref={ref} className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-        {filteredProjects.map((project, index) => (
-          <motion.div
-            key={project.id}
-            initial={{ opacity: 0, y: 20 }}
-            animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
-            transition={{ duration: 0.5, delay: index * 0.1 }}
-          >
-            <ProjectCard
-              title={project.title}
-              description={project.description}
-              imgUrl={project.image}
-              gitUrl={project.gitUrl}
-              previewUrl={project.previewUrl}
-              tool={project.tools}
-            />
-          </motion.div>
-        ))}
-      </div>
-    </section>
-  );
 };
 
-export default ProjectSection;
+export default function ProjectPage() {
+  return <ProjectClient />;
+}
