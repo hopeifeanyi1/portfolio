@@ -1,4 +1,4 @@
-//src/app/components/StylePanel.jsx
+// src/app/components/StylePanel.jsx
 "use client";
 import React, { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
@@ -16,20 +16,54 @@ import {
   CarouselPrevious,
 } from "@/components/ui/carousel";
 
+const STORAGE_KEY = "portfolio-style-preferences";
+
+const defaultStyles = {
+  theme: "dark",
+  shape: "conservative",
+  brandColor: "cyan",
+  accentColor: "cyan",
+  neutralColor: "gray",
+  solidStyle: "color",
+  effect: "flat",
+  surface: "translucent",
+  scaling: "100",
+  transition: "all",
+};
+
+const loadFromStorage = () => {
+  try {
+    const saved = localStorage.getItem(STORAGE_KEY);
+    if (saved) {
+      return { ...defaultStyles, ...JSON.parse(saved) };
+    }
+  } catch (e) {
+    console.warn("Failed to load style preferences:", e);
+  }
+  return defaultStyles;
+};
+
+const saveToStorage = (styles) => {
+  try {
+    localStorage.setItem(STORAGE_KEY, JSON.stringify(styles));
+  } catch (e) {
+    console.warn("Failed to save style preferences:", e);
+  }
+};
+
 const StylePanel = ({ isOpen, onClose, originPosition }) => {
   const [mounted, setMounted] = useState(false);
 
-  // Style states
-  const [theme, setTheme] = useState("dark");
-  const [shape, setShape] = useState("conservative");
-  const [brandColor, setBrandColor] = useState("");
-  const [accentColor, setAccentColor] = useState("");
-  const [neutralColor, setNeutralColor] = useState("gray");
-  const [solidStyle, setSolidStyle] = useState("color");
-  const [effect, setEffect] = useState("flat");
-  const [surface, setSurface] = useState("translucent");
-  const [scaling, setScaling] = useState("100");
-  const [transition, setTransition] = useState("all");
+  const [theme, setTheme] = useState(defaultStyles.theme);
+  const [shape, setShape] = useState(defaultStyles.shape);
+  const [brandColor, setBrandColor] = useState(defaultStyles.brandColor);
+  const [accentColor, setAccentColor] = useState(defaultStyles.accentColor);
+  const [neutralColor, setNeutralColor] = useState(defaultStyles.neutralColor);
+  const [solidStyle, setSolidStyle] = useState(defaultStyles.solidStyle);
+  const [effect, setEffect] = useState(defaultStyles.effect);
+  const [surface, setSurface] = useState(defaultStyles.surface);
+  const [scaling, setScaling] = useState(defaultStyles.scaling);
+  const [transition, setTransition] = useState(defaultStyles.transition);
 
   const shapes = [
     { value: "conservative", label: "Conservative", radius: "rounded-md" },
@@ -59,22 +93,42 @@ const StylePanel = ({ isOpen, onClose, originPosition }) => {
     ],
   };
 
-  useEffect(() => {
-    setMounted(true);
+  const applyStyles = (styles) => {
+    const root = document.documentElement;
 
-    // Load saved preferences with purple/pink defaults
-    const saved = {
-      theme: "dark",
-      shape: "conservative",
-      brandColor: "cyan",
-      accentColor: "cyan",
-      neutralColor: "gray",
-      solidStyle: "color",
-      effect: "flat",
-      surface: "translucent",
-      scaling: "100",
-      transition: "all",
+    if (styles.theme === "dark") {
+      document.documentElement.classList.add("dark");
+    } else {
+      document.documentElement.classList.remove("dark");
+    }
+
+    root.style.setProperty("--design-shape", styles.shape);
+    root.style.setProperty("--design-brand", styles.brandColor);
+    root.style.setProperty("--design-accent", styles.accentColor);
+    root.style.setProperty("--design-neutral", styles.neutralColor);
+    root.style.setProperty("--design-solid", styles.solidStyle);
+    root.style.setProperty("--design-effect", styles.effect);
+    root.style.setProperty("--design-surface", styles.surface);
+    root.style.setProperty(
+      "--design-scaling",
+      `${parseInt(styles.scaling) / 100}`,
+    );
+    root.style.setProperty("--design-transition", styles.transition);
+
+    const radiusMap = {
+      conservative: "rounded-md",
+      rounded: "rounded-xl",
+      playful: "rounded-full",
     };
+
+    root.style.setProperty("--dynamic-radius", radiusMap[styles.shape]);
+    document.body.setAttribute("data-shape", styles.shape);
+    document.body.setAttribute("data-brand", styles.brandColor);
+    document.body.setAttribute("data-accent", styles.accentColor);
+  };
+
+  useEffect(() => {
+    const saved = loadFromStorage();
 
     setTheme(saved.theme);
     setShape(saved.shape);
@@ -88,49 +142,8 @@ const StylePanel = ({ isOpen, onClose, originPosition }) => {
     setTransition(saved.transition);
 
     applyStyles(saved);
+    setMounted(true);
   }, []);
-
-  const applyStyles = (styles) => {
-    const root = document.documentElement;
-
-    // Apply theme
-    if (styles.theme === "dark") {
-      document.documentElement.classList.add("dark");
-    } else {
-      document.documentElement.classList.remove("dark");
-    }
-
-    // Apply custom properties
-    root.style.setProperty("--design-shape", styles.shape);
-    root.style.setProperty("--design-brand", styles.brandColor);
-    root.style.setProperty("--design-accent", styles.accentColor);
-    root.style.setProperty("--design-neutral", styles.neutralColor);
-    root.style.setProperty("--design-solid", styles.solidStyle);
-    root.style.setProperty("--design-effect", styles.effect);
-    root.style.setProperty("--design-surface", styles.surface);
-    root.style.setProperty(
-      "--design-scaling",
-      `${parseInt(styles.scaling) / 100}`
-    );
-    root.style.setProperty("--design-transition", styles.transition);
-
-    // Apply border radius mapping
-    const radiusMap = {
-      conservative: "rounded-md",
-      rounded: "rounded-xl",
-      playful: "rounded-full",
-    };
-
-    const selectedRadius = radiusMap[styles.shape];
-
-    // Set CSS custom property for border radius
-    root.style.setProperty("--dynamic-radius", selectedRadius);
-
-    // Add data attributes to body for CSS targeting
-    document.body.setAttribute("data-shape", styles.shape);
-    document.body.setAttribute("data-brand", styles.brandColor);
-    document.body.setAttribute("data-accent", styles.accentColor);
-  };
 
   const handleStyleChange = (key, value) => {
     const updates = {
@@ -181,6 +194,7 @@ const StylePanel = ({ isOpen, onClose, originPosition }) => {
     }
 
     applyStyles(updates);
+    saveToStorage(updates); // ← persist on every change
   };
 
   if (!mounted) return null;
@@ -189,7 +203,6 @@ const StylePanel = ({ isOpen, onClose, originPosition }) => {
     <AnimatePresence>
       {isOpen && (
         <>
-          {/* Backdrop */}
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
@@ -198,7 +211,6 @@ const StylePanel = ({ isOpen, onClose, originPosition }) => {
             className="fixed inset-0 z-[60] bg-black/20"
           />
 
-          {/* Panel Content */}
           <motion.div
             initial={{
               scale: 0,
@@ -209,12 +221,7 @@ const StylePanel = ({ isOpen, onClose, originPosition }) => {
                 40,
               y: originPosition.y - 40,
             }}
-            animate={{
-              scale: 1,
-              opacity: 1,
-              x: 0,
-              y: 0,
-            }}
+            animate={{ scale: 1, opacity: 1, x: 0, y: 0 }}
             exit={{
               scale: 0,
               opacity: 0,
@@ -230,22 +237,20 @@ const StylePanel = ({ isOpen, onClose, originPosition }) => {
               stiffness: 300,
               mass: 0.5,
             }}
-            style={{
-              transformOrigin: "top right",
-            }}
-            className={`fixed right-2 top-5 bottom-5 lg:w-[420px] w-[90vw] bg-zinc-900 text-white shadow-2xl z-[70] overflow-y-auto dynamic-rounded`}
+            style={{ transformOrigin: "top right" }}
+            className="fixed right-2 top-5 bottom-5 lg:w-[420px] w-[90vw] bg-zinc-900 text-white shadow-2xl z-[70] overflow-y-auto dynamic-rounded"
           >
             {/* Header */}
             <div className="px-3 py-2 flex items-start justify-between">
               <div className="pl-3 pt-4">
                 <h2 className="text-lg font-semibold mb-1">Customize</h2>
-                <p className="text-sm text-gray-400 ">
+                <p className="text-sm text-gray-400">
                   Customize global design settings
                 </p>
               </div>
               <button
                 onClick={onClose}
-                className={`flex items-center justify-center w-10 h-10 dynamic-rounded lg:dynamic-gradient lg:text-white transition-all shadow-lg hover:shadow-xl hover:scale-105`}
+                className="flex items-center justify-center w-10 h-10 dynamic-rounded lg:dynamic-gradient lg:text-white transition-all shadow-lg hover:shadow-xl hover:scale-105"
               >
                 <X className="block lg:hidden" />
                 <HiOutlineSparkles className="w-5 h-5 text-white hidden lg:block" />
@@ -254,13 +259,11 @@ const StylePanel = ({ isOpen, onClose, originPosition }) => {
 
             {/* Content */}
             <div className="px-3 py-3 space-y-6">
-              {/* Theme */}
-              <div
-                className={`dynamic-rounded overflow-hidden border-[1px] border-gray-500`}
-              >
+              {/* Theme & Shape */}
+              <div className="dynamic-rounded overflow-hidden border-[1px] border-gray-500">
                 <div className="px-6 py-3 flex items-center justify-between">
                   <span className="text-sm font-medium">Theme</span>
-                  <div className={`w-[80%] flex dynamic-rounded p-1`}>
+                  <div className="w-[80%] flex dynamic-rounded p-1">
                     <button
                       onClick={() => handleStyleChange("theme", "light")}
                       className={`w-full px-4 py-2 dynamic-rounded text-sm font-medium transition-all flex items-center justify-center gap-2 ${
@@ -289,22 +292,19 @@ const StylePanel = ({ isOpen, onClose, originPosition }) => {
                 <div className="border-t border-gray-800 px-6 py-3 flex items-center justify-between">
                   <span className="text-sm font-medium">Shape</span>
                   <div className="flex gap-2">
-                    {shapes.map((s) => {
-                      const radiusClass = s.radius;
-                      return (
-                        <button
-                          key={s.value}
-                          onClick={() => handleStyleChange("shape", s.value)}
-                          className={`transition-all bg-gray-600 ${radiusClass} ${
-                            shape === s.value
-                              ? "ring-2 ring-white ring-offset-2 ring-offset-gray-900"
-                              : ""
-                          }`}
-                        >
-                          <div className={`w-9 h-9 ${radiusClass}`} />
-                        </button>
-                      );
-                    })}
+                    {shapes.map((s) => (
+                      <button
+                        key={s.value}
+                        onClick={() => handleStyleChange("shape", s.value)}
+                        className={`transition-all bg-gray-600 ${s.radius} ${
+                          shape === s.value
+                            ? "ring-2 ring-white ring-offset-2 ring-offset-gray-900"
+                            : ""
+                        }`}
+                      >
+                        <div className={`w-9 h-9 ${s.radius}`} />
+                      </button>
+                    ))}
                   </div>
                 </div>
               </div>
@@ -316,10 +316,8 @@ const StylePanel = ({ isOpen, onClose, originPosition }) => {
                   Customize color schemes
                 </p>
 
-                <div
-                  className={`dynamic-rounded overflow-hidden border-[1px] border-gray-500 mt-4`}
-                >
-                  {/* Brand Colors with Carousel */}
+                <div className="dynamic-rounded overflow-hidden border-[1px] border-gray-500 mt-4">
+                  {/* Brand */}
                   <div className="pl-6 pr-4 py-4">
                     <div className="flex items-center justify-between gap-3">
                       <span className="text-sm font-medium whitespace-nowrap">
@@ -327,11 +325,8 @@ const StylePanel = ({ isOpen, onClose, originPosition }) => {
                       </span>
                       <div className="flex items-center gap-2 flex-1 min-w-0">
                         <Carousel
-                          opts={{
-                            align: "start",
-                            slidesToScroll: 3,
-                          }}
-                          className="w-full flex "
+                          opts={{ align: "start", slidesToScroll: 3 }}
+                          className="w-full flex"
                         >
                           <CarouselPrevious className="static translate-y-0 w-7 h-7 flex-shrink-0 bg-gray-600 border-0 text-white hover:bg-gray-700 hover:text-white disabled:opacity-30 my-auto" />
                           <CarouselContent className="ml-2 mr-2 pt-2">
@@ -344,9 +339,7 @@ const StylePanel = ({ isOpen, onClose, originPosition }) => {
                                   onClick={() =>
                                     handleStyleChange("brandColor", c.name)
                                   }
-                                  className={`relative w-9 h-9 flex-shrink-0 dynamic-rounded transition-all ${
-                                    c.bg
-                                  } ${
+                                  className={`relative w-9 h-9 flex-shrink-0 dynamic-rounded transition-all ${c.bg} ${
                                     brandColor === c.name
                                       ? "ring-2 ring-white ring-offset-2 ring-offset-gray-900"
                                       : "hover:scale-110"
@@ -361,18 +354,15 @@ const StylePanel = ({ isOpen, onClose, originPosition }) => {
                     </div>
                   </div>
 
-                  {/* Accent Colors with Carousel */}
+                  {/* Accent */}
                   <div className="border-t border-gray-800 pl-6 pr-4 py-4">
                     <div className="flex items-center justify-between gap-3">
                       <span className="text-sm font-medium whitespace-nowrap">
                         Accent
                       </span>
-                      <div className="flex items-center gap-2 flex-1 min-w-0 ">
+                      <div className="flex items-center gap-2 flex-1 min-w-0">
                         <Carousel
-                          opts={{
-                            align: "start",
-                            slidesToScroll: 3,
-                          }}
+                          opts={{ align: "start", slidesToScroll: 3 }}
                           className="w-full flex"
                         >
                           <CarouselPrevious className="static translate-y-0 w-7 h-7 flex-shrink-0 bg-gray-600 border-0 text-white hover:bg-gray-700 hover:text-white disabled:opacity-30 my-auto" />
@@ -386,9 +376,7 @@ const StylePanel = ({ isOpen, onClose, originPosition }) => {
                                   onClick={() =>
                                     handleStyleChange("accentColor", c.name)
                                   }
-                                  className={`relative w-9 h-9 flex-shrink-0 dynamic-rounded transition-all ${
-                                    c.bg
-                                  } ${
+                                  className={`relative w-9 h-9 flex-shrink-0 dynamic-rounded transition-all ${c.bg} ${
                                     accentColor === c.name
                                       ? "ring-2 ring-white ring-offset-2 ring-offset-gray-900"
                                       : "hover:scale-110"
@@ -403,7 +391,7 @@ const StylePanel = ({ isOpen, onClose, originPosition }) => {
                     </div>
                   </div>
 
-                  {/* Neutral Colors */}
+                  {/* Neutral */}
                   <div className="border-t border-gray-800 px-6 py-4 flex items-center justify-between gap-4">
                     <span className="text-sm font-medium min-w-[60px]">
                       Neutral
@@ -415,9 +403,7 @@ const StylePanel = ({ isOpen, onClose, originPosition }) => {
                           onClick={() =>
                             handleStyleChange("neutralColor", c.name)
                           }
-                          className={`relative w-9 h-9 dynamic-rounded transition-all  brightness-200 ${
-                            c.bg
-                          } ${
+                          className={`relative w-9 h-9 dynamic-rounded transition-all brightness-200 ${c.bg} ${
                             neutralColor === c.name
                               ? "ring-2 ring-white ring-offset-2 ring-offset-gray-900"
                               : "hover:scale-110"
