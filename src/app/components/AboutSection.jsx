@@ -12,6 +12,13 @@ import {
   CarouselPrevious,
 } from "@/components/ui/carousel";
 
+const STATS = [
+  { value: "4+", label: "Years experience" },
+  { value: "1M+", label: "Users impacted" },
+  { value: "N1M", label: "Innovation grant" },
+  { value: "3x", label: "Hackathon wins" },
+];
+
 const TAB_DATA = [
   {
     title: "Tech Stack",
@@ -79,16 +86,8 @@ const TAB_DATA = [
                 className="hover:opacity-90 block"
               >
                 <div className="bg-gray-50 dark:bg-gray-800/50 p-6 dynamic-rounded text-center">
-                  <Image
-                    src="/ai900.png"
-                    alt="Microsoft Certified: Azure AI Fundamentals"
-                    className="mx-auto"
-                    width={200}
-                    height={200}
-                  />
-                  <p className="text-sm font-medium mt-4">
-                    Microsoft Certified: Azure AI Fundamentals
-                  </p>
+                  <Image src="/ai900.png" alt="Microsoft Certified: Azure AI Fundamentals" className="mx-auto" width={200} height={200} />
+                  <p className="text-sm font-medium mt-4">Microsoft Certified: Azure AI Fundamentals</p>
                 </div>
               </a>
             </CarouselItem>
@@ -98,16 +97,8 @@ const TAB_DATA = [
                 className="hover:opacity-90 block"
               >
                 <div className="bg-gray-50 dark:bg-gray-800/50 p-6 dynamic-rounded text-center">
-                  <Image
-                    src="/dp900.png"
-                    alt="Microsoft Certified: Azure Data Fundamentals"
-                    className="mx-auto"
-                    width={200}
-                    height={200}
-                  />
-                  <p className="text-sm font-medium mt-4">
-                    Microsoft Certified: Azure Data Fundamentals
-                  </p>
+                  <Image src="/dp900.png" alt="Microsoft Certified: Azure Data Fundamentals" className="mx-auto" width={200} height={200} />
+                  <p className="text-sm font-medium mt-4">Microsoft Certified: Azure Data Fundamentals</p>
                 </div>
               </a>
             </CarouselItem>
@@ -117,38 +108,24 @@ const TAB_DATA = [
                 className="hover:opacity-90 block"
               >
                 <div className="bg-gray-50 dark:bg-gray-800/50 p-6 dynamic-rounded text-center">
-                  <Image
-                    src="/az900.png"
-                    alt="Microsoft Certified: Azure Fundamentals"
-                    className="mx-auto"
-                    width={200}
-                    height={200}
-                  />
-                  <p className="text-sm font-medium mt-4">
-                    Microsoft Certified: Azure Fundamentals
-                  </p>
+                  <Image src="/az900.png" alt="Microsoft Certified: Azure Fundamentals" className="mx-auto" width={200} height={200} />
+                  <p className="text-sm font-medium mt-4">Microsoft Certified: Azure Fundamentals</p>
                 </div>
               </a>
             </CarouselItem>
             <CarouselItem className="md:basis-1/2">
               <div className="bg-gray-50 dark:bg-gray-800/50 p-6 dynamic-rounded text-center flex items-center justify-center min-h-48">
-                <p className="font-medium">
-                  Cyber Security and Ethical Hacking
-                </p>
+                <p className="font-medium">Cyber Security and Ethical Hacking</p>
               </div>
             </CarouselItem>
             <CarouselItem className="md:basis-1/2">
               <div className="bg-gray-50 dark:bg-gray-800/50 p-6 dynamic-rounded text-center flex items-center justify-center min-h-48">
-                <p className="font-medium">
-                  Full-Stack Web Design and Development
-                </p>
+                <p className="font-medium">Full-Stack Web Design and Development</p>
               </div>
             </CarouselItem>
             <CarouselItem className="md:basis-1/2">
               <div className="bg-gray-50 dark:bg-gray-800/50 p-6 dynamic-rounded text-center flex items-center justify-center min-h-48">
-                <p className="font-medium">
-                  HTML, CSS, Javascript for Web Developers
-                </p>
+                <p className="font-medium">HTML, CSS, Javascript for Web Developers</p>
               </div>
             </CarouselItem>
           </CarouselContent>
@@ -167,9 +144,7 @@ const AboutSection = () => {
   const [isPending, startTransition] = useTransition();
 
   const handleTabChange = (id) => {
-    startTransition(() => {
-      setTab(id);
-    });
+    startTransition(() => setTab(id));
   };
 
   return (
@@ -180,12 +155,61 @@ const AboutSection = () => {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
           viewport={{ once: true }}
-          className=""
         >
-          <p className="text-gray-600 dark:text-gray-300 text-[16px] leading-relaxed mb-8">
-            I&apos;m a Frontend & Full-Stack Engineer with 4 years of experience specialising in React, Next.js, TypeScript, and NestJS. Co-founder of Haco, builder of AI-powered products, hackathon winner, and grant recipient. I build things that ship, work, and scale.
-          </p>
+          {/* Richer bio */}
+          <div className="space-y-4 mb-6 text-gray-600 dark:text-gray-300 text-[16px] leading-relaxed">
+            <p>
+              I&apos;m a Frontend and Full-Stack Engineer with 4 years of experience, specialising in
+              React, Next.js, TypeScript, and NestJS. I&apos;ve built and shipped production software
+              used by real people, from a{" "}
+              <span className="text-black dark:text-white font-medium">
+                mission-critical platform serving 1,000,000+ agents
+              </span>{" "}
+              at MTN Nigeria, to a{" "}
+              <span className="text-black dark:text-white font-medium">
+                six-module SaaS dashboard
+              </span>{" "}
+              built from scratch at Kwurah.
+            </p>
+            <p>
+              I co-founded{" "}
+              <span className="text-black dark:text-white font-medium">Haco</span>, where I lead
+              engineering on{" "}
+              <a
+                href="https://careerlyai.app"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-transparent bg-clip-text dynamic-text-gradient font-medium hover:opacity-80 transition-opacity"
+              >
+                CareerlyAI
+              </a>
+              , an AI-powered career platform that won a{" "}
+              <span className="text-black dark:text-white font-medium">
+                N1,000,000 innovation grant
+              </span>{" "}
+              and placed 2nd at the AI for Social Good Hackathon. I build things that ship, work, and scale.
+            </p>
+          </div>
 
+          {/* Stats strip — transparent bg, top/bottom border only */}
+          <motion.div
+            initial={{ opacity: 0, y: 12 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.1 }}
+            viewport={{ once: true }}
+            className="grid grid-cols-2 sm:grid-cols-4 gap-4 mb-10 py-6 border-y border-gray-200 dark:border-gray-700/60"
+          >
+            {STATS.map((stat, i) => (
+              <div key={i} className="text-center">
+                <p className="text-2xl font-bold text-transparent bg-clip-text dynamic-text-gradient">
+                  {stat.value}
+                </p>
+                <p className="text-xs text-gray-500 dark:text-gray-400 mt-1">{stat.label}</p>
+              </div>
+            ))}
+          </motion.div>
+
+          {/* Tabs */}
           <div className="flex flex-wrap justify-center gap-6 mb-10">
             {TAB_DATA.map((item) => (
               <TabButton

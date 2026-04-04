@@ -5,32 +5,30 @@ import Image from "next/image";
 import { TypeAnimation } from "react-type-animation";
 import { motion } from "framer-motion";
 import Link from "next/link";
-import { ArrowDown } from "lucide-react";
+import { ArrowDown, MapPin } from "lucide-react";
 import { FaGithub, FaLinkedin } from "react-icons/fa6";
 
 const HeroSection = () => {
   const socialIconVariants = {
-    hover: { 
-      scale: 1.1, 
+    hover: {
+      scale: 1.1,
       rotate: [0, 5, -5, 0],
-      transition: { duration: 0.3 }
-    }
+      transition: { duration: 0.3 },
+    },
   };
 
   const handleHireMeClick = (e) => {
     e.preventDefault();
-    const contactSection = document.getElementById('contact');
+    const contactSection = document.getElementById("contact");
     if (contactSection) {
-      contactSection.scrollIntoView({ 
-        behavior: 'smooth',
-        block: 'start'
-      });
+      contactSection.scrollIntoView({ behavior: "smooth", block: "start" });
     }
   };
 
   return (
     <section className="py-4 lg:py-6">
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-8 items-center">
+
         {/* Image Column */}
         <motion.div
           initial={{ opacity: 0, scale: 0.9 }}
@@ -64,34 +62,43 @@ const HeroSection = () => {
               Hello, I&apos;m{" "}
             </span>
             <TypeAnimation
-              sequence={[
-                "Ifeanyi Hope",
-                10000,
-              ]}
+              sequence={["Ifeanyi Hope", 10000]}
               wrapper="span"
               speed={1}
               className="text-black font-[950] text-3xl lg:text-[40px] dark:text-white leading-tight tracking-wide block [text-shadow:0.3px_0.3px_0_black,_-0.3px_-0.3px_0_black,_0.3px_-0.3px_0_black,_-0.3px_0.3px_0_black] dark:[text-shadow:0.3px_0.3px_0_white,_-0.3px_-0.3px_0_white,_0.3px_-0.3px_0_white,_-0.3px_0.3px_0_white]"
               repeat={Infinity}
             />
           </h1>
-          
-          <p className="text-gray-600 dark:text-gray-300 text-lg lg:text-xl mb-4 font-medium">
-            Software Engineer
+
+          <p className="text-gray-600 dark:text-gray-300 text-lg lg:text-xl mb-3 font-medium">
+            Frontend &amp; Full-Stack Engineer
           </p>
 
+          {/* Location + availability */}
+          <div className="flex flex-col items-center lg:items-start gap-1.5 mb-4">
+            <div className="flex items-center gap-2 text-sm text-gray-500 dark:text-gray-400">
+              <MapPin size={13} className="shrink-0" />
+              <span>Africa/Lagos</span>
+            </div>
+            <div className="flex items-center gap-2 text-sm">
+              <span className="relative flex h-2 w-2">
+                <span className="animate-ping absolute inline-flex h-full w-full rounded-full dynamic-gradient opacity-75"></span>
+                <span className="relative inline-flex rounded-full h-2 w-2 dynamic-gradient"></span>
+              </span>
+              <span className="text-gray-700 dark:text-gray-300">Available for new opportunities</span>
+            </div>
+          </div>
+
           {/* Social Links */}
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.3 }}
             className="flex gap-4 mb-4 justify-center lg:justify-start"
           >
-            <motion.div
-              variants={socialIconVariants}
-              whileHover="hover"
-            >
-              <Link 
-                href="https://github.com/hopeifeanyi1" 
+            <motion.div variants={socialIconVariants} whileHover="hover">
+              <Link
+                href="https://github.com/hopeifeanyi1"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center justify-center w-10 h-10 dynamic-rounded bg-gray-100 dark:bg-gray-800 border border-gray-300 dark:border-gray-700 dynamic-hover-gradient hover:border-transparent hover:text-white text-gray-700 dark:text-gray-300 transition-all duration-300 shadow-sm hover:shadow-md"
@@ -99,13 +106,9 @@ const HeroSection = () => {
                 <FaGithub size={18} />
               </Link>
             </motion.div>
-
-            <motion.div
-              variants={socialIconVariants}
-              whileHover="hover"
-            >
-              <Link 
-                href="https://www.linkedin.com/in/hope-ifeanyi" 
+            <motion.div variants={socialIconVariants} whileHover="hover">
+              <Link
+                href="https://www.linkedin.com/in/hope-ifeanyi"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center justify-center w-10 h-10 dynamic-rounded bg-gray-100 dark:bg-gray-800 border border-gray-300 dark:border-gray-700 dynamic-hover-gradient hover:border-transparent hover:text-white text-gray-700 dark:text-gray-300 transition-all duration-300 shadow-sm hover:shadow-md"
@@ -123,7 +126,6 @@ const HeroSection = () => {
             >
               Get in Touch
             </button>
-
             <Link
               href="/hope.pdf"
               download="Hope_CV.pdf"
