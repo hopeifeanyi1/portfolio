@@ -19,34 +19,102 @@ const STATS = [
   { value: "3x", label: "Hackathon wins" },
 ];
 
+const TECH_STACK = [
+  {
+    level: "Core Stack",
+    description: "What I build with daily",
+    skills: [
+      "TypeScript",
+      "Next.js",
+      "React",
+      "NestJS",
+      "PostgreSQL",
+      "Tailwind CSS",
+    ],
+  },
+  {
+    level: "Extended Stack",
+    description: "Shipped in production, reach for when needed",
+    skills: [
+      "Node.js",
+      "Three.js",
+      "React Native",
+      "Zustand",
+      "Supabase",
+      "Shadcn",
+      "Redux",
+      "TypeORM",
+      "MySQL",
+      "Vite",
+      "Cloudflare",
+    ],
+  },
+  {
+    level: "Also worked with",
+    description: "Used in real projects, comfortable picking up",
+    skills: [
+      "Express",
+      "Firebase",
+      "MongoDB",
+      "Docker",
+      "Azure",
+    ],
+  },
+];
+
+const levelConfig = {
+  "Core Stack": {
+    dot: "dynamic-gradient",
+    badge: "bg-purple-100 dark:bg-purple-900/30 text-purple-700 dark:text-purple-300",
+  },
+  "Extended Stack": {
+    dot: "bg-blue-500",
+    badge: "bg-blue-100 dark:bg-blue-900/30 text-blue-700 dark:text-blue-300",
+  },
+  "Also worked with": {
+    dot: "bg-gray-400 dark:bg-gray-500",
+    badge: "bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-400",
+  },
+};
+
 const TAB_DATA = [
   {
     title: "Tech Stack",
     id: "skills",
     content: (
-      <div className="grid grid-cols-2 sm:grid-cols-3 gap-4">
-        {[
-          "TypeScript",
-          "Next js",
-          "React",
-          "Three js",
-          "React Native",
-          "Tailwind",
-          "Nest js",
-          "Express",
-          "Firebase",
-          "PostgreSQL",
-          "MongoDB",
-          "Node js",
-        ].map((skill, index) => (
-          <div
-            key={index}
-            className="flex items-center p-3 dynamic-rounded bg-gray-50 dark:bg-gray-800/50"
-          >
-            <span className="h-2 w-2 dynamic-rounded dynamic-gradient mr-3"></span>
-            <span>{skill}</span>
-          </div>
-        ))}
+      <div className="space-y-6">
+        {TECH_STACK.map((group) => {
+          const config = levelConfig[group.level];
+          return (
+            <div key={group.level}>
+              <div className="flex items-center gap-3 mb-3">
+                <span
+                  className={`text-xs font-semibold px-2.5 py-1 rounded-full ${config.badge}`}
+                >
+                  {group.level}
+                </span>
+                <span className="text-xs text-gray-400 dark:text-gray-500">
+                  {group.description}
+                </span>
+              </div>
+              <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">
+                {group.skills.map((skill) => (
+                  <div
+                    key={skill}
+                    className="flex items-center p-3 dynamic-rounded bg-gray-50 dark:bg-gray-800/50"
+                  >
+                    <span
+                      className={`h-2 w-2 rounded-full shrink-0 mr-3 ${config.dot}`}
+                    />
+                    <span className="text-sm text-gray-800 dark:text-gray-200">
+                      {skill}
+                    </span>
+                  </div>
+                ))}
+              </div>
+            </div>
+          );
+        })}
       </div>
     ),
   },
@@ -80,7 +148,7 @@ const TAB_DATA = [
       <div className="w-full">
         <Carousel className="w-full">
           <CarouselContent className="md:w-auto w-[97vw]" opts={{ align: "start" }}>
-            <CarouselItem className="md:basis-1/2">
+            <CarouselItem className="md:basis-1/3">
               <a
                 href="https://learn.microsoft.com/api/credentials/share/en-us/HopeIFEANYI/3B11AE95D51C7AD?sharingId=B4D7060416A0FE6B"
                 className="hover:opacity-90 block"
@@ -91,9 +159,9 @@ const TAB_DATA = [
                 </div>
               </a>
             </CarouselItem>
-            <CarouselItem className="md:basis-1/2">
-              <a
-                href="https://learn.microsoft.com/api/credentials/share/en-us/HopeIFEANYI/F96AC56F66AF7953?sharingId=B4D7060416A0FE6B"
+            <CarouselItem className="md:basis-1/3">
+              
+              <a href="https://learn.microsoft.com/api/credentials/share/en-us/HopeIFEANYI/F96AC56F66AF7953?sharingId=B4D7060416A0FE6B"
                 className="hover:opacity-90 block"
               >
                 <div className="bg-gray-50 dark:bg-gray-800/50 p-6 dynamic-rounded text-center">
@@ -102,7 +170,7 @@ const TAB_DATA = [
                 </div>
               </a>
             </CarouselItem>
-            <CarouselItem className="md:basis-1/2">
+            <CarouselItem className="md:basis-1/3">
               <a
                 href="https://learn.microsoft.com/api/credentials/share/en-us/HopeIFEANYI/D93D7739FAD1104?sharingId=B4D7060416A0FE6B"
                 className="hover:opacity-90 block"
@@ -113,17 +181,17 @@ const TAB_DATA = [
                 </div>
               </a>
             </CarouselItem>
-            <CarouselItem className="md:basis-1/2">
+            <CarouselItem className="md:basis-1/3">
               <div className="bg-gray-50 dark:bg-gray-800/50 p-6 dynamic-rounded text-center flex items-center justify-center min-h-48">
                 <p className="font-medium">Cyber Security and Ethical Hacking</p>
               </div>
             </CarouselItem>
-            <CarouselItem className="md:basis-1/2">
+            <CarouselItem className="md:basis-1/3">
               <div className="bg-gray-50 dark:bg-gray-800/50 p-6 dynamic-rounded text-center flex items-center justify-center min-h-48">
                 <p className="font-medium">Full-Stack Web Design and Development</p>
               </div>
             </CarouselItem>
-            <CarouselItem className="md:basis-1/2">
+            <CarouselItem className="md:basis-1/3">
               <div className="bg-gray-50 dark:bg-gray-800/50 p-6 dynamic-rounded text-center flex items-center justify-center min-h-48">
                 <p className="font-medium">HTML, CSS, Javascript for Web Developers</p>
               </div>
@@ -156,7 +224,7 @@ const AboutSection = () => {
           transition={{ duration: 0.5 }}
           viewport={{ once: true }}
         >
-          {/* Richer bio */}
+          {/* Bio */}
           <div className="space-y-4 mb-6 text-gray-600 dark:text-gray-300 text-[16px] leading-relaxed">
             <p>
               I&apos;m a Frontend and Full-Stack Engineer with 4 years of experience, specialising in
@@ -191,7 +259,7 @@ const AboutSection = () => {
             </p>
           </div>
 
-          {/* Stats strip — transparent bg, top/bottom border only */}
+          {/* Stats strip */}
           <motion.div
             initial={{ opacity: 0, y: 12 }}
             whileInView={{ opacity: 1, y: 0 }}

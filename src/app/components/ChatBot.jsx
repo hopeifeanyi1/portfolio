@@ -17,6 +17,12 @@ const ChatBot = () => {
   };
 
   useEffect(() => {
+  const handler = () => setIsOpen(true);
+  window.addEventListener('open-chatbot', handler);
+  return () => window.removeEventListener('open-chatbot', handler);
+}, []);
+
+  useEffect(() => {
     scrollToBottom();
   }, [messages]);
 

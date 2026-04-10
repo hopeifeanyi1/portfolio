@@ -5,7 +5,7 @@ import Image from "next/image";
 import { TypeAnimation } from "react-type-animation";
 import { motion } from "framer-motion";
 import Link from "next/link";
-import { ArrowDown, MapPin } from "lucide-react";
+import { ArrowDown } from "lucide-react";
 import { FaGithub, FaLinkedin } from "react-icons/fa6";
 
 const HeroSection = () => {
@@ -28,7 +28,6 @@ const HeroSection = () => {
   return (
     <section className="py-4 lg:py-6">
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-8 items-center">
-
         {/* Image Column */}
         <motion.div
           initial={{ opacity: 0, scale: 0.9 }}
@@ -76,16 +75,14 @@ const HeroSection = () => {
 
           {/* Location + availability */}
           <div className="flex flex-col items-center lg:items-start gap-1.5 mb-4">
-            <div className="flex items-center gap-2 text-sm text-gray-500 dark:text-gray-400">
-              <MapPin size={13} className="shrink-0" />
-              <span>Africa/Lagos</span>
-            </div>
             <div className="flex items-center gap-2 text-sm">
               <span className="relative flex h-2 w-2">
                 <span className="animate-ping absolute inline-flex h-full w-full rounded-full dynamic-gradient opacity-75"></span>
                 <span className="relative inline-flex rounded-full h-2 w-2 dynamic-gradient"></span>
               </span>
-              <span className="text-gray-700 dark:text-gray-300">Available for new opportunities</span>
+              <span className="text-gray-700 dark:text-gray-300">
+                Available for new opportunities
+              </span>
             </div>
           </div>
 
@@ -117,6 +114,24 @@ const HeroSection = () => {
               </Link>
             </motion.div>
           </motion.div>
+
+          {/* AI Teaser — fires custom event to open ChatBot */}
+          <motion.button
+            initial={{ opacity: 0, y: 10 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.5 }}
+            onClick={() => window.dispatchEvent(new Event("open-chatbot"))}
+            className="flex items-center gap-2 text-sm text-gray-500 dark:text-gray-400 hover:text-gray-800 dark:hover:text-gray-200 transition-colors duration-200 group mb-4 justify-center lg:justify-start"
+          >
+            <span className="relative flex h-2 w-2 shrink-0">
+              <span className="animate-ping absolute inline-flex h-full w-full rounded-full dynamic-gradient opacity-75" />
+              <span className="relative inline-flex rounded-full h-2 w-2 dynamic-gradient" />
+            </span>
+            <span>Curious about my work?</span>
+            <span className="text-transparent bg-clip-text dynamic-text-gradient font-medium group-hover:underline underline-offset-2">
+              Ask my AI →
+            </span>
+          </motion.button>
 
           {/* Action Buttons */}
           <div className="flex flex-wrap gap-4 justify-center lg:justify-start">
