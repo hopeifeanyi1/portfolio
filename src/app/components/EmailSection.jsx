@@ -4,8 +4,7 @@ import React, { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { motion } from "framer-motion";
-import GithubIcon from "../../../public/github-icon.svg";
-import LinkedinIcon from "../../../public/linkedin-icon.svg";
+import { FaGithub, FaLinkedin } from "react-icons/fa6";
 import MailIcon from "../../../public/mail-icon.svg";
 import { toast } from "sonner";
 
@@ -104,21 +103,25 @@ const EmailSection = () => {
             </p>
             <div className="flex gap-3">
               <motion.div variants={socialIconVariants} whileHover="hover">
-                <Link
-                  href="https://github.com/hopeifeanyi1"
-                  className="flex items-center justify-center w-10 h-10 dynamic-rounded bg-gray-100 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 dynamic-hover-gradient hover:border-transparent hover:text-white text-gray-700 dark:text-gray-300 transition-all duration-300"
-                >
-                  <Image src={GithubIcon} alt="Github" width={18} height={18} />
-                </Link>
-              </motion.div>
-              <motion.div variants={socialIconVariants} whileHover="hover">
-                <Link
-                  href="https://www.linkedin.com/in/hope-ifeanyi"
-                  className="flex items-center justify-center w-10 h-10 dynamic-rounded bg-gray-100 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 dynamic-hover-gradient hover:border-transparent hover:text-white text-gray-700 dark:text-gray-300 transition-all duration-300"
-                >
-                  <Image src={LinkedinIcon} alt="LinkedIn" width={18} height={18} />
-                </Link>
-              </motion.div>
+              <Link
+                href="https://github.com/hopeifeanyi1"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center justify-center w-10 h-10 dynamic-rounded bg-gray-100 dark:bg-gray-800 border border-gray-300 dark:border-gray-700 dynamic-hover-gradient hover:border-transparent hover:text-white text-gray-700 dark:text-gray-300 transition-all duration-300 shadow-sm hover:shadow-md"
+              >
+                <FaGithub size={18} />
+              </Link>
+            </motion.div>
+            <motion.div variants={socialIconVariants} whileHover="hover">
+              <Link
+                href="https://www.linkedin.com/in/hope-ifeanyi"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center justify-center w-10 h-10 dynamic-rounded bg-gray-100 dark:bg-gray-800 border border-gray-300 dark:border-gray-700 dynamic-hover-gradient hover:border-transparent hover:text-white text-gray-700 dark:text-gray-300 transition-all duration-300 shadow-sm hover:shadow-md"
+              >
+                <FaLinkedin size={18} />
+              </Link>
+            </motion.div>
               <motion.div variants={socialIconVariants} whileHover="hover">
                 <Link
                   href="mailto:hopeifeanyi2@gmail.com"
