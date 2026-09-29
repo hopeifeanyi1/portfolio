@@ -200,9 +200,10 @@ export async function POST(req) {
         { role: 'system', content: SYSTEM_PROMPT },
         ...messages
       ],
-      model: 'llama-3.3-70b-versatile',
+      model: 'openai/gpt-oss-120b',
+      reasoning_effort: 'low',
       temperature: 0.5,
-      max_tokens: 500,
+      max_tokens: 1000,
       top_p: 0.9,
       stream: true,
     });
