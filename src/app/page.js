@@ -1,7 +1,8 @@
-// src/app/page.js
+// Location: src/app/page.js
 import { Inter } from "next/font/google";
 import HeroSection from "./components/HeroSection";
 import AboutSection from "./components/AboutSection";
+import HighlightsSection from "./components/HighlightsSection";
 import EmailSection from "./components/EmailSection";
 import Footer from "./components/Footer";
 
@@ -19,7 +20,11 @@ const jsonLd = {
   ],
   jobTitle: "Frontend & Full-Stack Engineer",
   description:
-    "Frontend & Full-Stack Engineer with 4 years of experience specialising in React, Next.js, TypeScript, and NestJS.",
+    "Frontend & Full-Stack Engineer with 4 years of experience specialising in Next.js, TypeScript, and NestJS. Former Lead Fullstack Developer at Chiwiq and founder of Haco (CareerlyAI).",
+  address: {
+    "@type": "PostalAddress",
+    addressCountry: "NG",
+  },
   knowsAbout: [
     "React",
     "Next.js",
@@ -27,7 +32,11 @@ const jsonLd = {
     "NestJS",
     "Node.js",
     "PostgreSQL",
-    "Three.js",
+    "React Native",
+    "Stripe Connect",
+    "Paystack",
+    "AI agents",
+    "Technical leadership",
   ],
   alumniOf: {
     "@type": "CollegeOrUniversity",
@@ -46,6 +55,7 @@ export default function Home() {
         <div className="container max-w-7xl mx-auto px-5 lg:px-8 pt-24">
           <HeroSection />
           <AboutSection />
+          <HighlightsSection />
           <EmailSection />
         </div>
         <Footer />

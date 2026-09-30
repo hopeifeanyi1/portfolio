@@ -1,11 +1,11 @@
-//src/app/components/HeroSection.jsx
+// Location: src/app/components/HeroSection.jsx
 "use client";
 import React from "react";
 import Image from "next/image";
 import { TypeAnimation } from "react-type-animation";
 import { motion } from "framer-motion";
 import Link from "next/link";
-import { ArrowDown } from "lucide-react";
+import { ArrowDown, MapPin } from "lucide-react";
 import { FaGithub, FaLinkedin } from "react-icons/fa6";
 
 const HeroSection = () => {
@@ -74,8 +74,8 @@ const HeroSection = () => {
           </p>
 
           {/* Location + availability */}
-          <div className="flex flex-col items-center lg:items-start gap-1.5 mb-4">
-            <div className="flex items-center gap-2 text-sm">
+          <div className="flex flex-col sm:flex-row items-center lg:items-start sm:justify-center lg:justify-start gap-2 sm:gap-5 mb-4 text-sm">
+            <div className="flex items-center gap-2">
               <span className="relative flex h-2 w-2">
                 <span className="animate-ping absolute inline-flex h-full w-full rounded-full dynamic-gradient opacity-75"></span>
                 <span className="relative inline-flex rounded-full h-2 w-2 dynamic-gradient"></span>
@@ -141,6 +141,12 @@ const HeroSection = () => {
             >
               Get in Touch
             </button>
+            <Link
+              href="/projects"
+              className="px-6 py-2.5 dynamic-rounded border border-gray-300 dark:border-gray-700 text-gray-900 dark:text-white font-medium hover:bg-gray-100 dark:hover:bg-gray-800 transition-all duration-300"
+            >
+              View Projects
+            </Link>
             <Link
               href="/hope.pdf"
               download="Hope_CV.pdf"

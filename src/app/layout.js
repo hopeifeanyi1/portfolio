@@ -1,4 +1,4 @@
-// src/app/layout.js
+// Location: src/app/layout.js
 import "./globals.css";
 import { Inter } from "next/font/google";
 import { Toaster } from "@/components/ui/sonner";
@@ -18,7 +18,7 @@ export const metadata = {
     template: "%s | Ifeanyi Hope",
   },
   description:
-    "Ifeanyi Hope is a Frontend & Full-Stack Engineer with 4 years of experience specialising in React, Next.js, TypeScript, and NestJS. Co-founder of Haco, hackathon winner, and grant recipient.",
+    "Ifeanyi Hope is a Frontend & Full-Stack Engineer with 4 years of experience specialising in Next.js, TypeScript, and NestJS. Former Lead Fullstack Developer at Chiwiq, founder of Haco (CareerlyAI), hackathon winner, and grant recipient.",
   keywords: [
     "Ifeanyi Hope",
     "Hope Ifeanyi",
@@ -32,6 +32,10 @@ export const metadata = {
     "Software Engineer",
     "CareerlyAI",
     "Haco",
+    "Chiwiq",
+    "Stripe Connect",
+    "Paystack",
+    "Lead Fullstack Developer",
   ],
   authors: [{ name: "Ifeanyi Hope", url: BASE_URL }],
   creator: "Ifeanyi Hope",
@@ -42,7 +46,7 @@ export const metadata = {
     siteName: "Ifeanyi Hope — Portfolio",
     title: "Ifeanyi Hope — Frontend & Full-Stack Engineer",
     description:
-      "Frontend & Full-Stack Engineer specialising in React, Next.js, TypeScript, and NestJS. Co-founder of Haco, hackathon winner, and grant recipient.",
+      "Frontend & Full-Stack Engineer specialising in Next.js, TypeScript, and NestJS. Team lead, payments and AI integration, founder of Haco, hackathon winner, and grant recipient.",
     images: [
       {
         url: "/og-image.png", // create a 1200×630 image (see tip below)

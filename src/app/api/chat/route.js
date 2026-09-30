@@ -1,4 +1,4 @@
-// src/app/api/chat/route.js
+// Location: src/app/api/chat/route.js
 import Groq from 'groq-sdk';
 
 const groq = new Groq({
@@ -20,7 +20,7 @@ CRITICAL INSTRUCTIONS - FOLLOW STRICTLY:
 ABOUT HOPE (FEMALE):
 
 **Who She Is:**
-Hope is a Frontend & Full-Stack Engineer with 4 years of experience, specialising in React, Next.js, TypeScript, and NestJS. She's a co-founder, hackathon winner, grant recipient, and builder of AI-powered products used by real people across Africa.
+Hope is a Frontend & Full-Stack Engineer with 4 years of experience, specialising in React, Next.js, TypeScript, and NestJS. She's the founder of Haco (CareerlyAI), a technical team lead with hands-on payments experience (Stripe Connect, Paystack, POS, subscription billing), a hackathon winner, grant recipient, and builder of AI-powered products used by real people across Africa. She has worked remotely with teams in Canada and the US.
 
 **Contact & Links:**
 - Email: hopeifeanyi2@gmail.com
@@ -34,44 +34,51 @@ Hope is a Frontend & Full-Stack Engineer with 4 years of experience, specialisin
 She has a BSc in Software Engineering from Babcock University (graduated 2025), with a start date of January 2022.
 
 **Career Journey:**
-Hope started her career as a Frontend Developer with the BUCC Software Development Team in June 2022, where she worked all the way through July 2025 — maintaining the SIWES Portal used by 1,000+ students per cycle and building the BUCC Single Sign-On platform.
+Hope started her career as a Frontend Developer with the BUCC Software Development Team in January 2022, where she worked all the way through May 2025 — maintaining the SIWES Portal used by 1,000+ students per cycle and building the BUCC Single Sign-On platform.
 
 In early 2024 (January to July), she interned as a Software Engineer at MTN Nigeria, where she maintained the SSP Backoffice — a mission-critical platform managing 1,000,000+ agents — and built the frontend for the Bus Tracker and Avatar Portal.
 
-Then 2025 got very busy. She did a Software Engineer internship at AppEasy (July–August 2025) in Los Angeles, consolidating four backend microservices and redesigning their landing page. Around the same time (June–September 2025), she was also a Frontend Engineer Intern at CenosTechnology in Nigeria, where she led the engineering team as Acting CTO and delivered the Bokimart e-commerce MVP.
+Then 2025 got very busy. She did a Software Engineer internship at AppEasy (July–August 2025) in Los Angeles, consolidating four backend microservices and redesigning their landing page. Around the same time (June–September 2025), she was also a Frontend Engineer Intern at Blackowlfortune in Nigeria, where she led the engineering team as Acting CTO and delivered the Bokimart e-commerce MVP.
 
-From October 2024 through present, she worked part time while being a student as a Frontend Engineer at Kwurah (Canada-based), building their property management platform Proptility from the ground up with 6 core modules.
+From October 2024 to March 2026, she worked remotely as a Frontend Engineer at Kwurah (Canada-based), architecting and building their property management platform Proptility with 6 production modules.
 
-Since June 2025, she's been a Fullstack Developer at HACO — a company she co-founded. There she built and launched CareerlyAI (careerlyai.app), an AI-powered career platform with 100+ users, winning a ₦1,000,000 innovation grant and 2nd place at the AI for Social Good Hackathon. She also led a team to deliver Careerly for Kids (kids.careerlyai.app), a RIASEC-based career discovery platform for students.
+Since June 2025, she's been the founder of Haco. There she built and launched CareerlyAI (careerlyai.app), an AI-powered career platform with 100+ users, winning a ₦1,000,000 innovation grant and 2nd place at the AI for Social Good Hackathon. She also led a team to deliver Careerly for Kids (kids.careerlyai.app), a RIASEC-based career discovery platform for students.
+
+From April to August 2026, she was Lead Fullstack Developer (contract) at Chiwiq, a US-based company, working remotely. She led a team of engineers building CROP, a multi-tenant e-commerce platform where businesses onboard onto a shared marketplace app, working across payments, inventory, admin tooling, AI-powered insights and an AI WhatsApp agent. She implemented the payment infrastructure end-to-end (Stripe Connect, Paystack sub-account revenue splitting, physical POS terminal support and automated subscription billing), and her independent code-level audit of a client e-commerce platform revealed true completion was 52%, with her status report and sprint plan becoming the team's delivery roadmap.
 
 **Work Experience (Full Detail):**
 
-1. Fullstack Developer — HACO | June 2025 – Present | Nigeria (Co-founded)
-   - Built CareerlyAI (careerlyai.app): smart job matching, resume & cover letter generation, skill gap analysis, Paystack subscriptions — 100+ users, ₦1M grant, 2nd place AI for Social Good Hackathon.
+1. Lead Fullstack Developer (Contract) — Chiwiq | April 2026 – August 2026 | Remote (US-based company)
+   - Led a team of engineers building CROP, a multi-tenant e-commerce platform (payments, inventory, admin tooling, AI-powered insights, AI WhatsApp agent).
+   - Implemented payment infrastructure end-to-end: Stripe Connect, Paystack sub-account revenue splitting, physical POS terminal support, automated subscription billing.
+   - Code-level audit of a client e-commerce platform revealed true completion was 52%; her status report and sprint plan became the delivery roadmap.
+
+2. Founder — Haco | June 2025 – Present | Nigeria
+   - Built CareerlyAI (careerlyai.app): smart job matching, resume & cover letter generation, skill gap analysis, a Chrome extension that answers job application questions from profile data, Paystack subscriptions — 100+ users, ₦1M grant, 2nd place AI for Social Good Hackathon.
    - Led engineering team to deliver Careerly for Kids (kids.careerlyai.app): RIASEC-based career discovery for students.
    - Full stack: Next.js, NestJS, PostgreSQL, Supabase, Tailwind CSS, Groq, OpenAI, RapidAPI, Paystack. Dual AI model strategy to optimise token costs.
 
-2. Frontend Engineer — Kwurah | October 2024 – Present | Canada
+3. Frontend Engineer — Kwurah | October 2024 – March 2026 | Canada (Remote)
    - Built Proptility (proptility.com) frontend from scratch: 6 modules (dashboard, properties, occupants, financials, insights, communications).
    - Integrated location and device fingerprint APIs for geolocation and secure login detection.
    - Optimised data fetching via prefetching/caching at login, reducing redundant API calls and loading states.
    - Stack: Next.js, TypeScript, React, Tailwind CSS, Zustand.
 
-3. Frontend Engineer Intern — CenosTechnology | June–September 2025 | Nigeria
+4. Frontend Engineer Intern (Acting CTO) — Blackowlfortune | June–September 2025 | Nigeria
    - Built Bokimart: role-based e-commerce platform for shoppers, storekeepers, and admins with inventory, purchasing, and delivery tracking.
    - Led sprint planning and task delegation as Acting CTO, delivering MVP within timeline.
    - Stack: Next.js, React, TypeScript, Tailwind CSS, Zustand.
 
-4. Software Engineer Intern — AppEasy | July–August 2025 | Los Angeles
+5. Software Engineer Intern — AppEasy | July–August 2025 | Los Angeles
    - Consolidated four microservices (Stripe, email, Gemini AI resume analyzer, job matching) into a unified Express/Supabase system.
    - Redesigned landing page with 2D and 3D UI components; built reusable components with React, Vite, TypeScript.
    - Implemented deployment pipelines with Sentry monitoring.
 
-5. Software Engineer Intern — MTN Nigeria | January–July 2024 | Nigeria
+6. Software Engineer Intern — MTN Nigeria | January–July 2024 | Nigeria
    - Maintained SSP Backoffice for 1,000,000+ agents across Nigeria's largest telecom network.
    - Built frontend for Bus Tracker and Avatar Portal using Next.js, TypeScript, Tailwind CSS, Shadcn.
 
-6. Frontend Developer — BUCC Software Development Team | June 2022–July 2025 | Nigeria
+7. Frontend Developer — BUCC Software Development Team | January 2022–May 2025 | Nigeria
    - Maintained SIWES Portal for 1,000+ students per cycle (React, JavaScript, Tailwind CSS, Redux).
    - Built BUCC Single Sign-On platform (Next.js, React, TypeScript, Tailwind CSS, Zustand).
 
@@ -98,6 +105,9 @@ Since June 2025, she's been a Fullstack Developer at HACO — a company she co-f
 - Databases: PostgreSQL, MongoDB, MySQL
 - Cloud & Deployment: Firebase, Supabase, Azure, Vercel, Railway, Render
 - Tools & DevOps: Git, GitHub, Docker
+- Payments: Stripe, Stripe Connect, Paystack (sub-account revenue splitting), subscription billing, POS terminal integration, payment architecture
+- AI: AI agent development (WhatsApp), prompt engineering, multi-model cost optimisation (Groq + OpenAI)
+- Leadership & Delivery: codebase audits, sprint planning, team leadership, product roadmap ownership
 - Testing: Jest
 
 **Certifications:**
@@ -138,7 +148,8 @@ function isPortfolioRelated(message) {
     'hope', 'ifeanyi', 'experience', 'project', 'skill', 'work', 'job',
     'education', 'award', 'certification', 'portfolio', 'contact', 'email',
     'hire', 'available', 'tech', 'developer', 'engineer', 'careerly',
-    'kwurah', 'mtn', 'bucc', 'babcock', 'background', 'qualification'
+    'kwurah', 'mtn', 'bucc', 'babcock', 'background', 'qualification',
+    'chiwiq', 'crop', 'haco', 'payment', 'stripe', 'paystack', 'lead', 'founder'
   ];
   
   // Check if message contains portfolio-related keywords

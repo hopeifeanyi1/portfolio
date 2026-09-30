@@ -1,4 +1,4 @@
-//src/app/components/AboutSection.jsx
+// Location: src/app/components/AboutSection.jsx
 "use client";
 import React, { useTransition, useState } from "react";
 import Image from "next/image";
@@ -14,9 +14,10 @@ import {
 
 const STATS = [
   { value: "4+", label: "Years experience" },
-  { value: "1M+", label: "Users impacted" },
-  { value: "N1M", label: "Innovation grant" },
-  { value: "3x", label: "Hackathon wins" },
+  { value: "1M+", label: "Agents served at MTN" },
+  { value: "100+", label: "CareerlyAI users" },
+  { value: "₦1M", label: "Innovation grant" },
+  { value: "3x", label: "Hackathon & innovation awards" },
 ];
 
 const TECH_STACK = [
@@ -33,12 +34,27 @@ const TECH_STACK = [
     ],
   },
   {
+    level: "Payments & AI",
+    description: "Integrated end-to-end in production",
+    skills: [
+      "Stripe",
+      "Stripe Connect",
+      "Paystack (revenue splits)",
+      "Subscription billing",
+      "POS terminals",
+      "OpenAI",
+      "Groq",
+      "AI agents (WhatsApp)",
+      "Multi-model cost optimisation",
+    ],
+  },
+  {
     level: "Extended Stack",
     description: "Shipped in production, reach for when needed",
     skills: [
       "Node.js",
-      "Three.js",
       "React Native",
+      "Three.js",
       "Zustand",
       "Supabase",
       "Shadcn",
@@ -46,6 +62,7 @@ const TECH_STACK = [
       "TypeORM",
       "MySQL",
       "Vite",
+      "Vercel",
       "Cloudflare",
     ],
   },
@@ -66,6 +83,10 @@ const levelConfig = {
   "Core Stack": {
     dot: "dynamic-gradient",
     badge: "bg-purple-100 dark:bg-purple-900/30 text-purple-700 dark:text-purple-300",
+  },
+  "Payments & AI": {
+    dot: "bg-emerald-500",
+    badge: "bg-emerald-100 dark:bg-emerald-900/30 text-emerald-700 dark:text-emerald-300",
   },
   "Extended Stack": {
     dot: "bg-blue-500",
@@ -124,7 +145,7 @@ const TAB_DATA = [
     content: (
       <div className="space-y-4">
         {[
-          "Babcock University, Software Engineering",
+          "BSc, Software Engineering, Babcock University (2025)",
           "Microsoft Learn",
           "Udemy",
           "Code with Mosh",
@@ -225,24 +246,32 @@ const AboutSection = () => {
           viewport={{ once: true }}
         >
           {/* Bio */}
+          <h2 className="text-2xl lg:text-3xl font-bold mb-2 text-center">
+            About Me
+          </h2>
+          <div className="w-16 h-1 dynamic-gradient mx-auto dynamic-rounded mb-8" />
           <div className="space-y-4 mb-6 text-gray-600 dark:text-gray-300 text-[16px] leading-relaxed">
             <p>
-              I&apos;m a Frontend and Full-Stack Engineer with 4 years of experience, specialising in
-              React, Next.js, TypeScript, and NestJS. I&apos;ve built and shipped production software
-              used by real people, from a{" "}
-              <span className="text-black dark:text-white font-medium">
-                mission-critical platform serving 1,000,000+ agents
-              </span>{" "}
-              at MTN Nigeria, to a{" "}
-              <span className="text-black dark:text-white font-medium">
-                six-module SaaS dashboard
-              </span>{" "}
-              built from scratch at Kwurah.
+              I&apos;m a Frontend and Full-Stack Engineer with 4 years of experience in Next.js,
+              TypeScript, and NestJS. I{" "}
+              <span className="text-black dark:text-white font-medium">lead engineering teams</span>,{" "}
+              <span className="text-black dark:text-white font-medium">build payment infrastructure</span>, and{" "}
+              <span className="text-black dark:text-white font-medium">ship AI-powered products</span>, working remotely with distributed teams
+              across the US and Canada.
             </p>
             <p>
-              I co-founded{" "}
-              <span className="text-black dark:text-white font-medium">Haco</span>, where I lead
-              engineering on{" "}
+              As{" "}
+              <span className="text-black dark:text-white font-medium">Lead Fullstack Developer at Chiwiq</span>, a US-based company, I led a team of
+              engineers building CROP, a multi-tenant e-commerce platform with inventory, admin
+              tooling, AI-powered insights, and an AI WhatsApp agent. I implemented its payments
+              end-to-end: Stripe Connect, Paystack revenue splitting, physical POS terminals, and
+              subscription billing. My code-level audit of a client platform showed it was only{" "}
+              <span className="text-black dark:text-white font-medium">52% complete</span>, and the sprint plan I wrote from it became the
+              team&apos;s delivery roadmap.
+            </p>
+            <p>
+              I&apos;m also the founder of{" "}
+              <span className="text-black dark:text-white font-medium">Haco</span>, where I built{" "}
               <a
                 href="https://careerlyai.app"
                 target="_blank"
@@ -251,11 +280,15 @@ const AboutSection = () => {
               >
                 CareerlyAI
               </a>
-              , an AI-powered career platform that won a{" "}
-              <span className="text-black dark:text-white font-medium">
-                N1,000,000 innovation grant
-              </span>{" "}
-              and placed 2nd at the AI for Social Good Hackathon. I build things that ship, work, and scale.
+              , an AI career platform with 100+ users and a Chrome extension that answers job
+              application questions using a user&apos;s profile. It won a{" "}
+              <span className="text-black dark:text-white font-medium">₦1,000,000 innovation grant</span> and 2nd place at the AI for Social Good
+              Hackathon, and I led the team that shipped Careerly for Kids after it.
+            </p>
+            <p>
+              Earlier, at <span className="text-black dark:text-white font-medium">MTN Nigeria</span>, I shipped features on a mission-critical
+              platform managing{" "}
+              <span className="text-black dark:text-white font-medium">1,000,000+ agents</span>. I build things that ship, work, and scale.
             </p>
           </div>
 
@@ -265,10 +298,10 @@ const AboutSection = () => {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.1 }}
             viewport={{ once: true }}
-            className="grid grid-cols-2 sm:grid-cols-4 gap-4 mb-10 py-6 border-y border-gray-200 dark:border-gray-700/60"
+            className="grid grid-cols-2 sm:grid-cols-5 gap-4 mb-10 py-6 border-y border-gray-200 dark:border-gray-700/60"
           >
             {STATS.map((stat, i) => (
-              <div key={i} className="text-center">
+              <div key={i} className="text-center last:col-span-2 sm:last:col-span-1">
                 <p className="text-2xl font-bold text-transparent bg-clip-text dynamic-text-gradient">
                   {stat.value}
                 </p>

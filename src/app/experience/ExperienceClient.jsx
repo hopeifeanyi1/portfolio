@@ -1,18 +1,43 @@
+// Location: src/app/experience/ExperienceClient.jsx
 "use client";
 import React, { useRef } from "react";
 import { motion, useInView } from "framer-motion";
 
 const experiences = [
   {
+    id: 0,
+    role: "Lead Fullstack Developer (Contract)",
+    company: "Chiwiq",
+    location: "Remote (US-based company)",
+    period: "April 2026 - August 2026",
+    description:
+      "Led engineering on a multi-tenant commerce platform and owned its payment infrastructure end-to-end.",
+    achievements: [
+      "Conducted an independent code-level audit of a client e-commerce platform, revealing true completion was 52% against an assumed higher baseline; the resulting status report and sprint plan became the team's actual delivery roadmap.",
+      "Led a team of engineers building CROP, a multi-tenant e-commerce platform for businesses to onboard onto a shared marketplace app, building alongside them across payments, inventory, admin tooling, AI-powered insights, and an AI WhatsApp agent.",
+      "Implemented payment infrastructure end-to-end across both platforms: Stripe Connect, Paystack sub-account revenue splitting, physical POS terminal support, and automated subscription billing.",
+    ],
+    technologies: [
+      "Next.js",
+      "NestJS",
+      "TypeScript",
+      "PostgreSQL",
+      "Stripe Connect",
+      "Paystack",
+      "AI Agents",
+      "Team Leadership",
+    ],
+  },
+  {
     id: 1,
-    role: "Fullstack Developer",
-    company: "HACO",
+    role: "Founder",
+    company: "Haco",
     location: "Nigeria",
     period: "June 2025 - Present",
     description:
-      "Built and scaled two AI-powered products serving students and graduates across Africa.",
+      "Founded Haco and built two AI-powered career products serving students and graduates across Africa.",
     achievements: [
-      "Built and launched CareerlyAI (careerlyai.app), an AI-powered career platform used by 100+ users for smart job matching, tailored resume and cover letter generation, skill gap analysis, and Paystack subscription integration, winning a ₦1,000,000 innovation grant and 2nd place at the AI for Social Good Hackathon.",
+      "Built and launched CareerlyAI (careerlyai.app), an AI-powered career platform used by 100+ users for smart job matching, tailored resume and cover letter generation, skill gap analysis, a Chrome extension that answers job application questions using the user's profile data, and Paystack subscription integration, winning a ₦1,000,000 innovation grant and 2nd place at the AI for Social Good Hackathon.",
       "Led a team of engineers to deliver Careerly for Kids (kids.careerlyai.app), a RIASEC-based career discovery platform for students, owning the product roadmap, task assignment, frontend development, and AI integration.",
       "Built across the full stack using Next.js, NestJS, PostgreSQL, Supabase, Tailwind CSS, Groq, OpenAI, RapidAPI, and Paystack, implementing a dual AI model strategy to optimise token costs.",
     ],
@@ -33,12 +58,12 @@ const experiences = [
     id: 2,
     role: "Frontend Engineer",
     company: "Kwurah",
-    location: "Canada",
-    period: "October 2024 - Present",
+    location: "Canada (Remote)",
+    period: "October 2024 - March 2026",
     description:
       "First frontend engineer on a Canada-based property management startup.",
     achievements: [
-      "Built the frontend of a property management platform (proptility.com) from scratch using Next.js, TypeScript, React, and Tailwind CSS, delivering 6 core modules: dashboard, properties, occupants, financials, insights, and communications.",
+      "Architected and built the frontend of a property management platform (proptility.com) using Next.js, TypeScript, React, and Tailwind CSS, delivering 6 production modules: dashboard, properties, occupants, financials, insights, and communications.",
       "Integrated location and device fingerprint APIs to enable property geolocation and secure new device/new location login detection.",
       "Optimised data fetching by prefetching and caching property data at login, eliminating redundant API calls and reducing loading states across the platform.",
     ],
@@ -46,8 +71,8 @@ const experiences = [
   },
   {
     id: 3,
-    role: "Frontend Engineer (Internship)",
-    company: "CenosTechnology",
+    role: "Frontend Engineer (Internship, Acting CTO)",
+    company: "Blackowlfortune",
     location: "Nigeria",
     period: "June 2025 - September 2025",
     description:
@@ -105,7 +130,7 @@ const experiences = [
     role: "Frontend Developer",
     company: "BUCC Software Development Team",
     location: "Nigeria",
-    period: "June 2022 - July 2025",
+    period: "January 2022 - May 2025",
     description:
       "Maintained and built university platforms serving the Babcock student community.",
     achievements: [
@@ -124,8 +149,8 @@ const experiences = [
 
 const awards = [
   "1st Place, Babcock Innovation Challenge 2025 (Team earned ₦1,000,000 business grant)",
-  "2nd Place, AI FOR SOCIAL Good - BUCC Hackathon Competition, 2025 (Team earned $350)",
-  "Winner, GDGBabcock x Ready Tensor's Chatbothon, 2025 (Received $100 prize)",
+  "1st Runner-up, AI for Social Good - BUCC Hackathon 2025 (Team earned $350)",
+  "Winner, GDGBabcock x Ready Tensor's Chatbothon 2025 - EasyTherapy (Received $100 prize)",
 ];
 
 const ExperienceClient = () => {
