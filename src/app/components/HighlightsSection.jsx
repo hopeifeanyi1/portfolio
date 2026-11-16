@@ -33,7 +33,7 @@ const FEATURED_ROLES = [
   {
     company: "Kwurah",
     role: "Frontend Engineer",
-    meta: "Oct 2024 – Mar 2026 · Canada (Remote)",
+    meta: "Oct 2024 – May 2025 · Canada (Remote)",
     link: { href: "https://proptility.com", label: "proptility.com" },
     points: [
       "Architected and built the frontend of a property management platform, delivering 6 production modules: dashboard, properties, occupants, financials, insights and communications.",

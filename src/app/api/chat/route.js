@@ -40,25 +40,25 @@ In early 2024 (January to July), she interned as a Software Engineer at MTN Nige
 
 Then 2025 got very busy. She did a Software Engineer internship at AppEasy (July–August 2025) in Los Angeles, consolidating four backend microservices and redesigning their landing page. Around the same time (June–September 2025), she was also a Frontend Engineer Intern at Blackowlfortune in Nigeria, where she led the engineering team as Acting CTO and delivered the Bokimart e-commerce MVP.
 
-From October 2024 to March 2026, she worked remotely as a Frontend Engineer at Kwurah (Canada-based), architecting and building their property management platform Proptility with 6 production modules.
+From October 2024 to May 2025, she worked remotely as a Frontend Engineer at Kwurah (Canada-based), architecting and building their property management platform Proptility with 6 production modules.
 
 Since June 2025, she's been the founder of Haco. There she built and launched CareerlyAI (careerlyai.app), an AI-powered career platform with 100+ users, winning a ₦1,000,000 innovation grant and 2nd place at the AI for Social Good Hackathon. She also led a team to deliver Careerly for Kids (kids.careerlyai.app), a RIASEC-based career discovery platform for students.
 
-From April to August 2026, she was Lead Fullstack Developer (contract) at Chiwiq, a US-based company, working remotely. She led a team of engineers building CROP, a multi-tenant e-commerce platform where businesses onboard onto a shared marketplace app, working across payments, inventory, admin tooling, AI-powered insights and an AI WhatsApp agent. She implemented the payment infrastructure end-to-end (Stripe Connect, Paystack sub-account revenue splitting, physical POS terminal support and automated subscription billing), and her independent code-level audit of a client e-commerce platform revealed true completion was 52%, with her status report and sprint plan becoming the team's delivery roadmap.
+From April to August 2026, she was Lead Fullstack Developer (contract) at Chiwiq, a US-based company, working remotely. She led a team of engineers building CROP, a multi-tenant e-commerce platform where businesses onboard onto a shared marketplace app, working across payments, inventory, admin tooling, AI-powered insights and an AI WhatsApp agent. She implemented the payment infrastructure end-to-end (Stripe Connect, Paystack sub-account revenue splitting, physical POS terminal support and automated subscription billing). She also audited an inherited client e-commerce platform, and her status report and sprint plan became the team's delivery roadmap.
 
 **Work Experience (Full Detail):**
 
-1. Lead Fullstack Developer (Contract) — Chiwiq | April 2026 – August 2026 | Remote (US-based company)
+1.  Lead Fullstack Developer (Contract) — Chiwiq | April 2026 – August 2026 | Remote (US-based company)
    - Led a team of engineers building CROP, a multi-tenant e-commerce platform (payments, inventory, admin tooling, AI-powered insights, AI WhatsApp agent).
    - Implemented payment infrastructure end-to-end: Stripe Connect, Paystack sub-account revenue splitting, physical POS terminal support, automated subscription billing.
-   - Code-level audit of a client e-commerce platform revealed true completion was 52%; her status report and sprint plan became the delivery roadmap.
+   - Audited an inherited client e-commerce platform; her status report and sprint plan became the team's delivery roadmap.
 
 2. Founder — Haco | June 2025 – Present | Nigeria
    - Built CareerlyAI (careerlyai.app): smart job matching, resume & cover letter generation, skill gap analysis, a Chrome extension that answers job application questions from profile data, Paystack subscriptions — 100+ users, ₦1M grant, 2nd place AI for Social Good Hackathon.
    - Led engineering team to deliver Careerly for Kids (kids.careerlyai.app): RIASEC-based career discovery for students.
    - Full stack: Next.js, NestJS, PostgreSQL, Supabase, Tailwind CSS, Groq, OpenAI, RapidAPI, Paystack. Dual AI model strategy to optimise token costs.
 
-3. Frontend Engineer — Kwurah | October 2024 – March 2026 | Canada (Remote)
+3. Frontend Engineer — Kwurah | October 2024 – May 2025 | Canada (Remote)
    - Built Proptility (proptility.com) frontend from scratch: 6 modules (dashboard, properties, occupants, financials, insights, communications).
    - Integrated location and device fingerprint APIs for geolocation and secure login detection.
    - Optimised data fetching via prefetching/caching at login, reducing redundant API calls and loading states.

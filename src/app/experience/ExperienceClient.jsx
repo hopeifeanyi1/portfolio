@@ -13,7 +13,7 @@ const experiences = [
     description:
       "Led engineering on a multi-tenant commerce platform and owned its payment infrastructure end-to-end.",
     achievements: [
-      "Conducted an independent code-level audit of a client e-commerce platform, revealing true completion was 52% against an assumed higher baseline; the resulting status report and sprint plan became the team's actual delivery roadmap.",
+      "Conducted a code-level audit of an inherited client platform and produced the status report and sprint plan adopted as the team's delivery roadmap",
       "Led a team of engineers building CROP, a multi-tenant e-commerce platform for businesses to onboard onto a shared marketplace app, building alongside them across payments, inventory, admin tooling, AI-powered insights, and an AI WhatsApp agent.",
       "Implemented payment infrastructure end-to-end across both platforms: Stripe Connect, Paystack sub-account revenue splitting, physical POS terminal support, and automated subscription billing.",
     ],
@@ -59,7 +59,7 @@ const experiences = [
     role: "Frontend Engineer",
     company: "Kwurah",
     location: "Canada (Remote)",
-    period: "October 2024 - March 2026",
+    period: "October 2024 - h 2026",
     description:
       "First frontend engineer on a Canada-based property management startup.",
     achievements: [

@@ -69,24 +69,20 @@ const TECH_STACK = [
   {
     level: "Also worked with",
     description: "Used in real projects, comfortable picking up",
-    skills: [
-      "Express",
-      "Firebase",
-      "MongoDB",
-      "Docker",
-      "Azure",
-    ],
+    skills: ["Express", "Firebase", "MongoDB", "Docker", "Azure"],
   },
 ];
 
 const levelConfig = {
   "Core Stack": {
     dot: "dynamic-gradient",
-    badge: "bg-purple-100 dark:bg-purple-900/30 text-purple-700 dark:text-purple-300",
+    badge:
+      "bg-purple-100 dark:bg-purple-900/30 text-purple-700 dark:text-purple-300",
   },
   "Payments & AI": {
     dot: "bg-emerald-500",
-    badge: "bg-emerald-100 dark:bg-emerald-900/30 text-emerald-700 dark:text-emerald-300",
+    badge:
+      "bg-emerald-100 dark:bg-emerald-900/30 text-emerald-700 dark:text-emerald-300",
   },
   "Extended Stack": {
     dot: "bg-blue-500",
@@ -168,26 +164,45 @@ const TAB_DATA = [
     content: (
       <div className="w-full">
         <Carousel className="w-full">
-          <CarouselContent className="md:w-auto w-[97vw]" opts={{ align: "start" }}>
+          <CarouselContent
+            className="md:w-auto w-[97vw]"
+            opts={{ align: "start" }}
+          >
             <CarouselItem className="md:basis-1/3">
               <a
                 href="https://learn.microsoft.com/api/credentials/share/en-us/HopeIFEANYI/3B11AE95D51C7AD?sharingId=B4D7060416A0FE6B"
                 className="hover:opacity-90 block"
               >
                 <div className="bg-gray-50 dark:bg-gray-800/50 p-6 dynamic-rounded text-center">
-                  <Image src="/ai900.png" alt="Microsoft Certified: Azure AI Fundamentals" className="mx-auto" width={200} height={200} />
-                  <p className="text-sm font-medium mt-4">Microsoft Certified: Azure AI Fundamentals</p>
+                  <Image
+                    src="/ai900.png"
+                    alt="Microsoft Certified: Azure AI Fundamentals"
+                    className="mx-auto"
+                    width={200}
+                    height={200}
+                  />
+                  <p className="text-sm font-medium mt-4">
+                    Microsoft Certified: Azure AI Fundamentals
+                  </p>
                 </div>
               </a>
             </CarouselItem>
             <CarouselItem className="md:basis-1/3">
-              
-              <a href="https://learn.microsoft.com/api/credentials/share/en-us/HopeIFEANYI/F96AC56F66AF7953?sharingId=B4D7060416A0FE6B"
+              <a
+                href="https://learn.microsoft.com/api/credentials/share/en-us/HopeIFEANYI/F96AC56F66AF7953?sharingId=B4D7060416A0FE6B"
                 className="hover:opacity-90 block"
               >
                 <div className="bg-gray-50 dark:bg-gray-800/50 p-6 dynamic-rounded text-center">
-                  <Image src="/dp900.png" alt="Microsoft Certified: Azure Data Fundamentals" className="mx-auto" width={200} height={200} />
-                  <p className="text-sm font-medium mt-4">Microsoft Certified: Azure Data Fundamentals</p>
+                  <Image
+                    src="/dp900.png"
+                    alt="Microsoft Certified: Azure Data Fundamentals"
+                    className="mx-auto"
+                    width={200}
+                    height={200}
+                  />
+                  <p className="text-sm font-medium mt-4">
+                    Microsoft Certified: Azure Data Fundamentals
+                  </p>
                 </div>
               </a>
             </CarouselItem>
@@ -197,24 +212,38 @@ const TAB_DATA = [
                 className="hover:opacity-90 block"
               >
                 <div className="bg-gray-50 dark:bg-gray-800/50 p-6 dynamic-rounded text-center">
-                  <Image src="/az900.png" alt="Microsoft Certified: Azure Fundamentals" className="mx-auto" width={200} height={200} />
-                  <p className="text-sm font-medium mt-4">Microsoft Certified: Azure Fundamentals</p>
+                  <Image
+                    src="/az900.png"
+                    alt="Microsoft Certified: Azure Fundamentals"
+                    className="mx-auto"
+                    width={200}
+                    height={200}
+                  />
+                  <p className="text-sm font-medium mt-4">
+                    Microsoft Certified: Azure Fundamentals
+                  </p>
                 </div>
               </a>
             </CarouselItem>
             <CarouselItem className="md:basis-1/3">
               <div className="bg-gray-50 dark:bg-gray-800/50 p-6 dynamic-rounded text-center flex items-center justify-center min-h-48">
-                <p className="font-medium">Cyber Security and Ethical Hacking</p>
+                <p className="font-medium">
+                  Cyber Security and Ethical Hacking
+                </p>
               </div>
             </CarouselItem>
             <CarouselItem className="md:basis-1/3">
               <div className="bg-gray-50 dark:bg-gray-800/50 p-6 dynamic-rounded text-center flex items-center justify-center min-h-48">
-                <p className="font-medium">Full-Stack Web Design and Development</p>
+                <p className="font-medium">
+                  Full-Stack Web Design and Development
+                </p>
               </div>
             </CarouselItem>
             <CarouselItem className="md:basis-1/3">
               <div className="bg-gray-50 dark:bg-gray-800/50 p-6 dynamic-rounded text-center flex items-center justify-center min-h-48">
-                <p className="font-medium">HTML, CSS, Javascript for Web Developers</p>
+                <p className="font-medium">
+                  HTML, CSS, Javascript for Web Developers
+                </p>
               </div>
             </CarouselItem>
           </CarouselContent>
@@ -252,26 +281,41 @@ const AboutSection = () => {
           <div className="w-16 h-1 dynamic-gradient mx-auto dynamic-rounded mb-8" />
           <div className="space-y-4 mb-6 text-gray-600 dark:text-gray-300 text-[16px] leading-relaxed">
             <p>
-              I&apos;m a Frontend and Full-Stack Engineer with 4 years of experience in Next.js,
-              TypeScript, and NestJS. I{" "}
-              <span className="text-black dark:text-white font-medium">lead engineering teams</span>,{" "}
-              <span className="text-black dark:text-white font-medium">build payment infrastructure</span>, and{" "}
-              <span className="text-black dark:text-white font-medium">ship AI-powered products</span>, working remotely with distributed teams
-              across the US and Canada.
+              I&apos;m a Frontend and Full-Stack Engineer with 4 years of
+              experience in Next.js, TypeScript, and NestJS. I{" "}
+              <span className="text-black dark:text-white font-medium">
+                lead engineering teams
+              </span>
+              ,{" "}
+              <span className="text-black dark:text-white font-medium">
+                build payment infrastructure
+              </span>
+              , and{" "}
+              <span className="text-black dark:text-white font-medium">
+                ship AI-powered products
+              </span>
+              , working remotely with distributed teams across the US and
+              Canada.
             </p>
             <p>
               As{" "}
-              <span className="text-black dark:text-white font-medium">Lead Fullstack Developer at Chiwiq</span>, a US-based company, I led a team of
-              engineers building CROP, a multi-tenant e-commerce platform with inventory, admin
-              tooling, AI-powered insights, and an AI WhatsApp agent. I implemented its payments
-              end-to-end: Stripe Connect, Paystack revenue splitting, physical POS terminals, and
-              subscription billing. My code-level audit of a client platform showed it was only{" "}
-              <span className="text-black dark:text-white font-medium">52% complete</span>, and the sprint plan I wrote from it became the
-              team&apos;s delivery roadmap.
+              <span className="text-black dark:text-white font-medium">
+                Lead Fullstack Developer at Chiwiq
+              </span>
+              , a US-based company, I led a team of engineers building CROP, a
+              multi-tenant e-commerce platform with inventory, admin tooling,
+              AI-powered insights, and an AI WhatsApp agent. I implemented its
+              payments end-to-end: Stripe Connect, Paystack revenue splitting,
+              physical POS terminals, and subscription billing. I also audited
+              an inherited client platform, and the status report and sprint
+              plan I wrote from it became the team&apos;s delivery roadmap.
             </p>
             <p>
               I&apos;m also the founder of{" "}
-              <span className="text-black dark:text-white font-medium">Haco</span>, where I built{" "}
+              <span className="text-black dark:text-white font-medium">
+                Haco
+              </span>
+              , where I built{" "}
               <a
                 href="https://careerlyai.app"
                 target="_blank"
@@ -280,15 +324,25 @@ const AboutSection = () => {
               >
                 CareerlyAI
               </a>
-              , an AI career platform with 100+ users and a Chrome extension that answers job
-              application questions using a user&apos;s profile. It won a{" "}
-              <span className="text-black dark:text-white font-medium">₦1,000,000 innovation grant</span> and 2nd place at the AI for Social Good
-              Hackathon, and I led the team that shipped Careerly for Kids after it.
+              , an AI career platform with 100+ users and a Chrome extension
+              that answers job application questions using a user&apos;s
+              profile. It won a{" "}
+              <span className="text-black dark:text-white font-medium">
+                ₦1,000,000 innovation grant
+              </span>{" "}
+              and 2nd place at the AI for Social Good Hackathon, and I led the
+              team that shipped Careerly for Kids after it.
             </p>
             <p>
-              Earlier, at <span className="text-black dark:text-white font-medium">MTN Nigeria</span>, I shipped features on a mission-critical
-              platform managing{" "}
-              <span className="text-black dark:text-white font-medium">1,000,000+ agents</span>. I build things that ship, work, and scale.
+              Earlier, at{" "}
+              <span className="text-black dark:text-white font-medium">
+                MTN Nigeria
+              </span>
+              , I shipped features on a mission-critical platform managing{" "}
+              <span className="text-black dark:text-white font-medium">
+                1,000,000+ agents
+              </span>
+              . I build things that ship, work, and scale.
             </p>
           </div>
 
@@ -301,11 +355,16 @@ const AboutSection = () => {
             className="grid grid-cols-2 sm:grid-cols-5 gap-4 mb-10 py-6 border-y border-gray-200 dark:border-gray-700/60"
           >
             {STATS.map((stat, i) => (
-              <div key={i} className="text-center last:col-span-2 sm:last:col-span-1">
+              <div
+                key={i}
+                className="text-center last:col-span-2 sm:last:col-span-1"
+              >
                 <p className="text-2xl font-bold text-transparent bg-clip-text dynamic-text-gradient">
                   {stat.value}
                 </p>
-                <p className="text-xs text-gray-500 dark:text-gray-400 mt-1">{stat.label}</p>
+                <p className="text-xs text-gray-500 dark:text-gray-400 mt-1">
+                  {stat.label}
+                </p>
               </div>
             ))}
           </motion.div>
